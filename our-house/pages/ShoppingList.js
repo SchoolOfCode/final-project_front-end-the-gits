@@ -1,5 +1,7 @@
 import React from 'react'
-import "./ShoppingList.css";
+import styles from '../styles/ShoppingList.module.css'
+
+
 const ShoppingList = () => {
   return (
     <div>ShoppingList</div>

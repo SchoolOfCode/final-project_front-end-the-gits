@@ -1,4 +1,6 @@
 import React from 'react'
+import styles from '../styles/ShoppingListItem.module.css'
+
 
 const ShoppingListItem = () => {
   return (
