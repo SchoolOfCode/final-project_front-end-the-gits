@@ -1,87 +1,87 @@
 <mxfile host="65bd71144e">
     <diagram id="EcV0npUJ-lvtQeWcKfJA" name="Page-1">
-        <mxGraphModel dx="2035" dy="595" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="2038" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="5" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="3" target="4">
+                <mxCell id="5" value="" style="edgeStyle=none;html=1;" parent="1" source="3" target="4" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="App" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="3" value="App" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="358" width="150" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="Landing Page&lt;br&gt;&lt;br&gt;Props:&lt;br&gt;&lt;br&gt;State:&lt;br&gt;&lt;br&gt;Elements:&lt;br&gt;&lt;br&gt;&amp;lt;h1&amp;gt;&lt;br&gt;&amp;lt;p&amp;gt;&lt;br&gt;&amp;lt;log in button&amp;gt;&lt;br&gt;&amp;lt;log out button&amp;gt;&lt;br&gt;&amp;lt;img&amp;gt;" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+                <mxCell id="4" value="Landing Page&lt;br&gt;&lt;br&gt;Props:&lt;br&gt;&lt;br&gt;State:&lt;br&gt;&lt;br&gt;Elements:&lt;br&gt;&lt;br&gt;&amp;lt;h1&amp;gt;&lt;br&gt;&amp;lt;p&amp;gt;&lt;br&gt;&amp;lt;log in button&amp;gt;&lt;br&gt;&amp;lt;log out button&amp;gt;&lt;br&gt;&amp;lt;img&amp;gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
                     <mxGeometry x="270" y="110" width="326" height="210" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="" style="endArrow=classic;html=1;exitX=0.163;exitY=1.01;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4">
+                <mxCell id="6" value="" style="endArrow=classic;html=1;exitX=0.163;exitY=1.01;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="4" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="310" y="420" as="sourcePoint"/>
                         <mxPoint x="323" y="390" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="7" value="" style="endArrow=classic;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="4">
+                <mxCell id="7" value="" style="endArrow=classic;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="4" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="510" y="390" as="sourcePoint"/>
                         <mxPoint x="515" y="390" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="8" value="Sign up" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="8" value="Sign up" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="260" y="390" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="Log in" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="9" value="Log in" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="460" y="390" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="" style="endArrow=classic;html=1;exitX=0.45;exitY=1.067;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="8">
+                <mxCell id="12" value="" style="endArrow=classic;html=1;exitX=0.45;exitY=1.067;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="8" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="308" y="510" as="sourcePoint"/>
                         <mxPoint x="380" y="510" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="13" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                <mxCell id="13" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="495" y="450" as="sourcePoint"/>
                         <mxPoint x="450" y="510" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="14" value="Home Page&lt;br&gt;&lt;br&gt;Props:&lt;br&gt;&lt;br&gt;State:&lt;br&gt;Elements:&lt;br&gt;&lt;br&gt;&amp;lt;Navbar&amp;gt;&lt;br&gt;&amp;lt;Profile&amp;gt;&lt;br&gt;&amp;lt;Card&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="14" value="Home Page&lt;br&gt;&lt;br&gt;Props:&lt;br&gt;&lt;br&gt;State:&lt;br&gt;Elements:&lt;br&gt;&lt;br&gt;&amp;lt;Navbar&amp;gt;&lt;br&gt;&amp;lt;Profile&amp;gt;&lt;br&gt;&amp;lt;Card&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="230" y="510" width="366" height="210" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="Card&lt;br&gt;(Shopping card)&lt;br&gt;&lt;br&gt;&lt;br&gt;props:&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Elements:&lt;br&gt;&amp;lt;svg&amp;gt;&lt;br&gt;&amp;lt;h3&amp;gt; - title&lt;br&gt;&amp;lt;a&amp;gt;&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="200" y="770" width="240" height="180" as="geometry"/>
+                <mxCell id="15" value="Card&lt;br&gt;(Shopping card)&lt;br&gt;&lt;br&gt;&lt;br&gt;props:&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Elements:&lt;br&gt;&amp;lt;svg&amp;gt;&lt;br&gt;&amp;lt;h3&amp;gt; - title&lt;br&gt;&amp;lt;a&amp;gt;&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="780" width="240" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="" style="endArrow=classic;html=1;entryX=0.473;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="15">
+                <mxCell id="16" value="" style="endArrow=classic;html=1;entryX=0.473;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="15" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="408" y="720" as="sourcePoint"/>
                         <mxPoint x="458" y="670" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="17" value="ShopName&lt;br&gt;State:&lt;br&gt;useReducer - controlling the delete and add&amp;nbsp;&lt;br&gt;UseState - When new shopList is created&lt;br&gt;[shop, setShop] = null&lt;br&gt;&lt;br&gt;UseFetch - Fetching all pre-existing ShopLists from Database&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;elements:&lt;br&gt;&amp;lt;Navbar&amp;gt;&lt;br&gt;&amp;lt;Profile&amp;gt;&lt;br&gt;&amp;lt;InputBar&amp;gt;&lt;br&gt;&amp;lt;ShopNameItem&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="17" value="ShopName&lt;br&gt;State:&lt;br&gt;useReducer - controlling the delete and add&amp;nbsp;&lt;br&gt;UseState - When new shopList is created&lt;br&gt;[shop, setShop] = null&lt;br&gt;&lt;br&gt;UseFetch - Fetching all pre-existing ShopLists from Database&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;elements:&lt;br&gt;&amp;lt;Navbar&amp;gt;&lt;br&gt;&amp;lt;Profile&amp;gt;&lt;br&gt;&amp;lt;InputBar&amp;gt;&lt;br&gt;&amp;lt;ShopNameItem&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="240" y="1030" width="347" height="240" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="" style="endArrow=classic;html=1;entryX=0.467;entryY=-0.012;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="15" target="17">
+                <mxCell id="18" value="" style="endArrow=classic;html=1;entryX=0.467;entryY=-0.012;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="15" target="17" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="400" y="980" as="sourcePoint"/>
                         <mxPoint x="450" y="930" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="19" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="20">
+                <mxCell id="19" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="20" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="413" y="1270" as="sourcePoint"/>
                         <mxPoint x="413" y="1440" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="20" value="ShoppingList&lt;br&gt;State:&lt;br&gt;useReducer - controlling the add, delete and complete&lt;br&gt;useState&lt;br&gt;&lt;br&gt;Props:&lt;br&gt;shop&lt;br&gt;&lt;br&gt;Elements:&amp;nbsp;&lt;br&gt;&amp;lt;ul&amp;gt; - items&lt;br&gt;&amp;lt;delete button&amp;gt;&lt;br&gt;&amp;lt;complete button&amp;gt;&lt;br&gt;&amp;lt;input&amp;gt;&lt;br&gt;&amp;lt;Profile&amp;gt;&lt;br&gt;&amp;lt;Navbar&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="20" value="ShoppingList&lt;br&gt;State:&lt;br&gt;useReducer - controlling the add, delete and complete&lt;br&gt;useState&lt;br&gt;&lt;br&gt;Props:&lt;br&gt;shop&lt;br&gt;&lt;br&gt;Elements:&amp;nbsp;&lt;br&gt;&amp;lt;ul&amp;gt; - items&lt;br&gt;&amp;lt;delete button&amp;gt;&lt;br&gt;&amp;lt;complete button&amp;gt;&lt;br&gt;&amp;lt;input&amp;gt;&lt;br&gt;&amp;lt;Profile&amp;gt;&lt;br&gt;&amp;lt;Navbar&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="230" y="1430" width="370" height="250" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="" style="endArrow=classic;html=1;entryX=1.017;entryY=0.388;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="23">
+                <mxCell id="21" value="" style="endArrow=classic;html=1;entryX=1.017;entryY=0.388;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="23" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="220" y="570" as="sourcePoint"/>
                         <mxPoint x="10" y="570" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="22" value="" style="endArrow=none;html=1;exitX=0;exitY=0.286;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="14">
+                <mxCell id="22" value="" style="endArrow=none;html=1;exitX=0;exitY=0.286;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="14" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="170" y="600" as="sourcePoint"/>
                         <mxPoint x="140" y="570" as="targetPoint"/>
@@ -90,13 +90,13 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="23" value="Navbar&lt;br&gt;UseContext: counter for notifications&lt;br&gt;UseState: to hide or remove notifications - not mvp&amp;nbsp;&lt;br&gt;&lt;br&gt;Elements:&lt;br&gt;&amp;lt;svg&amp;gt; - icons" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="23" value="Navbar&lt;br&gt;UseContext: counter for notifications&lt;br&gt;UseState: to hide or remove notifications - not mvp&amp;nbsp;&lt;br&gt;&lt;br&gt;Elements:&lt;br&gt;&amp;lt;svg&amp;gt; - icons" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="-210" y="505" width="180" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="Profile&lt;br&gt;UseContext - passing down user data to update shopping list" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="24" value="Profile&lt;br&gt;UseContext - passing down user data to update shopping list" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="640" y="640" width="170" height="90" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" value="" style="endArrow=none;html=1;exitX=0;exitY=0.286;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+                <mxCell id="25" value="" style="endArrow=none;html=1;exitX=0;exitY=0.286;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="686" y="570.06" as="sourcePoint"/>
                         <mxPoint x="596" y="570" as="targetPoint"/>
@@ -105,67 +105,70 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="26" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                <mxCell id="26" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="690" y="570" as="sourcePoint"/>
                         <mxPoint x="690" y="640" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="27" value="UseReducer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="27" value="UseReducer" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="50" y="150" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="28" value="UseContext" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="28" value="UseContext" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="660" y="160" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="UseFetch" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="29" value="UseFetch" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="50" y="270" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                <mxCell id="30" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="-90" y="665" as="sourcePoint"/>
                         <mxPoint x="-90" y="1560" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="31" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="24">
+                <mxCell id="31" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="24" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="699.5" y="700" as="sourcePoint"/>
                         <mxPoint x="720" y="1530" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="32" value="InputBar:&lt;br&gt;Behaviours:&lt;br&gt;Adds a&amp;nbsp; new Shopping List by name, e.g Tesco&amp;nbsp;&lt;br&gt;&lt;br&gt;elements:&lt;br&gt;&amp;lt;input&amp;gt;&lt;br&gt;&amp;lt;div&amp;gt;&lt;br&gt;&amp;lt;button&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="-50" y="620" width="230" height="210" as="geometry"/>
+                <mxCell id="32" value="InputBar:&lt;br&gt;Behaviours:&lt;br&gt;Adds a&amp;nbsp; new Shopping List by name, e.g Tesco&amp;nbsp;&lt;br&gt;&lt;br&gt;elements:&lt;br&gt;&amp;lt;input&amp;gt;&lt;br&gt;&amp;lt;div&amp;gt;&lt;br&gt;&amp;lt;button&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="800" width="230" height="210" as="geometry"/>
                 </mxCell>
-                <mxCell id="33" value="" style="endArrow=classic;html=1;exitX=-0.003;exitY=0.643;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="14" target="32">
+                <mxCell id="33" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=-0.008;exitY=0.332;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="17" target="32" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="160" y="650" as="sourcePoint"/>
+                        <mxPoint x="170" y="650" as="sourcePoint"/>
                         <mxPoint x="210" y="600" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="180" y="1020"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="34" value="ShoppingListItem&lt;br&gt;&lt;br&gt;elements:&lt;br&gt;&amp;lt;p&amp;gt; Name of item&lt;br&gt;&amp;lt;delete button&amp;gt;&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="34" value="ShoppingListItem&lt;br&gt;&lt;br&gt;elements:&lt;br&gt;&amp;lt;p&amp;gt; Name of item&lt;br&gt;&amp;lt;delete button&amp;gt;&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="-60" y="1475" width="240" height="130" as="geometry"/>
                 </mxCell>
-                <mxCell id="36" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="34" target="20">
+                <mxCell id="36" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="34" target="20" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="310" y="1490" as="sourcePoint"/>
                         <mxPoint x="300" y="1610" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="37" value="ShopNameItem&lt;br&gt;&lt;br&gt;elements:&lt;br&gt;&amp;lt;h3&amp;gt; Name of shop&lt;br&gt;&amp;lt;li&amp;gt;&lt;br&gt;&amp;lt;delete button&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="37" value="ShopNameItem&lt;br&gt;&lt;br&gt;elements:&lt;br&gt;&amp;lt;h3&amp;gt; Name of shop&lt;br&gt;&amp;lt;li&amp;gt;&lt;br&gt;&amp;lt;delete button&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="-70" y="1100" width="160" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="38" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="17">
+                <mxCell id="38" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="17" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="90" y="1150" as="sourcePoint"/>
                         <mxPoint x="140" y="1100" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="40" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                <mxCell id="40" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="495" y="720" as="sourcePoint"/>
                         <mxPoint x="545" y="770" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="41" value="Card(ChoreCard)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="41" value="Card(ChoreCard)" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="500" y="770" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
