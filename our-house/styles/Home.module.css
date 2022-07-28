@@ -33,6 +33,7 @@
   font-size: 90px;
   font-weight: bolder;
   margin-bottom: 3vh;
+  color: #302f2f;
 }
 
 .home .left p {
@@ -86,6 +87,10 @@
   width: 50vw;
   height: 94vh;
  
+}
+
+.home .right img {
+  margin-left: 3vw;
 }
 
 .home .right img svg{
