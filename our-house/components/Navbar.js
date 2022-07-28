@@ -1,7 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import { RiMoneyPoundBoxLine } from 'react-icons/ri';
+import { GoCalendar } from 'react-icons/go'
+import { FaBirthdayCake } from 'react-icons/fa'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { GiVacuumCleaner } from 'react-icons/gi';
 
 const Navbar = () => {
+  const iconSize = "3em";
   return (
     <nav className="navbar">
       <a>
@@ -10,28 +16,28 @@ const Navbar = () => {
       <ul>
         <li>
           <Link href="/shopname">
-            <a>Shop Name</a>
+            <a><AiOutlineShoppingCart size={iconSize} /></a>
           </Link>
         </li>
         <li>
-          <Link href="/shoppinglist">
-            <a>Shopping List</a>
+          <Link href="/events">
+            <a><GoCalendar size={iconSize} /></a>
           </Link>
         </li>
         <li>
-        <Link href="/userhome">
-            <a>User Home</a>
+        <Link href="/birthdays">
+            <a><FaBirthdayCake size={iconSize} /></a>
           </Link>
           </li>
           
         <li>
-          <Link href="/shoppinglist">
-            <a>Shopping List</a>
+          <Link href="/chores">
+            <a><GiVacuumCleaner size={iconSize} /></a>
           </Link>
         </li>
         <li>
-        <Link href="/userhome">
-            <a>User Home</a>
+        <Link href="/Bills">
+            <a><RiMoneyPoundBoxLine size={iconSize} /></a>
           </Link>
         </li>
       </ul>
