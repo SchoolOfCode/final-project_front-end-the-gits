@@ -1,24 +1,27 @@
 import React,{useState} from "react";
 import Link from "next/link";
+import styles from "../styles/NavBar.module.css"
+// Temporary placeholder icons.
 import { RiMoneyPoundBoxLine } from 'react-icons/ri';
 import { GoCalendar } from 'react-icons/go'
-import { FaBirthdayCake, FaDoorClosed } from 'react-icons/fa'
+import { FaBirthdayCake } from 'react-icons/fa'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { GiVacuumCleaner } from 'react-icons/gi';
-import styles from "../styles/NavBar.module.css"
+
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState({opened: false, className: ""})
+  // state only for mobile menu works with the revealMenu function
+  const [isMenuOpen, setIsMenuOpen] = useState({opened: false, className: "close"})
   
+  // Only for mobile menus
   function revealMenu (){
-    console.log('openMenu')
     if (isMenuOpen.opened === false) {
-      setIsMenuOpen({opened: true, className: "opened"})
-    
+      setIsMenuOpen({opened: true, className: "open"})
     } else{
-      setIsMenuOpen({opened: false, className: ""})
+      setIsMenuOpen({opened: false, className: "close"})
     }
   }
+
   return (
     <nav className={`${styles.navbar} ${styles[isMenuOpen.className]}`}>
       <a>
