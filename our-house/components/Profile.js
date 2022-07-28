@@ -11,11 +11,12 @@ export default function Profile() {
   return (
     user && (
       <div className={styles.profile}>
-        <div>
+        <div className={styles.bar}>
             <div className={styles.right}>
                 <h2> Welcome back, {user.name}</h2>
-                <img src={user.picture} alt={user.name} />
+                
             </div>
+        <img src='/user_avatar_1.svg' width={20} height={70} alt={user.name} />
         </div>
       </div>
     )

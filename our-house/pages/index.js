@@ -7,14 +7,15 @@ import Profile from '../components/Profile'
 export default function Home() {
   return (
     <div>
-      <div>Home Page</div>
+     
+      <Profile />
         <Link href="/api/auth/login">
           <a href="/api/auth/login">Login</a>
         </Link>
         <Link href="/api/auth/logout">
         <a href="/api/auth/logout">Logout</a>
         </Link>
-        <Profile />
+        <div>Home Page</div>
       </div>
       
   )
