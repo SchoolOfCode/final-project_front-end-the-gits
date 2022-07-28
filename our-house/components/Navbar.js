@@ -5,39 +5,40 @@ import { GoCalendar } from 'react-icons/go'
 import { FaBirthdayCake } from 'react-icons/fa'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { GiVacuumCleaner } from 'react-icons/gi';
+import styles from "../styles/NavBar.module.css"
 
 const Navbar = () => {
   const iconSize = "3em";
   return (
-    <nav className="navbar">
+    <nav className={styles.navbar}>
       <a>
-        <img src="/vercel.svg"></img>
+        <img className={styles["navbar-logo"]} src="/vercel.svg"></img>
       </a>
-      <ul>
+      <ul className={styles["navbar-ul"]}>
         <li>
           <Link href="/shopname">
-            <a><AiOutlineShoppingCart size={iconSize} /></a>
+            <a><AiOutlineShoppingCart className={styles["list-icons"]}  /></a>
           </Link>
         </li>
         <li>
           <Link href="/events">
-            <a><GoCalendar size={iconSize} /></a>
+            <a><GoCalendar className={styles["list-icons"]}  /></a>
           </Link>
         </li>
         <li>
         <Link href="/birthdays">
-            <a><FaBirthdayCake size={iconSize} /></a>
+            <a><FaBirthdayCake className={styles["list-icons"]} /></a>
           </Link>
           </li>
           
         <li>
           <Link href="/chores">
-            <a><GiVacuumCleaner size={iconSize} /></a>
+            <a><GiVacuumCleaner className={styles["list-icons"]} /></a>
           </Link>
         </li>
         <li>
         <Link href="/Bills">
-            <a><RiMoneyPoundBoxLine size={iconSize} /></a>
+            <a><RiMoneyPoundBoxLine className={styles["list-icons"]} /></a>
           </Link>
         </li>
       </ul>

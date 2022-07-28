@@ -1,3 +1,31 @@
 .navbar {
+    background-color: #8A82E8;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    height: 100vh;
+}
 
+.navbar-logo {
+width: 90px;
+padding-top: 1em;
+}
+
+.navbar-ul {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center
+}
+
+.list-icons {
+    font-size: 3em;
+}
+
+.navbar-ul li {
+    padding-top:1em;
 }
