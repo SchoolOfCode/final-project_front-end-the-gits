@@ -6,19 +6,21 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <div className={styles.home}>
-      <div className={styles.left}>
-        <h1>Our House</h1>
-        <p>Your one stop shop</p>
-        <p>to organise your home</p>
-        <div className={styles.buttons}>
-         <button>Login</button>
-         <button className={styles.signup}>Sign Up</button>
+      <div className={styles.container}>
+        <div className={styles.left}>
+          <h1>Our House</h1>
+          <p>Your one stop shop</p>
+          <p>to organise your home</p>
+          <div className={styles.buttons}>
+          <button>Login</button>
+          <button className={styles.signup}>Sign Up</button>
+          </div>
         </div>
-      </div>
-      
-      <div className={styles.right}>
-      
-        <img src="/logo3.svg" width={760} height={940} alt="" />
+        
+        <div className={styles.right}>
+        
+          <img src="/logo_8.svg" width={760} height={940} alt="" />
+        </div>
       </div>
     </div>
       
