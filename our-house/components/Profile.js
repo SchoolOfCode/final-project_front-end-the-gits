@@ -1,5 +1,6 @@
 import React from 'react';
 import { useUser } from '@auth0/nextjs-auth0';
+import styles from "../styles/Profile.module.css"
 
 export default function Profile() {
   const { user, error, isLoading } = useUser();
@@ -9,10 +10,14 @@ export default function Profile() {
 
   return (
     user && (
-      <div>
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
+      <div className={styles.profile}>
+        <div className={styles.bar}>
+            <div className={styles.right}>
+                <h2> Welcome back, {user.name}</h2>
+                
+            </div>
+        <img src='/user_avatar_1.svg' width={20} height={70} alt={user.name} />
+        </div>
       </div>
     )
   );
