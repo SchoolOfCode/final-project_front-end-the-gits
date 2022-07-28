@@ -42,6 +42,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
+      <button className={styles["mobile-menu-button"]}></button>
     </nav>
   );
 };
