@@ -2,7 +2,12 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <nav className="navbar">
+    <a>
+    <img src="/vercel.svg"></img>
+    </a>
+    </nav>
+   
   )
 }
 
