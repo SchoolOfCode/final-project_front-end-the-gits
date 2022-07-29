@@ -11,8 +11,12 @@ const ShoppingList = () => {
     {name: "Milk", id:"2", completed: false, icon:"user_avatar_1.svg"}])
 
   // takes in a value from the input component
+
   const updateShoppingList = (value) => {
-    setListItems([value, ...listItems])
+    const id = String(Math.floor(Math.random()*100+3))
+    const newItem = {name: value, id: id, completed: false, icon:"user_avatar_1.svg"}
+    console.log('sdfsdfs',[...listItems, newItem])
+    setListItems([newItem, ...listItems])
   }
 
   const deleteListItem = (id) => {
