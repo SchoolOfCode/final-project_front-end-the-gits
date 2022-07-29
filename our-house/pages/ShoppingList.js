@@ -6,21 +6,18 @@ import ShoppingListItem from '../components/ShoppingListItem.js'
 import { useState } from 'react'
 
 const ShoppingList = () => {
-
   const [listItems, setListItems] = useState(["bread", "milk", "chocolate"])
 
-
-  const handleClick = (value) => {
+  // takes in a value from the input component
+  const updateShoppingList = (value) => {
     setListItems([...listItems, value])
-
   }
-
 
   const props = {
     name: "Lidl"
   }
   
-
+  // Input bar create locally... to be replaced by component
   return (
     <div className={styles.shoppinglist}>
     <Navbar/>
@@ -28,9 +25,9 @@ const ShoppingList = () => {
     <input type="text"/>
     <button onClick={ () => {
       const value = document.querySelector('input')
-      handleClick(value.value)
+      updateShoppingList(value.value)
     }}></button>
-    {/* <InputBar handleClick={handleClick}/> */}
+    {/* <InputBar updateShoppingList={updateShoppingList}/> */}
     <ul>
       {listItems.map((item, index) => (
         <ShoppingListItem name={item} key={index}/>))}
