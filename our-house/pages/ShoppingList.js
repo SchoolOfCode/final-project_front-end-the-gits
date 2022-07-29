@@ -11,7 +11,6 @@ const ShoppingList = () => {
     {name: "Milk", id:"2", completed: false, icon:"user_avatar_1.svg"}])
 
   // takes in a value from the input component
-
   const updateShoppingList = (value) => {
     const id = String(Math.floor(Math.random()*100+3))
     const newItem = {name: value, id: id, completed: false, icon:"user_avatar_1.svg"}
@@ -23,7 +22,6 @@ const ShoppingList = () => {
     const newListItems = listItems.filter((item) => {
       if (item.id === id) {
         return false
-
       }
       else {
         return true
@@ -31,6 +29,16 @@ const ShoppingList = () => {
     }
     )
     setListItems(newListItems)
+  }
+
+  // uses item id to toggled between true or false
+  const toggleItemAsCompleted = (id) => {
+    const newListItems = listItems.map(item => {
+      if (item.id === id) {
+        item.completed = !item.completed;
+      }
+    })
+    setListItems(newListItems);
   }
 
   const props = {
@@ -50,7 +58,7 @@ const ShoppingList = () => {
     {/* <InputBar updateShoppingList={updateShoppingList}/> */}
     <ul>
       {listItems.map((item, index) => (
-        <ShoppingListItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem}/>))}
+        <ShoppingListItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />))}
     </ul>
 
     </div>
