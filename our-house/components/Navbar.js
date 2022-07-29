@@ -24,20 +24,24 @@ const Navbar = () => {
 
   return (
     <nav className={`${styles.navbar} ${styles[isMenuOpen.className]}`}>
-      <a>
+     <a>
         <img className={styles["navbar-logo"]} src="/homeLogo.svg"></img>
       </a>
       <ul className={styles["navbar-ul"]}>
+       <Link href="/shoppinglist">
         <li>
         <a>
-        <img className={styles["navbar-logo"]} src="/cart.svg"></img>
+        <img className={styles["svg-icons"]} src="/cart.svg"></img>
       </a>
         </li>
+        </Link>
+       <Link href="/bills">
         <li>
         <a>
-        <img className={styles["navbar-logo"]} src="/bill.svg"></img>
+        <img className={styles["svg-icons"]} src="/bill.svg"></img>
       </a>
         </li>
+      </Link>
         <li>
         <Link href="/birthdays">
             <a><FaBirthdayCake className={styles["list-icons"]} /></a>
