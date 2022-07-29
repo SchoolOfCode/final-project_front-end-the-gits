@@ -29,9 +29,9 @@ const Navbar = () => {
       </a>
       <ul className={styles["navbar-ul"]}>
         <li>
-          <Link href="/shopname">
-            <a><AiOutlineShoppingCart className={styles["list-icons"]}  /></a>
-          </Link>
+        <a>
+        <img className={styles["navbar-logo"]} src="/cart.svg"></img>
+      </a>
         </li>
         <li>
           <Link href="/events">
