@@ -17,16 +17,12 @@ Behaviours
 */
 const ShoppingListItem = ({name, completed, icon, id, deleteListItem}) => {
 
-  
-
-
-
 
   return (
     <li>
       <div className={styles.left}>{name}</div>
       <div className={styles.right}>
-        <img src="/user_avatar_1.svg" alt="user avatar icon" />
+        <img src={`/${icon}`} alt="user avatar icon" />
         <button>
           <FiEdit />
         </button>
