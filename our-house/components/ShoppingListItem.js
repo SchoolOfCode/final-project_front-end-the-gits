@@ -13,10 +13,16 @@ Behaviours
  - delete button (icon)
  - crossed out
 */
-const ShoppingListItem = ({name, completed, icon, id, deleteListItem}) => {
+const ShoppingListItem = ({name, completed, icon, id, deleteListItem, toggleItemAsCompleted}) => {
+
+console.log(completed)
   return (
-    <li className={styles.shoppingListItem}>
-      <div className={styles.left}>{name}</div>
+    <li className={styles.shoppingListItem} onClick={() => {
+      toggleItemAsCompleted(id)
+    }}>
+      <div className={styles.left}>
+      <p>{name}</p>
+      </div>
       <div className={styles.right}>
         <div className={styles.background}>
           <img src='/user_avatar_1.svg' width={24}

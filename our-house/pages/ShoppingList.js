@@ -38,7 +38,8 @@ const ShoppingList = () => {
         item.completed = !item.completed;
       }
     })
-    setListItems(newListItems);
+    console.log(newListItems)
+    // setListItems(newListItems);
   }
 
   const props = {
