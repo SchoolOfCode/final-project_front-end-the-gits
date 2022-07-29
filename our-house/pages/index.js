@@ -6,7 +6,6 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <div>
-      <Navbar/>
       <div>
         <h2>HELLO</h2>
         <p>Hellow there lets try to move the navbar to one side of this text</p>
