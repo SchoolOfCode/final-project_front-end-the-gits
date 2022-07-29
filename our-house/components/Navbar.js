@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <nav className={`${styles.navbar} ${styles[isMenuOpen.className]}`}>
       <a>
-        <img className={styles["navbar-logo"]} src="/vercel.svg"></img>
+        <img className={styles["navbar-logo"]} src="/homeLogo.svg"></img>
       </a>
       <ul className={styles["navbar-ul"]}>
         <li>
@@ -34,9 +34,9 @@ const Navbar = () => {
       </a>
         </li>
         <li>
-          <Link href="/events">
-            <a><GoCalendar className={styles["list-icons"]}  /></a>
-          </Link>
+        <a>
+        <img className={styles["navbar-logo"]} src="/bill.svg"></img>
+      </a>
         </li>
         <li>
         <Link href="/birthdays">
