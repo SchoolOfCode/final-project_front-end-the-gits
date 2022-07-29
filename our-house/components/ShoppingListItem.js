@@ -4,9 +4,6 @@ import styles from '../styles/ShoppingListItem.module.css'
 
 const ShoppingListItem = () => {
   return (
-<<<<<<< Updated upstream
-    <div>ShoppingListItem</div>
-=======
     <li className={styles.shoppingListItem}>
       <div className={styles.left}>{name}</div>
       <div className={styles.right}>
@@ -23,7 +20,6 @@ const ShoppingListItem = () => {
         </button>
       </div>
     </li>
->>>>>>> Stashed changes
   )
 }
 
