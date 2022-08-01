@@ -1,59 +1,163 @@
+@media only screen and (max-width: 600px) {
+
+
 .navbar {
-    position: absolute;
-    top: 0;
-    left: -90px;
-    background-color: #8A82E8;
-    width: 90px;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    height: 100vh;
-    transition: left .32s;
+  position: fixed;
+  top: 0;
+  left: -90px;
+  background-color: #8A82E8;
+  width: 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+  transition: left .32s;
+  box-shadow: 1px 4px 4px -1px #585858;
 }
 
 .navbar.open {
-    left: 0;
+  left: 0;
 }
 
 .navbar-logo {
-    width: 80px;
-    padding-top: 1em;
+  width: 80px;
+  padding-top: 1em;
 }
 
 .navbar-ul {
-    list-style: none;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    justify-content: center
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center
 }
 
 .navbar-ul li {
-    padding-top: 1em;
+  padding-top: 1em;
 }
 
 .navbar-ul li a {
-    padding-top: 1em;
+  padding-top: 1em;
 }
 
 .list-icons {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 .svg-icons {
-    height: 75px;
-    width: 75px
+ 
+ 
+}
+
+.svg-icons svg {
+  
+}
+
+.notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  background-color: red;
+  top: -75px;
+  left: 62px;
+  color: white;
+  font-weight: 500;
+  border: 3px solid black;
+  font-size: 16px;
+  font-family: roboto;
+  
 }
 
 .mobile-menu-button {
-    position: absolute;
-    top: 106px;
-    right: -35px;
-    border: none;
-    border-radius: 0 150px 150px 0;
-    height: 84px;
-    width: 40px;
-    background-color: #8A82E8;
+  position: absolute;
+  top: 106px;
+  right: -35px;
+  border: none;
+  border-radius: 0 150px 150px 0;
+  height: 84px;
+  width: 40px;
+  background-color: #8A82E8;
 }
+}
+
+
+/* pc screens */
+
+.navbar {
+  position: fixed;
+  
+  background-color: #8A82E8;
+  width: 7.4vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  box-shadow: 1px 4px 4px -1px #585858;
+}
+
+
+
+.navbar-logo {
+  width: 80px;
+  padding-top: 1em;
+}
+
+.navbar-ul {
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center
+}
+
+.navbar-ul li {
+  padding-top: 1em;
+}
+
+.navbar-ul li a {
+  padding-top: 1em;
+}
+
+.list-icons {
+  font-size: 3em;
+}
+
+.svg-icons {
+ 
+ 
+}
+
+.svg-icons svg {
+  
+}
+
+.notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: red;
+  top: -70px;
+  left: 52px;
+  color: white;
+  font-weight: 500;
+  border: 3px solid black;
+  font-size: 14px;
+  font-family: roboto;
+  
+}
+
