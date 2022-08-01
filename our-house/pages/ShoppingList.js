@@ -33,13 +33,20 @@ const ShoppingList = () => {
 
   // uses item id to toggled between true or false
   const toggleItemAsCompleted = (id) => {
-    const newListItems = listItems.map(item => {
-      if (item.id === id) {
-        item.completed = !item.completed;
+    let newListItems = [];
+    // find item by id, update the completed key:value and exit loop
+    for(let i=0; i < listItems.length; i++) {
+      if (listItems[i].id === id) {
+        newListItems = [
+          ...listItems.slice(0,i),
+          {...listItems[i], completed: !listItems[i].completed },
+          ...listItems.slice(i+1, listItems.lenght)
+        ];
+        break;
       }
-    })
-    console.log(newListItems)
-    // setListItems(newListItems);
+
+    }
+    setListItems(newListItems);
   }
 
   const props = {

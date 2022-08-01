@@ -2,42 +2,37 @@ import React from 'react'
 import styles from '../styles/ShoppingListItem.module.css'
 import { FiEdit } from 'react-icons/fi'
 import { RiDeleteBin6Line } from 'react-icons/ri';
-/*
-Props needed
- - text of the list item
- - completed?
- - profile icon stored as a number
-- id needed from shoppingList to delete
-Behaviours
- - edit button (icon)
- - delete button (icon)
- - crossed out
-*/
+
+import { GiRecycle } from 'react-icons/gi';
+
+
 const ShoppingListItem = ({name, completed, icon, id, deleteListItem, toggleItemAsCompleted}) => {
 
-console.log(completed)
+
   return (
-    <li className={styles.shoppingListItem} onClick={() => {
-      toggleItemAsCompleted(id)
-    }}>
+    <li className={styles.shoppingListItem} >
       <div className={styles.left}>
       <p>{name}</p>
       </div>
       <div className={styles.right}>
+        
+        <div className={styles.edit}>
+          <FiEdit />
+        </div>
         <div className={styles.background}>
           <img src='/user_avatar_1.svg' width={24}
           alt="user avatar icon" />
         </div>
-        <button>
-          <FiEdit />
-        </button>
-        <button onClick={() => {
+        <div className={styles.delete} onClick={() => {
           deleteListItem(id)
         }}>
           <RiDeleteBin6Line />
-        </button>
-      </div>
+        </div>
+        </div>
     </li>
-  )
-}
+
+  )}
+
+
 export default ShoppingListItem
+
