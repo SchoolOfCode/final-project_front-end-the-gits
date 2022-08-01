@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+
 // import  Logo from '../public/logo.svg'  
 
 export default function Home() {
@@ -18,14 +20,17 @@ export default function Home() {
             <p>to organise your home</p>
           </div>
           <div className={styles.buttons}>
+            
+          <Link href="/api/auth/login">
+          <a href="/api/auth/login">
             <button>Login</button>
-            <button className={styles.signup}>Sign Up</button>
+          </a>
+        </Link>
+          <button className={styles.signup}>Sign Up</button>
           </div>
         </div>
         
         
       </div>
-  
-      
   )
 }
