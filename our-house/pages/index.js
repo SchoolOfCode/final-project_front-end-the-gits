@@ -14,16 +14,25 @@ export default function Home() {
           <p>Your one stop shop</p>
           <p>to organise your home</p>
           <div className={styles.buttons}>
-          <Link href="/api/auth/login">
+          {/* <Link href="/api/auth/login">
           <a href="/api/auth/login">Login</a>
+        </Link> */}
+        
+        <Link href="/UserHome">
+            <a>
+            <button >Login</button>
+            </a>
         </Link>
+          
           <button className={styles.signup}>Sign Up</button>
           </div>
         </div>
         
         <div className={styles.right}>
         
-          <img src="/logo_8.svg" width={900} height={1100} alt="" />
+          <div className={styles.svg}>
+            <img src="/logo_8.svg" width={800} height={800}alt=""></img>
+          </div>
         </div>
       </div>
   )
