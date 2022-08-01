@@ -25,21 +25,25 @@ const Navbar = () => {
   return (
     <nav className={`${styles.navbar} ${styles[isMenuOpen.className]}`}>
      <a>
-        <img className={styles["navbar-logo"]} src="/homeLogo.svg"></img>
+        <img className={styles["navbar-logo"]} src="/logo_8.svg"></img>
       </a>
       <ul className={styles["navbar-ul"]}>
        <Link href="/shoppinglist">
         <li>
-        <a>
-        <img className={styles["svg-icons"]} src="/cart.svg"></img>
-      </a>
+          <a>
+          <img className={styles["svg-icons"]} src="/shopping_icon.svg" width={70}></img>
+        </a>
+          <div className={styles.notification}>3</div>
         </li>
         </Link>
        <Link href="/bills">
         <li>
         <a>
-        <img className={styles["svg-icons"]} src="/bill.svg"></img>
-      </a>
+        <img className={styles["svg-icons"]} src="/bills_icon.svg" width={70}>
+          
+        </img>
+        </a>
+        <div className={styles.bilsNotification}>3</div>
         </li>
       </Link>
         <li>
@@ -65,5 +69,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-//homepage/shoppinglist/tesco
