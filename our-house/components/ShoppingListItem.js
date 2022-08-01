@@ -7,9 +7,6 @@ import { GiRecycle } from 'react-icons/gi';
 
 const ShoppingListItem = ({name, completed, icon, id, deleteListItem, toggleItemAsCompleted}) => {
 
-  
-
-
 
   return (
     <li className={styles.shoppingListItem} >
@@ -29,9 +26,9 @@ const ShoppingListItem = ({name, completed, icon, id, deleteListItem, toggleItem
         }}>
           <RiDeleteBin6Line />
         </div>
-      </div>
+        </div>
     </li>
-  )
-}
+  )}
+
 
 export default ShoppingListItem
