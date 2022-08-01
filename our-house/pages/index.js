@@ -23,8 +23,8 @@ export default function Home() {
             <button >Login</button>
             </a>
         </Link> */}
-        <Link href="/api/auth/logout">
-          <a href="/api/auth/logout">Login</a>
+        <Link href="/api/auth/login">
+          <a href="/api/auth/login">Login</a>
         </Link>
         
           
