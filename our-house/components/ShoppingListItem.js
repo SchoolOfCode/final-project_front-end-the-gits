@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../styles/ShoppingListItem.module.css'
 import { FiEdit } from 'react-icons/fi'
 import { RiDeleteBin6Line } from 'react-icons/ri';
+
 import { GiRecycle } from 'react-icons/gi';
 
 
@@ -19,7 +20,8 @@ const ShoppingListItem = ({name, completed, icon, id, deleteListItem, toggleItem
           <FiEdit />
         </div>
         <div className={styles.background}>
-          <img src='/user_avatar_1.svg' alt="user avatar icon" width={28} />
+          <img src='/user_avatar_1.svg' width={24}
+          alt="user avatar icon" />
         </div>
         <div className={styles.delete} onClick={() => {
           deleteListItem(id)
@@ -28,7 +30,9 @@ const ShoppingListItem = ({name, completed, icon, id, deleteListItem, toggleItem
         </div>
         </div>
     </li>
+
   )}
 
 
 export default ShoppingListItem
+

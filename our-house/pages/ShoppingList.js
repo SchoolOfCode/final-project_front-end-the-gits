@@ -44,6 +44,7 @@ const ShoppingList = () => {
         ];
         break;
       }
+
     }
     setListItems(newListItems);
   }
