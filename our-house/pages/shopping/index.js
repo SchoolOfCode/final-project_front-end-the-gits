@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar"
 import styles from "../../styles/ShopName.module.css"
 import ShopNameItem from "../../components/ShopNameItem"
 import { useState } from 'react'
+import Link from 'next/link'
 
 
 // This gets called on every request
@@ -16,8 +17,22 @@ export async function getServerSideProps() {
 }
 
 
+// const uniqueShopName = [...new Set(data.map(shop => shop.shoppingListName))]; 
+
 const ShopName = ({data}) => {
-  const [listItems, setListItems] = useState(data)
+
+  const uniqueShopName = [...new Set(data.map(shop => shop.shoppingListName))]; 
+  
+  
+  
+  console.log(new Set(uniqueShopName))
+
+  const [listItems, setListItems] = useState(uniqueShopName)
+
+  // Loop through data to find shopping list name for each unique shoppiing list name
+  //(link use profile to database)
+
+
     // [{username:"Abdullahi's", name: "Marks and Spencers",  id:"1", icon:"user_avatar_1.svg" },
     // {username:"Lee's", name: "Waitrose", id:"2", icon:"user_avatar_1.svg"}]
 
@@ -80,7 +95,7 @@ const ShopName = ({data}) => {
         </h1>
     </div>
       <div className={styles.inputBar}>
-          <input  className={styles.input} type=' text'  onChange={(e) => setInput(e.target.value) } value={input}/>
+          <input  className={styles.input} type='text'  onChange={(e) => setInput(e.target.value) } value={input}/>
           <div className={styles.button}  type='submit' onClick={ () => {
             handleSubmit()
             const value = document.querySelector('input')
@@ -91,7 +106,12 @@ const ShopName = ({data}) => {
           
       <div className={styles.items}>
         {listItems.map((item, index) => (
-          <ShopNameItem name={item.shoppingListName} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />))}
+          <Link href={"/shopping/" + item}>
+          <a>
+          <ShopNameItem name={item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />
+          </a>
+          </Link>
+          ))}
       </div>
 
 

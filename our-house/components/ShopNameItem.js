@@ -15,7 +15,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) =
         </div>
         <div className={styles.shopNameItem} >
             <div className={styles.cardTop}></div>
-            <Link href="/ShoppingList">
+            
                     <a>
             <div className={styles.cardText}>
                     <p>
@@ -29,8 +29,8 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) =
                     </p>
             </div>
             </a>
-            </Link>
-            <div className={styles.icons}>
+            
+            <div className={styles.icons}> */}
                     <div className={styles.iconLeft}>
                     </div>
                     
