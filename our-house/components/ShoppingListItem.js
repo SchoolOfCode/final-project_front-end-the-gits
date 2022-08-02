@@ -12,7 +12,7 @@ const ShoppingListItem = ({name, completed, icon, id, deleteListItem, toggleItem
   return (
     <li className={styles.shoppingListItem} >
       <div className={styles.left}>
-      <p>{name}</p>
+      <p key={id} onClick={toggleItemAsCompleted}>{name}</p>
       </div>
       <div className={styles.right}>
         

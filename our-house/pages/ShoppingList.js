@@ -24,13 +24,14 @@ const ShoppingList = () => {
     const newShopItem = {item: value, shoppingListName: shopName, completed: false, username: user.name}
 
 
-    const data = await fetch(`${process.env.API_URL}/ShoppingList`, {
+    const data = await fetch(`${process.env.URL}/Shopping-List`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(newShopItem),
     })
+    console.log(`${process.env.URL}/Shopping-List`)
   }
 
   const deleteListItem = async (id) => {
@@ -46,7 +47,8 @@ const ShoppingList = () => {
 
     
     setListItems(newListItems)
-    const data = await fetch(`${process.env.API_URL}/ShoppingList`, {
+    console.log(id)
+    const data = await fetch("https://the-gits.herokuapp.com/api/v1/Shopping-List", {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -57,20 +59,29 @@ const ShoppingList = () => {
 
   // uses item id to toggled between true or false
   const toggleItemAsCompleted = (id) => {
-    let newListItems = [];
-    // find item by id, update the completed key:value and exit loop
-    for(let i=0; i < listItems.length; i++) {
-      if (listItems[i].id === id) {
-        newListItems = [
-          ...listItems.slice(0,i),
-          {...listItems[i], completed: !listItems[i].completed },
-          ...listItems.slice(i+1, listItems.lenght)
-        ];
-        break;
-      }
+    // let newListItems = [];
+    // // find item by id, update the completed key:value and exit loop
+    // for(let i=0; i < listItems.length; i++) {
+    //   if (listItems[i].id === id) {
+    //     newListItems = [
+    //       ...listItems.slice(0,i),
+    //       {...listItems[i], completed: !listItems[i].completed },
+    //       ...listItems.slice(i+1, listItems.length)
+    //     ];
+    //     break;
+    //   }
 
-    }
-    setListItems(newListItems);
+    // }
+    // setListItems(newListItems);
+    let updatedShopList = listItems.map((item) =>{
+      if(item.id === id){
+        item.completed = !item.completed;
+        console.log(item.completed)
+      }
+      return item
+    })
+    setListItems(updatedShopList)
+    console.log(updatedShopList)
   }
 
   const props = {
