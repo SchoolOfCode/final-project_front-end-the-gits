@@ -4,16 +4,36 @@ import Navbar from '../components/Navbar.js'
 import InputBar from '../components/InputBar.js'
 import Profile from '../components/Profile.js'
 import ShoppingListItem from '../components/ShoppingListItem.js'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const ShoppingList = () => {
-  const [listItems, setListItems] = useState([
-    {name: "Bread", id:"1", completed: false, icon:"user_avatar_1.svg"},
-    {name: "Milk", id:"2", completed: false, icon:"user_avatar_1.svg"}])
+  const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(true)
+  const [listItems, setListItems] = useState(null)
+  
+    // {name: "Bread", id:"1", completed: false, icon:"user_avatar_1.svg"},
+    // {name: "Milk", id:"2", completed: false, icon:"user_avatar_1.svg"}
 
-    const [input, setInput] = useState("");
+  useEffect(() => {
+    async function fetchShoppingListItems(){
+      const response = await fetch("https://the-gits.herokuapp.com/api/v1/shopping-list")
+      const data = await response.json()
+      setListItems(data)
+      setIsLoading(false)
+      console.log(data)
+    }
+    fetchShoppingListItems()
+  }, [])
+
+  if (isLoading){
+    return (
+      <h2>Loading...</h2>
+    )
+  }
+  
 
   // takes in a value from the input component
+  // check new data structure matches the database item structure
   const updateShoppingList = (value) => {
     const id = String(Math.floor(Math.random()*100+3))
     const newItem = {name: value, id: id, completed: false, icon:"user_avatar_1.svg"}
@@ -56,16 +76,8 @@ const ShoppingList = () => {
        // inbuild function for handling buttons 
       //  event.preventDefault()
       
-     
-      setInput("");
+    setInput("");
   };
-
-
- 
-  
-  
-  
- 
 
   const props = {
     
@@ -98,13 +110,14 @@ const ShoppingList = () => {
           handleSubmit()
           const value = document.querySelector('input')
           updateShoppingList(value.value)
+          // setListItems(value.value)
           
         }}><p>Add Item</p></div>
     </div>
     {/* <InputBar updateShoppingList={updateShoppingList}/> */}
     <div className={styles.items}>
       {listItems.map((item, index) => (
-        <ShoppingListItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />))}
+        <ShoppingListItem name={item.item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />))}
     </div>
 
     </div>

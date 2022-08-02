@@ -30,7 +30,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) =
             </div>
             </a>
             
-            <div className={styles.icons}> */}
+            <div className={styles.icons}>
                     <div className={styles.iconLeft}>
                     </div>
                     
