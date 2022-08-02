@@ -8,12 +8,6 @@
   height: 100vh;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 100vh;
-}
 
 .home .left {
   display: flex;
@@ -21,7 +15,7 @@
   justify-content: flex-start;
   align-items: center;
   width: 40vw;
-  height: 100vh;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   padding-top: 27vh;
   
@@ -90,9 +84,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 50vw;
-  height: 94vh;
- 
+  width: 55vw;
+  height: 100vh; 
 }
 
 .home .right img {

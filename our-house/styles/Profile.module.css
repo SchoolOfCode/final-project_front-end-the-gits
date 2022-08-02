@@ -19,7 +19,7 @@
     width: 100vw;
     /* border-top: 2px solid black; */
     border-bottom: 2px solid black;
-    box-shadow: 1px 4px 6px -1px #585858;
+    box-shadow: 1px 4px 4px -1px #585858;
 }
 
 .right{
@@ -50,3 +50,8 @@
     font-size: 22px;
     text-shadow: 2px 2px 2px #383838;
 }
+
+
+
+
+
