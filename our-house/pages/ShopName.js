@@ -20,6 +20,7 @@ const ShopName = () => {
   // const [nameOfShop, setNameOfShop] = useState(uniqueShopName)
   // setNameOfShop(uniqueShopName)
 
+  // const [page, setPage] = useState(true) 
   const [listItems, setListItems] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [input, setInput] = useState("");
@@ -32,7 +33,6 @@ const ShopName = () => {
     const data = await response.json()
     // const uniqueShopName = [...new Set(data.map(shop => shop.shoppingListName))];
     setListItems([...new Set(data.map(shop => shop.shoppingListName))])
-
     setIsLoading(false)
     console.log(data)
     }
@@ -127,12 +127,18 @@ const ShopName = () => {
           <ShopNameItem name={item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />
           </a>
           </Link>))}
+
+          {/* <button onClick={setPage(false)}>rerender</button>
+          {!page && 
+          <h1>This has changed</h1>} */}
+
           
       </div>
 
 
     </div>
   )
+        
 }
 
 export default ShopName
