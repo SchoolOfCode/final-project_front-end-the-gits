@@ -4,21 +4,36 @@ import Navbar from '../components/Navbar.js'
 import InputBar from '../components/InputBar.js'
 import ShoppingListItem from '../components/ShoppingListItem.js'
 import { useState } from 'react'
+import { useUser } from '@auth0/nextjs-auth0';
+
 
 const ShoppingList = () => {
+  const { user, error, isLoading } = useUser();
+
   const [listItems, setListItems] = useState([
     {name: "Bread", id:"1", completed: false, icon:"user_avatar_1.svg"},
     {name: "Milk", id:"2", completed: false, icon:"user_avatar_1.svg"}])
 
   // takes in a value from the input component
-  const updateShoppingList = (value) => {
+  const updateShoppingList = async (value, shopName) => {
     const id = String(Math.floor(Math.random()*100+3))
     const newItem = {name: value, id: id, completed: false, icon:"user_avatar_1.svg"}
     console.log('sdfsdfs',[...listItems, newItem])
     setListItems([newItem, ...listItems])
+
+    const newShopItem = {item: value, shoppingListName: shopName, completed: false, username: user.name}
+
+
+    const data = await fetch(`${process.env.API_URL}/ShoppingList`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newShopItem),
+    })
   }
 
-  const deleteListItem = (id) => {
+  const deleteListItem = async (id) => {
     const newListItems = listItems.filter((item) => {
       if (item.id === id) {
         return false
@@ -28,7 +43,16 @@ const ShoppingList = () => {
       }
     }
     )
+
+    
     setListItems(newListItems)
+    const data = await fetch(`${process.env.API_URL}/ShoppingList`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({id: id}),
+    })
   }
 
   // uses item id to toggled between true or false
@@ -61,7 +85,7 @@ const ShoppingList = () => {
     <input type="text"/>
     <button onClick={ () => {
       const value = document.querySelector('input')
-      updateShoppingList(value.value)
+      updateShoppingList(value.value, props.name)
     }}></button>
     {/* <InputBar updateShoppingList={updateShoppingList}/> */}
     <ul>
