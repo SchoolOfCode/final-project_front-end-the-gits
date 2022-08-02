@@ -317,7 +317,7 @@
     .profile{
       position: fixed;
       width: 100vw;
-      height: 11vh;
+      height: 14vh;
       background-color: white;
       z-index: 2;
       top: 0;
@@ -438,6 +438,46 @@
 
   @media only screen and (max-width: 390px) {
 
+     /* Controls the top bar and profile avatar. Will remove when Profile componaent is completed */
+     .profile{
+      position: fixed;
+      width: 100vw;
+      height: 16vh;
+      background-color: white;
+      z-index: 2;
+      top: 0;
+      
+      
+    }
+    
+    .bar {
+      height: 6vh;
+      width: 100vw;
+      /* border-top: 2px solid black; */
+      border-bottom: 2px solid black;
+      box-shadow: 1px 4px 6px -1px #585858;
+      border: 1px solid rgb(0, 0, 0);
+    }
+    
+    .right{
+        width: 60vw;
+    }
+    
+    .profile img {
+      
+        right: 5vw;
+        border: 4px solid black;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .right h2 {
+      margin-left: 6vw;     
+      font-size: 17px;
+    }
+
+
+
 
     /* Controls the cards */
 
@@ -469,7 +509,7 @@
 
     /* Controls the top bar and profile avatar. Will remove when Profile componaent is completed */
     .profile{
-     height: 13vh;
+     height: 14vh;
 
     }
     
