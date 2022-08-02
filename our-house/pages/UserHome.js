@@ -50,7 +50,7 @@ const UserHome = () => {
     <div className={styles.profile}>
         <div className={styles.bar}>
             <div className={styles.right}>
-                <h2> Welcome back, Lee</h2>
+                <h2> Terry Tibbs</h2>
                 
             </div>
         <img src='/user_avatar_1.svg' width={20} height={70} alt='lee' />
@@ -75,9 +75,11 @@ const UserHome = () => {
       <div className={styles.cards}>
         <Link href="/ShopName">
             <a>
-            <div className={styles.card}>        
-                <img className={styles.avatar} src='/shopping_icon.svg' width={102}  ></img>        
-                <div className={styles.title}>Shopping</div>                
+            <div className={styles.cardContainer}>
+                <img className={styles.avatar} src='/shopping_icon.svg'></img>  
+                <div className={styles.card}>             
+                    <div className={styles.title}>Shopping</div>                
+                </div>
             </div>
             <div className={styles.avatarsNotification}>
                   <div className={styles.avatarBox1}>
@@ -102,9 +104,11 @@ const UserHome = () => {
         </Link>
         <Link href="/Chores">
             <a>
-            <div className={styles.card}>
-              <img className={styles.avatar} src='/school_icon.svg' width={102}  ></img>
-              <div className={styles.title}>Chores</div>
+            <div className={styles.cardContainer}>
+                <img className={styles.avatar} src='/school_icon.svg'></img>  
+                <div className={styles.card}>             
+                    <div className={styles.title}>Chores</div>                
+                </div>
             </div>
             <div className={styles.avatarsNotification}>
                   <div className={styles.avatarBox1}>
@@ -126,9 +130,11 @@ const UserHome = () => {
         </Link>
         <Link href="/Appointments">
             <a>
-            <div className={styles.card}>
-                <img className={styles.avatar} src='/glasses_icon.svg' width={102}  ></img>
-                <div className={styles.title}>Appointments</div>
+            <div className={styles.cardContainer}>
+                <img className={styles.avatar} src='/glasses_icon.svg'></img>  
+                <div className={styles.card}>             
+                    <div className={styles.title}>Appointments</div>                
+                </div>
             </div>
             <div className={styles.avatarsNotification}>
                   <div className={styles.avatarBox1}>
@@ -150,9 +156,11 @@ const UserHome = () => {
         </Link>
         <Link href="/Bills">
             <a>
-            <div className={styles.card}>
-                <img className={styles.avatar} src='/bills_icon.svg' width={102}  ></img>
-                <div className={styles.title}>Household Bills</div>
+            <div className={styles.cardContainer}>
+                <img className={styles.avatar} src='/bills_icon.svg' ></img>  
+                <div className={styles.card}>             
+                    <div className={styles.title}>Household Bills</div>                
+                </div>
             </div>
             <div className={styles.avatarsNotification}>
                   <div className={styles.avatarBox1}>
@@ -170,9 +178,11 @@ const UserHome = () => {
         </Link>
         <Link href="/School">
             <a>
-            <div className={styles.card}>
-                <img className={styles.avatar} src='/school_icon.svg' width={102}  ></img>
-                <div className={styles.title}>School Events</div>
+            <div className={styles.cardContainer}>
+                <img className={styles.avatar} src='/school_icon.svg'></img>  
+                <div className={styles.card}>             
+                    <div className={styles.title}>School Events</div>                
+                </div>
             </div>
             <div className={styles.avatarsNotification}>
                   
@@ -186,9 +196,11 @@ const UserHome = () => {
         </Link>
         <Link href="/Social_events">
             <a>
-            <div className={styles.card}>
-                <img className={styles.avatar} src='/glasses_icon.svg' width={102}  ></img>
-                <div className={styles.title}>Social Events</div>
+            <div className={styles.cardContainer}>
+                <img className={styles.avatar} src='/glasses_icon.svg'></img>  
+                <div className={styles.card}>             
+                    <div className={styles.title}>Social Events</div>                
+                </div>
             </div>
             <div className={styles.avatarsNotification}>
                   <div className={styles.avatarBox1}>
@@ -213,33 +225,38 @@ const UserHome = () => {
         </Link>
         <Link href="/Birthdays">
             <a>
-            <div className={styles.card}>
-                <img className={styles.avatar} src='/shopping_icon.svg' width={102}  ></img>
-                <div className={styles.title}>Birthdays</div>
-            </div>
-            <div className={styles.avatarsNotification}>
-                  <div className={styles.avatarBox1}>
-                      <div className={styles.notification1}>1</div>
-                      <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />
-                      
-                  </div>
-                  
-                  <div className={styles.avatarBox4}>
-                      <div className={styles.notification4}>1</div>
-                      <img className={styles.usersAvatar} src='/user_avatar_1.svg'   />                      
-                  </div>
+            <div className={styles.cardContainer}>
+                    <img className={styles.avatar} src='/shopping_icon.svg' ></img>  
+                    <div className={styles.card}>             
+                        <div className={styles.title}>Birthdays</div>                
+                    </div>
+                
+                <div className={styles.avatarsNotification}>
+                    <div className={styles.avatarBox1}>
+                        <div className={styles.notification1}>1</div>
+                        <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />
+                        
+                    </div>
+                    
+                    <div className={styles.avatarBox4}>
+                        <div className={styles.notification4}>1</div>
+                        <img className={styles.usersAvatar} src='/user_avatar_1.svg'   />                      
+                    </div>
+                    </div>
                 </div>
             </a>
         </Link>
         <Link href="/Finances">
             <a>
-            <div className={styles.card}>
-                <img className={styles.avatar} src='/school_icon.svg' width={102}  ></img>
-                <div className={styles.title}>Finances</div>
+            <div className={styles.cardContainer}>
+                <img className={styles.avatar} src='/school_icon.svg' ></img>  
+                <div className={styles.card}>             
+                    <div className={styles.title}>Finances</div>                
+                </div>
             </div>
             <div className={styles.avatarsNotification}>
                   <div className={styles.avatarBox1}>
-                      <div className={styles.notification1}>1</div>
+                      <div className={styles.notification1}>2</div>
                       <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />
                       
                   </div>
