@@ -50,7 +50,7 @@ const ShopName = () => {
 
   useEffect(() => {
     async function fetchShoppingLists(){
-    const response = await fetch("https://the-gits.herokuapp.com/api/v1/shopping-list")
+    const response = await fetch(`${process.env.URL}/shopping-list`)
     const data = await response.json()
     // const uniqueShopName = [...new Set(data.map(shop => shop.shoppingListName))];
     setFetchData(data)  

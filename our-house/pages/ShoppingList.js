@@ -5,8 +5,10 @@ import InputBar from '../components/InputBar.js'
 import Profile from '../components/Profile.js'
 import ShoppingListItem from '../components/ShoppingListItem.js'
 import { useState, useEffect } from 'react'
+import { useUser } from '@auth0/nextjs-auth0/'
 
 const ShoppingList = () => {
+  const {user} = useUser()
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(true)
   const [listItems, setListItems] = useState(null)
