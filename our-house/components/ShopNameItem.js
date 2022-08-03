@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
 import styles from '../styles/ShopNameItem.module.css'
 import { FaRegEdit } from 'react-icons/fa'
 import { RiDeleteBin6Line } from 'react-icons/ri';
@@ -7,11 +8,24 @@ import { MdAddCircleOutline } from 'react-icons/md';
 import Link from 'next/link'
 
 
-const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, setNameClicked}) => {
-  function handleClick(){
-    setNameClicked(name)
-  }
-  
+const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, setNameClicked, setListItems}) => {
+    // const [listByName, setListByName] = useState("")
+    // useEffect(() => {
+    //     async function fetchShoppingListsByName(){
+    //     const response = await fetch("https://the-gits.herokuapp.com/api/v1/shopping-list/" + name)
+    //     const data = await response.json()
+        
+    //     setListItems(data)
+    //     console.log(data)
+       
+    //     }
+    //     fetchShoppingListsByName()
+    //   }, [listByName])
+    
+    function handleClick(){
+        setNameClicked(name)
+        // setListByName(name)
+    }
     return (
     <div className={styles.shopItemContainer}>
         <div className={styles.background}>

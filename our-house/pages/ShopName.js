@@ -148,7 +148,7 @@ const ShopName = () => {
         {shopName.map((item, index) => (
           
           
-          <ShopNameItem name={item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} setNameClicked={setNameClicked} />
+          <ShopNameItem name={item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} setNameClicked={setNameClicked} setListItems={setListItems} />
           
         ))}
       </div>}
