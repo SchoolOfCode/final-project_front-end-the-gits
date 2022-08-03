@@ -108,7 +108,7 @@ const Navbar = () => {
             <a>
               <div className={styles.iconContainer}>
                  <div className={styles.notification}>2</div>
-                  <img className={styles["svg-icons"]} src="/bills_icon.svg" width={70}></img>
+                  <img className={styles["svg-icons"]} src="/birthday_icon.svg" width={70}></img>
               </div>
             </a>
               </Link>
@@ -117,7 +117,7 @@ const Navbar = () => {
             <a>
               <div className={styles.iconContainer}>
                  <div className={styles.notification}>5</div>
-                  <img className={styles["svg-icons"]} src="/shopping_icon.svg" width={70}></img>
+                  <img className={styles["svg-icons"]} src="/finances_icon.svg" width={70}></img>
               </div>
             </a>
               </Link>
