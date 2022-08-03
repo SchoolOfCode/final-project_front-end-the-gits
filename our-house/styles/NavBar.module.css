@@ -96,6 +96,7 @@
 }
 
 .mobile-menu-button {
+  opacity: 0;
   display: hidden;
   position: absolute;
   top: 106px;
@@ -112,82 +113,61 @@
 
  @media only screen and (max-width: 440px) { 
  
-
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: -80px;
-    background-color: #8A82E8;
-    width: 20vw;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    height: 100vh;
-    transition: left .32s;
-    box-shadow: 1px 4px 4px -1px #585858;
-    z-index: 3;
-  }
-  
-  .navbar.open {
-    left: 0;
+ .navbar {
+  width: 22vw;
+  align-items: center;
+  justify-content: flex-start;
+  transition: left .32s;
+  /* left: -20vw; */
+  z-index: 3;
   }
   
   .navbar-logo {
-    width: 80px;
-    padding-top: 1em;
+    /* margin-top: 10px; */
+    margin-bottom: 40px;
   }
-  
-  .navbar-ul {
-    list-style: none;
-    padding: 0px;
+
+  .logoBox img {
+   width: 64px;
+   height: 64px;
+ 
+  }
+ 
+  .iconContainer {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    height: 100%;
-    justify-content: center
+    justify-content: center;
+    width: 100%;
+    /* background-color: yellow; */
   }
-  
-  .navbar-ul li {
-    padding-top: 1em;
+
+  .iconContainer img{
+    width: 50px;
+    height: 50px;
+    padding-right: 26px;
   }
-  
-  .navbar-ul li a {
-    padding-top: 1em;
-  }
-  
-  .list-icons {
-    font-size: 3em;
-  }
-  
-  .svg-icons {
    
-   
-  }
-  
-  .svg-icons svg {
-    
-  }
   
   .notification {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 28px;
-    height: 28px;
+    width: 13px;
+    height: 13px;
     background-color: red;
-    top: -75px;
-    left: 62px;
+    top: -16px;
+    left: 60px;
     color: white;
     font-weight: 500;
     border: 3px solid black;
-    font-size: 16px;
+    font-size: 11px;
     font-family: roboto;
     
   }
   
   .mobile-menu-button {
+    display: block;
     position: absolute;
     top: 106px;
     right: -35px;
@@ -196,7 +176,5 @@
     height: 84px;
     width: 40px;
     background-color: #8A82E8;
-  
+  }
 }
-
- }

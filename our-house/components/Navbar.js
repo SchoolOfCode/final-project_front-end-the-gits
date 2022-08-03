@@ -25,8 +25,13 @@ const Navbar = () => {
   return (
     <nav className={`${styles.navbar} ${styles[isMenuOpen.className]}`}>
           <Link href="/UserHome">
+          
+
+          
           <a>
+          <div className={styles.logoBox}>
             <img className={styles["navbar-logo"]} src="/logo_navbar.svg"></img>
+            </div>
           </a>
           </Link>
       <div className={styles.navContainer}>
