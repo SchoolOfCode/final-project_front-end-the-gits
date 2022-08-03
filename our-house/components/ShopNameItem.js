@@ -7,8 +7,12 @@ import { MdAddCircleOutline } from 'react-icons/md';
 import Link from 'next/link'
 
 
-const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) => {
-  return (
+const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, setNameClicked}) => {
+  function handleClick(){
+    setNameClicked(name)
+  }
+  
+    return (
     <div className={styles.shopItemContainer}>
         <div className={styles.background}>
                 <img src='/user_avatar_1.svg' alt="user avatar icon" width={55} />
@@ -17,7 +21,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) =
             <div className={styles.cardTop}></div>
             
                     <a>
-            <button className={styles.cardText}>
+            <button onClick={handleClick} className={styles.cardText}>
                     <p>
                         Terry's
                     </p> 

@@ -3,6 +3,9 @@ import Navbar from "../components/Navbar"
 import styles from "../styles/ShopName.module.css"
 import ShopNameItem from "../components/ShopNameItem"
 import { useState, useEffect } from 'react'
+import ShoppingListItem from '../components/ShoppingListItem'
+// import styles from '../styles/ShoppingList.module.css'
+// import styles from '../styles/ShoppingListItem.module.css'
 import Link from 'next/link'
 
 /*
@@ -39,6 +42,7 @@ const ShopName = () => {
   const [shopName, setShopName] = useState(null)
   const [listItems, setListItems] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [nameClicked, setNameClicked] = useState(null)
   const [input, setInput] = useState("");
     // {username:"Abdullahi's", name: "Marks and Spencers",  id:"1", icon:"user_avatar_1.svg" },
     // {username:"Lee's", name: "Waitrose", id:"2", icon:"user_avatar_1.svg"}
@@ -135,19 +139,20 @@ const ShopName = () => {
             updateShoppingList(value.value)
           }}><p>Add Item</p></div>
       </div>
-
-      <div className={styles.items}>
+      {nameClicked ? <div className={styles.items}>
+      {listItems.map((item, index) => (
+        <ShoppingListItem name={item.item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />))}
+    </div>
+      
+       : <div className={styles.items}>
         {shopName.map((item, index) => (
           
           
-          <ShopNameItem name={item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />
+          <ShopNameItem name={item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} setNameClicked={setNameClicked} />
           
         ))}
-
-          
-
-          
-      </div>
+      </div>}
+      
 
 
     </div>
