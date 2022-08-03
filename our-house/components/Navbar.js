@@ -24,46 +24,90 @@ const Navbar = () => {
 
   return (
     <nav className={`${styles.navbar} ${styles[isMenuOpen.className]}`}>
-     <a>
-        <img className={styles["navbar-logo"]} src="/logo_8.svg"></img>
-      </a>
-      <ul className={styles["navbar-ul"]}>
-       <Link href="/shoppinglist">
-        <li>
-          <a>
-          <img className={styles["svg-icons"]} src="/shopping_icon.svg" width={70}></img>
-        </a>
-          <div className={styles.notification}>3</div>
-        </li>
-        </Link>
-       <Link href="/bills">
-        <li>
+    <div className={styles.navContainer}>
         <a>
-        <img className={styles["svg-icons"]} src="/bills_icon.svg" width={70}>
+            <img className={styles["navbar-logo"]} src="/logo_8.svg"></img>
+          </a>
+         
+          <Link href="/shoppinglist">
+              <a>
+              <div className={styles.iconContainer}>
+                 <div className={styles.notification}>3</div>
+                  <img className={styles["svg-icons"]} src="/shopping_icon.svg" width={70}></img>
+              </div>
+            </a>
+            </Link>
+
+          <Link href="/bills">
+            
+          <a>
+              <div className={styles.iconContainer}>
+                 <div className={styles.notification}>3</div>
+                  <img className={styles["svg-icons"]} src="/shopping_icon.svg" width={70}></img>
+              </div>
+            </a>
+           
+          </Link>
           
-        </img>
-        </a>
-        <div className={styles.bilsNotification}>3</div>
-        </li>
-      </Link>
-        <li>
-        <Link href="/birthdays">
-            <a><FaBirthdayCake className={styles["list-icons"]} /></a>
-          </Link>
-          </li>
-          
-        <li>
-          <Link href="/chores">
-            <a><GiVacuumCleaner className={styles["list-icons"]} /></a>
-          </Link>
-        </li>
-        <li>
-        <Link href="/Bills">
-            <a><RiMoneyPoundBoxLine className={styles["list-icons"]} /></a>
-          </Link>
-        </li>
-      </ul>
-      <button onClick={revealMenu} className={styles["mobile-menu-button"]}></button>
+            <Link href="/birthdays">
+            <a>
+              <div className={styles.iconContainer}>
+                 <div className={styles.notification}>3</div>
+                  <img className={styles["svg-icons"]} src="/shopping_icon.svg" width={70}></img>
+              </div>
+            </a>
+              
+              </Link>
+             
+              
+            
+              <Link href="/chores">
+              <a>
+              <div className={styles.iconContainer}>
+                 <div className={styles.notification}>3</div>
+                  <img className={styles["svg-icons"]} src="/shopping_icon.svg" width={70}></img>
+              </div>
+            </a>
+              </Link>
+            
+            <Link href="/Bills">
+            <a>
+              <div className={styles.iconContainer}>
+                 <div className={styles.notification}>3</div>
+                  <img className={styles["svg-icons"]} src="/shopping_icon.svg" width={70}></img>
+              </div>
+            </a>
+              </Link>
+
+              <Link href="/Bills">
+            <a>
+              <div className={styles.iconContainer}>
+                 <div className={styles.notification}>3</div>
+                  <img className={styles["svg-icons"]} src="/shopping_icon.svg" width={70}></img>
+              </div>
+            </a>
+              </Link>
+
+              <Link href="/Bills">
+            <a>
+              <div className={styles.iconContainer}>
+                 <div className={styles.notification}>3</div>
+                  <img className={styles["svg-icons"]} src="/shopping_icon.svg" width={70}></img>
+              </div>
+            </a>
+              </Link>
+
+              <Link href="/Bills">
+            <a>
+              <div className={styles.iconContainer}>
+                 <div className={styles.notification}>3</div>
+                  <img className={styles["svg-icons"]} src="/shopping_icon.svg" width={70}></img>
+              </div>
+            </a>
+              </Link>
+            
+          <button onClick={revealMenu} className={styles["mobile-menu-button"]}></button>
+      </div>
     </nav>
   );
 };
