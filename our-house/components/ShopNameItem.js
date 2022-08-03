@@ -8,7 +8,7 @@ import { MdAddCircleOutline } from 'react-icons/md';
 import Link from 'next/link'
 
 
-const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, setNameClicked, setListItems}) => {
+const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, setNameClicked, setListItems, compareName}) => {
     // const [listByName, setListByName] = useState("")
     // useEffect(() => {
     //     async function fetchShoppingListsByName(){
@@ -24,6 +24,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
     
     function handleClick(){
         setNameClicked(name)
+        compareName(name)
         // setListByName(name)
     }
     return (

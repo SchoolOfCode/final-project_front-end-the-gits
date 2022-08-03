@@ -39,6 +39,7 @@ const ShopName = () => {
   // setNameOfShop(uniqueShopName)
 
   // const [page, setPage] = useState(true) 
+  const [fetchData, setFetchData] = useState(null)
   const [shopName, setShopName] = useState(null)
   const [listItems, setListItems] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
@@ -52,7 +53,7 @@ const ShopName = () => {
     const response = await fetch("https://the-gits.herokuapp.com/api/v1/shopping-list")
     const data = await response.json()
     // const uniqueShopName = [...new Set(data.map(shop => shop.shoppingListName))];
-    setListItems(data)
+    setFetchData(data)  
     setShopName([...new Set(data.map(shop => shop.shoppingListName))])
     setIsLoading(false)
     console.log(data)
@@ -67,6 +68,33 @@ const ShopName = () => {
       <h2>Loading...</h2>
     )
   }
+
+
+  function compareName(name){
+    const newListItems = fetchData.filter((item) => {
+      console.log("item", item.shoppingListName)
+      console.log("nameClicked", name)
+      if (item.shoppingListName === name) {
+        console.log(item)
+        return true
+      }
+      else {
+        console.log("error")
+        return false
+      }})
+
+      setListItems(newListItems)
+      console.log(fetchData)
+
+  }
+    
+
+  // function compareName(item){
+  //   if(item.shoppingListName === nameClicked){
+  //     return item
+  //   }
+  // }
+  // setListItems(listItems.filter(compareName))
 
   const updateShoppingList = (value) => {
     const id = String(Math.floor(Math.random()*100+3))
@@ -148,7 +176,7 @@ const ShopName = () => {
         {shopName.map((item, index) => (
           
           
-          <ShopNameItem name={item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} setNameClicked={setNameClicked} setListItems={setListItems} />
+          <ShopNameItem name={item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} setNameClicked={setNameClicked} setListItems={setListItems} compareName={compareName}/>
           
         ))}
       </div>}
