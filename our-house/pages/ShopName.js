@@ -5,15 +5,30 @@ import ShopNameItem from "../components/ShopNameItem"
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-// This gets called on every request
-// export async function getServerSideProps() {
-//   // Fetch data from external API
-//   const res = await fetch(`https://the-gits.herokuapp.com/api/v1/shopping-list`)
-//   const data = await res.json()
-//   // console.log(data)
-//   // Pass data to the page via props
-//   return { props: { data } }
-// }
+/*
+  useState to pass unique shop name down.
+  useState to store all data to later sort by shop name.
+  (which is easier /quicker: sort the data on this page by shop name or 
+  do we send a fresh get resquest to the api to request data by shop name - this api already exsits.)
+
+  remove Link to next page.
+  add button with onClick to trigger conditional render
+  
+  import ShoppingListItem component to display the items in a list
+  pass the filter by name list to this componet
+
+  link input component to both renders - name of shops and then to the list of items.
+  - delete button nolonger has an id property to use to delete the list.
+
+
+  conditional rendering to show clicked on shopping list. 
+  (i.e. when you click on Lidl, you then get your list of items for Lidl).
+
+  merge in post/patch branch and resolve conflicts
+  tidy up file tree - don't the shopping folder anymore.
+
+
+*/
 
 const ShopName = () => {
   // const uniqueShopName = [...new Set(data.map(shop => shop.shoppingListName))];
@@ -21,6 +36,7 @@ const ShopName = () => {
   // setNameOfShop(uniqueShopName)
 
   // const [page, setPage] = useState(true) 
+  const [shopName, setShopName] = useState(null)
   const [listItems, setListItems] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [input, setInput] = useState("");
@@ -32,9 +48,11 @@ const ShopName = () => {
     const response = await fetch("https://the-gits.herokuapp.com/api/v1/shopping-list")
     const data = await response.json()
     // const uniqueShopName = [...new Set(data.map(shop => shop.shoppingListName))];
-    setListItems([...new Set(data.map(shop => shop.shoppingListName))])
+    setListItems(data)
+    setShopName([...new Set(data.map(shop => shop.shoppingListName))])
     setIsLoading(false)
     console.log(data)
+    console.log(shopName)
     }
     fetchShoppingLists()
   }, [])
@@ -119,18 +137,14 @@ const ShopName = () => {
       </div>
 
       <div className={styles.items}>
-        {listItems.map((item, index) => (
+        {shopName.map((item, index) => (
           
-          <Link href={"/ShoppingList"}>
-          {/* (true&& ? : turnerayr operator) */}
-          <a>
+          
           <ShopNameItem name={item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />
-          </a>
-          </Link>))}
+          
+        ))}
 
-          {/* <button onClick={setPage(false)}>rerender</button>
-          {!page && 
-          <h1>This has changed</h1>} */}
+          
 
           
       </div>

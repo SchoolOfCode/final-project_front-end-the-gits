@@ -17,7 +17,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) =
             <div className={styles.cardTop}></div>
             
                     <a>
-            <div className={styles.cardText}>
+            <button className={styles.cardText}>
                     <p>
                         Terry's
                     </p> 
@@ -27,7 +27,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) =
                     <p>
                         list
                     </p>
-            </div>
+            </button>
             </a>
             
             <div className={styles.icons}>
