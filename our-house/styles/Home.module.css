@@ -89,7 +89,8 @@
 }
 
 .home .right img {
-  width: 30vw;
+  width: 26vw;
+  z-index: 3;
 }
 
 

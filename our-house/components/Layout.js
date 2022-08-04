@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import styles from '../styles/UserHome.module.css'
+import styles from '../styles/Profile.module.css'
 import { useRouter } from "next/router";
 
 import Footer from "./Footer";

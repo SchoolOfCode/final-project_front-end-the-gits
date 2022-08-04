@@ -6,67 +6,9 @@ import Link from "next/link";
 
 const UserHome = () => {
 
-  const appCards = [
-    {
-      title: 'Shopping',
-      icon: '/shopping_icon.svg'
-  },
-  {
-    title: 'Chores',
-    icon: '/school_icon.svg'
-},
-{
-  title: 'Social Events',
-  icon: '/glasses_icon.svg'
-},
-{
-  title: 'Bills',
-  icon: '/bills_icon.svg'
-},
-{
-  title: 'Birthdays',
-  icon: '/shopping_icon.svg'
-},
-{
-  title: 'School',
-  icon: '/school_icon.svg'
-},
-{
-  title: 'Appointments',
-  icon: '/shopping_icon.svg'
-}
-, {
-  title: 'Finances',
-  icon: '/bills_icon.svg'
-}
-]
-
-
   return (
-    <div className={styles.shoppinglist}>
-    <div className={styles.profile}>
-        <div className={styles.bar}>
-            <div className={styles.right}>
-                <h2> Terry Tibbs</h2>
-                
-            </div>
-        <img src='/user_avatar_1.svg' width={20} height={70} alt='lee' />
-        </div>
-      </div>
     <div className={styles.userHome}>
-      {/* <div className={styles.cards}>
-        {appCards.map((appcard) => (
-          <div className={styles.card}>
-          
-          <img className={styles.avatar} src={appcard.icon} width={102}  ></img>
-          <div className={styles.title}>{appcard.title}</div>
-          </div>
         
-        ))}
-        </div> */}
-       
-        
-
       <div className={styles.cards}>
         <Link href="/ShopName">
             <a>
@@ -270,8 +212,6 @@ const UserHome = () => {
 
       </div>
     </div>
-
-   </div>
   )
   }
 
