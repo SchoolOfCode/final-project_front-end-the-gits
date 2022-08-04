@@ -6,7 +6,9 @@ import { Layout } from '../components/Layout';
 export default function App({ Component, pageProps }) {
   return (
     <UserProvider>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </UserProvider>
   );
 }
