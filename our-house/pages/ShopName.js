@@ -21,8 +21,6 @@ const ShopName = () => {
       setFetchData(data);
       setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
       setIsLoading(false);
-      console.log("DATA: ", data);
-      console.log("SHOP ANME: ", shopName);
     }
     fetchShoppingLists();
   }, []);
@@ -33,19 +31,14 @@ const ShopName = () => {
 
   function compareName(name) {
     const newListItems = fetchData.filter((item) => {
-      console.log("item", item.shoppingListName);
-      console.log("nameClicked", name);
       if (item.shoppingListName === name) {
-        console.log(item);
         return true;
       } else {
-        console.log("error");
         return false;
       }
     });
 
     setListItems(newListItems);
-    console.log(fetchData);
   }
 
   const updateShoppingList = async (value, shopName) => {
@@ -56,7 +49,6 @@ const ShopName = () => {
       completed: false,
       icon: "user_avatar_1.svg",
     };
-    console.log("sdfsdfs", [...listItems, newItem]);
     setListItems([newItem, ...listItems]);
 
     const newShopItem = {
@@ -146,7 +138,6 @@ const deleteShop = async (shops) => {
     setListItems(newListItems);
   };
 
-  console.log("list items: ", listItems)
 
   return (
     <div className={styles.ShoppingNamelist}>
