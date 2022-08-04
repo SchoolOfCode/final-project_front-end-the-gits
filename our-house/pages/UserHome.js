@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from '../styles/UserHome.module.css'
-import Navbar from '../components/Navbar.js'
 import Link from "next/link";
+
+
 
 const UserHome = () => {
 
@@ -56,8 +57,6 @@ const UserHome = () => {
         <img src='/user_avatar_1.svg' width={20} height={70} alt='lee' />
         </div>
       </div>
-    <Navbar/>
-
     <div className={styles.userHome}>
       {/* <div className={styles.cards}>
         {appCards.map((appcard) => (
