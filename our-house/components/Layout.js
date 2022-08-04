@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import styles from '../styles/UserHome.module.css'
 import { useRouter } from "next/router";
+import Footer from "./Footer"
 
 
 export const Layout = ({ children }) => {
@@ -27,6 +28,7 @@ export const Layout = ({ children }) => {
         </div>
         <Navbar/>
         {children}
+        <Footer />
       </div>
     )
   }
