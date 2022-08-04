@@ -113,7 +113,7 @@ const deleteShop = async (shops) => {
   setShopName(newListOfShops);
 
   // remove shop from the database
-  const data = await fetch(`${process.env.URL}/Shopping-List`, {
+  const data = await fetch(`${process.env.URL}/Shopping-List/remove-shop`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
