@@ -15,7 +15,7 @@ const ShoppingList = () => {
   
   useEffect(() => {
     async function fetchShoppingListItems(){
-      const response = await fetch("https://the-gits.herokuapp.com/api/v1/shopping-list")
+      const response = await fetch(`${process.env.URL}/Shopping-List`)
       const data = await response.json()
       setListItems(data)
       setIsLoading(false)

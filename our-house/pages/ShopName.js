@@ -4,55 +4,23 @@ import styles from "../styles/ShopName.module.css"
 import ShopNameItem from "../components/ShopNameItem"
 import { useState, useEffect } from 'react'
 import ShoppingListItem from '../components/ShoppingListItem'
-// import styles from '../styles/ShoppingList.module.css'
-// import styles from '../styles/ShoppingListItem.module.css'
-import Link from 'next/link'
+import InputBar from '../components/InputBar'
 
-/*
-  useState to pass unique shop name down.
-  useState to store all data to later sort by shop name.
-  (which is easier /quicker: sort the data on this page by shop name or 
-  do we send a fresh get resquest to the api to request data by shop name - this api already exsits.)
-
-  remove Link to next page.
-  add button with onClick to trigger conditional render
-  
-  import ShoppingListItem component to display the items in a list
-  pass the filter by name list to this componet
-
-  link input component to both renders - name of shops and then to the list of items.
-  - delete button nolonger has an id property to use to delete the list.
-
-
-  conditional rendering to show clicked on shopping list. 
-  (i.e. when you click on Lidl, you then get your list of items for Lidl).
-
-  merge in post/patch branch and resolve conflicts
-  tidy up file tree - don't the shopping folder anymore.
-
-
-*/
 
 const ShopName = () => {
-  // const uniqueShopName = [...new Set(data.map(shop => shop.shoppingListName))];
-  // const [nameOfShop, setNameOfShop] = useState(uniqueShopName)
-  // setNameOfShop(uniqueShopName)
 
-  // const [page, setPage] = useState(true) 
   const [fetchData, setFetchData] = useState(null)
   const [shopName, setShopName] = useState(null)
   const [listItems, setListItems] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [nameClicked, setNameClicked] = useState(null)
   const [input, setInput] = useState("");
-    // {username:"Abdullahi's", name: "Marks and Spencers",  id:"1", icon:"user_avatar_1.svg" },
-    // {username:"Lee's", name: "Waitrose", id:"2", icon:"user_avatar_1.svg"}
+  
 
   useEffect(() => {
     async function fetchShoppingLists(){
     const response = await fetch(`${process.env.URL}/shopping-list`)
     const data = await response.json()
-    // const uniqueShopName = [...new Set(data.map(shop => shop.shoppingListName))];
     setFetchData(data)  
     setShopName([...new Set(data.map(shop => shop.shoppingListName))])
     setIsLoading(false)
@@ -61,7 +29,7 @@ const ShopName = () => {
     }
     fetchShoppingLists()
   }, [])
-  // takes in a value from the input component
+ 
 
   if (isLoading){
     return (
@@ -87,14 +55,6 @@ const ShopName = () => {
       console.log(fetchData)
 
   }
-    
-
-  // function compareName(item){
-  //   if(item.shoppingListName === nameClicked){
-  //     return item
-  //   }
-  // }
-  // setListItems(listItems.filter(compareName))
 
   const updateShoppingList = (value) => {
     const id = String(Math.floor(Math.random()*100+3))
@@ -136,13 +96,7 @@ const ShopName = () => {
       setInput("");
   };
 
-  /*
-  onClick added to shop name card
-  that conditional renders the new shopping list of items using the ShoppingListItem component
-  takes in the name of the shop that was clicked on to filter the data to render.
-  use useEffect onClick to change a boolean state
-  useState e.target and the turnery operator to control the render. 
-  */
+  
   return (
     <div className={styles.ShoppingNamelist}>
     <div className={styles.profile}>
@@ -154,25 +108,27 @@ const ShopName = () => {
         </div>
       </div>
     <Navbar/>
-    <div className={styles.heading}>
+    {/* <div className={styles.heading}>
         <h1>
         Shopping Lists
         </h1>
-    </div>
-      <div className={styles.inputBar}>
+    </div> */}
+      {/* <div className={styles.inputBar}>
           <input  className={styles.input} type=' text'  onChange={(e) => setInput(e.target.value) } value={input}/>
           <div className={styles.button}  type='submit' onClick={ () => {
             handleSubmit()
             const value = document.querySelector('input')
             updateShoppingList(value.value)
           }}><p>Add Item</p></div>
-      </div>
+      </div> */}
       {nameClicked ? <div className={styles.items}>
+      <InputBar name={`${nameClicked} Shopping List`} updateShoppingList={updateShoppingList}/>
       {listItems.map((item, index) => (
         <ShoppingListItem name={item.item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />))}
     </div>
       
        : <div className={styles.items}>
+       <InputBar name="Shopping Lists" updateShoppingList={updateShoppingList}/>
         {shopName.map((item, index) => (
           
           
