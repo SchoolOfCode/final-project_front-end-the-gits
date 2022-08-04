@@ -33,7 +33,7 @@ const ShoppingList = () => {
   // takes in a value from the input component
   const updateShoppingList = async (value, shopName) => {
     const id = String(Math.floor(Math.random()*100+3))
-    const newItem = {name: value, id: id, completed: false, icon:"user_avatar_1.svg"}
+    const newItem = {item: value, id: id, completed: false, icon:"user_avatar_1.svg"}
     console.log('sdfsdfs',[...listItems, newItem])
     setListItems([newItem, ...listItems])
 
@@ -47,7 +47,7 @@ const ShoppingList = () => {
       },
       body: JSON.stringify(newShopItem),
     })
-    console.log(`${process.env.URL}/Shopping-List`)
+    
   }
 
   const deleteListItem = async (id) => {

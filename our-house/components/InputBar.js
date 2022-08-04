@@ -2,15 +2,15 @@ import React from "react";
 import styles from "../styles/ShopName.module.css"
 
 
-const InputBar = ({name, updateShoppingList}) => {
+const InputBar = ({title, name, handleClick}) => {
   return (
     <div>
-      <h1 className={styles.heading}>{name}</h1>
+      <h1 className={styles.heading}>{title}</h1>
       <input type="text" />
       <button
         onClick={() => {
           const value = document.querySelector("input");
-          updateShoppingList(value.value, name);
+          handleClick(value.value, name);
         }}
       ></button>
     </div>
