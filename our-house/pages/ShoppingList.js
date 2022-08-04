@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../styles/ShoppingList.module.css'
 import Navbar from '../components/Navbar.js'
 import InputBar from '../components/InputBar.js'
+import Profile from '../components/Profile.js'
 import ShoppingListItem from '../components/ShoppingListItem.js'
 import { useState } from 'react'
 
@@ -10,12 +11,15 @@ const ShoppingList = () => {
     {name: "Bread", id:"1", completed: false, icon:"user_avatar_1.svg"},
     {name: "Milk", id:"2", completed: false, icon:"user_avatar_1.svg"}])
 
+    const [input, setInput] = useState("");
+
   // takes in a value from the input component
   const updateShoppingList = (value) => {
     const id = String(Math.floor(Math.random()*100+3))
     const newItem = {name: value, id: id, completed: false, icon:"user_avatar_1.svg"}
     console.log('sdfsdfs',[...listItems, newItem])
     setListItems([newItem, ...listItems])
+
   }
 
   const deleteListItem = (id) => {
@@ -44,30 +48,64 @@ const ShoppingList = () => {
         ];
         break;
       }
-
     }
     setListItems(newListItems);
   }
 
+  const handleSubmit = (e) => { // function to handle the submit button 
+       // inbuild function for handling buttons 
+      //  event.preventDefault()
+      
+     
+      setInput("");
+  };
+
+
+ 
+  
+  
+  
+ 
+
   const props = {
+    
     name: "Lidl"
   }
   
   // Input bar create locally... to be replaced by component
   return (
     <div className={styles.shoppinglist}>
+    <div className={styles.profile}>
+        <div className={styles.bar}>
+            <div className={styles.right}>
+                <h2> Welcome back, Lee</h2>
+                
+            </div>
+        <img src='/user_avatar_1.svg' width={20} height={70} alt='lee' />
+        </div>
+      </div>
     <Navbar/>
-    <h1>{props.name} Shopping List</h1>
-    <input type="text"/>
-    <button onClick={ () => {
-      const value = document.querySelector('input')
-      updateShoppingList(value.value)
-    }}></button>
+    <div className={styles.heading}>
+        <img className={styles.listProfile} src='/user_avatar_1.svg' alt="" />
+        <h1>
+        
+        {props.svg} {props.name} SHOP
+        </h1>
+    </div>
+    <div className={styles.inputBar}>
+        <input  className={styles.input} type=' text'  onChange={(e) => setInput(e.target.value) } value={input}/>
+        <div className={styles.button}  type='submit' onClick={ () => {
+          handleSubmit()
+          const value = document.querySelector('input')
+          updateShoppingList(value.value)
+          
+        }}><p>Add Item</p></div>
+    </div>
     {/* <InputBar updateShoppingList={updateShoppingList}/> */}
-    <ul>
+    <div className={styles.items}>
       {listItems.map((item, index) => (
         <ShoppingListItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />))}
-    </ul>
+    </div>
 
     </div>
   )

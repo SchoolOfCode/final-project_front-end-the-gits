@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
 
+
+
+/* Controls the top bar and profile avatar. Will remove when Profile componaent is completed */
+
 .profile{
   display: flex;
   justify-content: flex-end;
@@ -28,16 +32,17 @@
 
 .right{
     display: flex;
+    justify-items: center;
     align-items: center;
-    width: 20vw;
+    width: 16vw;
 }
 
 .profile img {
     position: relative;
     display: block;
     border-radius: 50%;
-    right: 5vw;
-    border: 8px solid black;
+    right: 8vw;
+    border: 7px solid black;
     width: 108px;
     height: 108px;
     background-color: rgb(255, 45, 87);
@@ -47,12 +52,13 @@
 }
 
 .right h2 {
-  margin-right: 2vw;
+  /* margin-right: 2vw; */
   color: white;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 22px;
   text-shadow: 2px 2px 2px #383838;
+  min-width: 4vw;
 }
 
 
@@ -65,7 +71,8 @@
   justify-content: flex-start;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
+  margin-top: 30px;
 }
 
 .cards {
@@ -73,32 +80,44 @@
   justify-content: space-around;
   align-items: flex-end;
   flex-wrap: wrap;
+  flex-direction: row;
   width: 74%;
   height: 60%;
   margin-left: 7vw;
-  margin-top: 12vh;
-  row-gap: 120px;
-  
-  
+  row-gap: 30px; 
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100px;
   
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 310px;
   height: 160px;
   box-shadow: 1px 1px 2px 2px #4e4e4e;
   border-radius: 8px 8px 0 0;
+  background-color: white;
   
   
 }
 
 .avatar {
   position: relative;
-  top: -40px;
+  top: 46px;
+}
+
+.cardContainer img {
+  width: 100px;
+  height: 100px;
 }
 
 .title {
@@ -107,6 +126,8 @@
   /* padding-bottom: 40px; */
   font-family: roboto;
   color: rgb(31, 31, 31);
+  padding-top: 16px;
+  
   
 }
 
@@ -211,6 +232,7 @@
     color: white;
     font-size: 13px;
     font-family: roboto;
+    
   
   }
 
@@ -288,3 +310,271 @@
 
   
 
+  @media only screen and (max-width: 440px) {
+
+
+    /* Controls the top bar and profile avatar. Will remove when Profile componaent is completed */
+    .profile{
+      position: fixed;
+      width: 100vw;
+      height: 14vh;
+      background-color: white;
+      z-index: 2;
+      top: 0;
+      
+      
+    }
+    
+    .bar {
+      height: 6vh;
+      width: 100vw;
+      /* border-top: 2px solid black; */
+      border-bottom: 2px solid black;
+      box-shadow: 1px 4px 6px -1px #585858;
+      border: 1px solid rgb(0, 0, 0);
+    }
+    
+    .right{
+        width: 60vw;
+    }
+    
+    .profile img {
+      
+        right: 5vw;
+        border: 4px solid black;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .right h2 {
+      margin-left: 6vw;     
+      font-size: 17px;
+    }
+
+
+
+
+    /* Controls the cards */
+
+    .userHome {
+      width: 100vw;    
+      margin-top: 13vh;
+      margin-bottom: 5vh;
+    }
+    
+    .cards {
+      width: 40%;
+      height: 60%;
+      margin-top: 0;
+      row-gap: 0;
+      
+    }
+    
+    .card {
+      width: 230px;
+      height: 100px;
+    }
+
+    .avatar {
+      top: 28px;
+    }
+    
+    .cardContainer img {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .title {
+      font-size: 18px;
+    }
+    
+    .avatarBox1 img, .avatarBox2 img, .avatarBox3 img, .avatarBox4 img {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .avatarsNotification {      
+      width: 232px;
+      box-shadow: 1px 1px 0.5px 0.5px #353535;
+      border: 2px solid #444444;
+      overflow-x: scroll;
+    }
+    
+    
+
+    
+      .notification1 {
+        width: 14px;
+        height: 14px;
+        background-color: rgb(116, 199, 253);
+        font-size: 13px;
+      }
+    
+      .notification2 {
+        width: 14px;
+        height: 14px;
+        background-color: rgb(100, 204, 100);
+        font-size: 13px;
+      }
+    
+      .notification3 {
+        width: 14px;
+        height: 14px;
+        background-color: rgb(228, 151, 252);        
+        font-size: 13px;
+      
+      }
+
+      .notification4 {
+        width: 14px;
+        height: 14px;
+        background-color: rgb(255, 116, 116);  
+        font-size: 13px;       
+      }
+    
+      
+  }
+
+
+  @media only screen and (max-width: 390px) {
+
+     /* Controls the top bar and profile avatar. Will remove when Profile componaent is completed */
+     .profile{
+      position: fixed;
+      width: 100vw;
+      height: 16vh;
+      background-color: white;
+      z-index: 2;
+      top: 0;
+      
+      
+    }
+    
+    .bar {
+      height: 6vh;
+      width: 100vw;
+      /* border-top: 2px solid black; */
+      border-bottom: 2px solid black;
+      box-shadow: 1px 4px 6px -1px #585858;
+      border: 1px solid rgb(0, 0, 0);
+    }
+    
+    .right{
+        width: 60vw;
+    }
+    
+    .profile img {
+      
+        right: 5vw;
+        border: 4px solid black;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .right h2 {
+      margin-left: 6vw;     
+      font-size: 17px;
+    }
+
+
+
+
+    /* Controls the cards */
+
+    
+
+    .card {
+      width: 220px;
+      height: 94px; 
+    }
+    
+    
+    .title {
+      font-size: 17px; 
+    }
+    
+    .avatarsNotification {      
+      width: 224px;
+      box-shadow: 1px 1px 0.5px 0.5px #353535;
+      border: 2px solid #444444;
+      overflow-x: scroll;
+    }
+
+    
+      
+  }
+
+  @media only screen and (max-width: 350px) {
+
+
+    /* Controls the top bar and profile avatar. Will remove when Profile componaent is completed */
+    .profile{
+     height: 14vh;
+
+    }
+    
+    .bar {
+      height: 5vh; 
+    }
+
+    .profile img {
+     width: 70px;
+     height: 70px;
+    }
+    
+    .right h2 {
+      margin-left: 6vw;     
+      font-size: 16px;
+    }
+
+
+
+
+    /* Controls the cards */
+
+    .userHome {      
+      margin-top: 12vh;
+      margin-bottom: 5vh;
+    }
+    
+  
+    
+    .card {
+      width: 200px;
+      height: 90px;
+    }
+
+    
+    .cardContainer img {
+      width: 55px;
+      height: 55px;
+    }
+    
+    .title {
+      font-size: 16px;
+    }
+
+    .avatarBox1 img, .avatarBox2 img, .avatarBox3 img, .avatarBox4 img {
+      width: 24px;
+      height: 24px;
+    }  
+    
+    
+    .avatarsNotification {      
+      width: 204px;
+    }
+    
+
+    
+      .notification1, .notification2, .notification3, .notification4 {
+        width: 13px;
+        height: 13px;
+        font-size: 12px;
+      }
+    
+    
+    
+      
+  }
+
+  
