@@ -42,10 +42,6 @@ const UserHome = () => {
 ]
 
 
-
-
-
-
   return (
     <div className={styles.shoppinglist}>
     <div className={styles.profile}>

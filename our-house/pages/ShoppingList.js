@@ -4,25 +4,53 @@ import Navbar from '../components/Navbar.js'
 import InputBar from '../components/InputBar.js'
 import Profile from '../components/Profile.js'
 import ShoppingListItem from '../components/ShoppingListItem.js'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useUser } from '@auth0/nextjs-auth0/'
 
 const ShoppingList = () => {
-  const [listItems, setListItems] = useState([
-    {name: "Bread", id:"1", completed: false, icon:"user_avatar_1.svg"},
-    {name: "Milk", id:"2", completed: false, icon:"user_avatar_1.svg"}])
+  const {user} = useUser()
+  const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(true)
+  const [listItems, setListItems] = useState(null)
+  
+  useEffect(() => {
+    async function fetchShoppingListItems(){
+      const response = await fetch(`${process.env.URL}/Shopping-List`)
+      const data = await response.json()
+      setListItems(data)
+      setIsLoading(false)
+      console.log(data)
+    }
+    fetchShoppingListItems()
+  }, [])
 
-    const [input, setInput] = useState("");
+  if (isLoading){
+    return (
+      <h2>Loading...</h2>
+    )
+  }
 
   // takes in a value from the input component
-  const updateShoppingList = (value) => {
+  const updateShoppingList = async (value, shopName) => {
     const id = String(Math.floor(Math.random()*100+3))
-    const newItem = {name: value, id: id, completed: false, icon:"user_avatar_1.svg"}
+    const newItem = {item: value, id: id, completed: false, icon:"user_avatar_1.svg"}
     console.log('sdfsdfs',[...listItems, newItem])
     setListItems([newItem, ...listItems])
 
+    const newShopItem = {item: value, shoppingListName: shopName, completed: false, username: user.name}
+
+
+    const data = await fetch(`${process.env.URL}/Shopping-List`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newShopItem),
+    })
+    
   }
 
-  const deleteListItem = (id) => {
+  const deleteListItem = async (id) => {
     const newListItems = listItems.filter((item) => {
       if (item.id === id) {
         return false
@@ -32,40 +60,52 @@ const ShoppingList = () => {
       }
     }
     )
+
+    
     setListItems(newListItems)
+    console.log(id)
+    const data = await fetch("https://the-gits.herokuapp.com/api/v1/Shopping-List", {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({id: id}),
+    })
   }
 
   // uses item id to toggled between true or false
   const toggleItemAsCompleted = (id) => {
-    let newListItems = [];
-    // find item by id, update the completed key:value and exit loop
-    for(let i=0; i < listItems.length; i++) {
-      if (listItems[i].id === id) {
-        newListItems = [
-          ...listItems.slice(0,i),
-          {...listItems[i], completed: !listItems[i].completed },
-          ...listItems.slice(i+1, listItems.lenght)
-        ];
-        break;
+    // let newListItems = [];
+    // // find item by id, update the completed key:value and exit loop
+    // for(let i=0; i < listItems.length; i++) {
+    //   if (listItems[i].id === id) {
+    //     newListItems = [
+    //       ...listItems.slice(0,i),
+    //       {...listItems[i], completed: !listItems[i].completed },
+    //       ...listItems.slice(i+1, listItems.length)
+    //     ];
+    //     break;
+    //   }
+
+    // }
+    // setListItems(newListItems);
+    let updatedShopList = listItems.map((item) =>{
+      if(item.id === id){
+        item.completed = !item.completed;
+        console.log(item.completed)
       }
-    }
-    setListItems(newListItems);
+      return item
+    })
+    setListItems(updatedShopList)
+    console.log(updatedShopList)
   }
 
   const handleSubmit = (e) => { // function to handle the submit button 
        // inbuild function for handling buttons 
       //  event.preventDefault()
       
-     
-      setInput("");
+    setInput("");
   };
-
-
- 
-  
-  
-  
- 
 
   const props = {
     
@@ -85,26 +125,16 @@ const ShoppingList = () => {
         </div>
       </div>
     <Navbar/>
-    <div className={styles.heading}>
-        <img className={styles.listProfile} src='/user_avatar_1.svg' alt="" />
-        <h1>
-        
-        {props.svg} {props.name} SHOP
-        </h1>
-    </div>
-    <div className={styles.inputBar}>
-        <input  className={styles.input} type=' text'  onChange={(e) => setInput(e.target.value) } value={input}/>
-        <div className={styles.button}  type='submit' onClick={ () => {
-          handleSubmit()
-          const value = document.querySelector('input')
-          updateShoppingList(value.value)
-          
-        }}><p>Add Item</p></div>
-    </div>
+    <h1>{props.name} Shopping List</h1>
+    <input type="text"/>
+    <button onClick={ () => {
+      const value = document.querySelector('input')
+      updateShoppingList(value.value, props.name)
+    }}></button>
     {/* <InputBar updateShoppingList={updateShoppingList}/> */}
     <div className={styles.items}>
       {listItems.map((item, index) => (
-        <ShoppingListItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />))}
+        <ShoppingListItem name={item.item} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />))}
     </div>
 
     </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
 import styles from '../styles/ShopNameItem.module.css'
 import { FaRegEdit } from 'react-icons/fa'
 import { RiDeleteBin6Line } from 'react-icons/ri';
@@ -7,17 +8,35 @@ import { MdAddCircleOutline } from 'react-icons/md';
 import Link from 'next/link'
 
 
-const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) => {
-  return (
+const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, setNameClicked, setListItems, compareName}) => {
+    // const [listByName, setListByName] = useState("")
+    // useEffect(() => {
+    //     async function fetchShoppingListsByName(){
+    //     const response = await fetch("https://the-gits.herokuapp.com/api/v1/shopping-list/" + name)
+    //     const data = await response.json()
+        
+    //     setListItems(data)
+    //     console.log(data)
+       
+    //     }
+    //     fetchShoppingListsByName()
+    //   }, [listByName])
+    
+    function handleClick(){
+        setNameClicked(name)
+        compareName(name)
+        // setListByName(name)
+    }
+    return (
     <div className={styles.shopItemContainer}>
         <div className={styles.background}>
                 <img src='/user_avatar_1.svg' alt="user avatar icon" width={55} />
         </div>
         <div className={styles.shopNameItem} >
             <div className={styles.cardTop}></div>
-            <Link href="/ShoppingList">
+            
                     <a>
-            <div className={styles.cardText}>
+            <button onClick={handleClick} className={styles.cardText}>
                     <p>
                         Terry's
                     </p> 
@@ -27,9 +46,9 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) =
                     <p>
                         list
                     </p>
-            </div>
+            </button>
             </a>
-            </Link>
+            
             <div className={styles.icons}>
                     <div className={styles.iconLeft}>
                     </div>
