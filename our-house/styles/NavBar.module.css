@@ -125,8 +125,8 @@
   height: 100%;
   align-items: center;
   justify-content: flex-start;
-  transition: left .32s;
-  /* left: -20vw; */
+  transition: left 0.32s;
+  left: 0vw;
   z-index: 3;
   border-bottom: 2px solid black;
   box-shadow: 1px 4px 4px -1px #585858;
@@ -134,12 +134,13 @@
 
   .open {
     width: 22vw;
-    transition: left .32s;
+    
 }
 
 .close {
   width: 0vw;
   display: none;
+  
 }
 
   .navbar-logo {
@@ -189,7 +190,7 @@
     height: 13px;
     background-color: red;
     top: -18px;
-    left: 54px;
+    left: 52px;
     color: white;
     font-weight: 500;
     border: 2px solid black;
