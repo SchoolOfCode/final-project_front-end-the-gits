@@ -125,7 +125,7 @@
   height: 100%;
   align-items: center;
   justify-content: flex-start;
-  transition: left 0.32s;
+  transition: transform 0.32s;
   left: 0vw;
   z-index: 3;
   border-bottom: 2px solid black;
@@ -138,8 +138,9 @@
 }
 
 .close {
-  width: 0vw;
-  display: none;
+  /* width: 0vw;
+  display: none; */
+  transform: translateX(-22vw)
   
 }
 
@@ -216,6 +217,7 @@
     z-index: 1;
     visibility: visible;
     box-shadow: 1px 1px 2px 2px #585858;
+    transition: transform .32s;
   
   }
   
@@ -223,7 +225,7 @@
     
     position: fixed;
     top: 150px;
-    left: 0px;
+    transform: translateX(-16px);
     border: none;
     border-radius: 0 150px 150px 0;
     height: 84px;
