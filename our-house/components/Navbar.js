@@ -52,7 +52,7 @@ const Navbar = () => {
           </a>
           </Link>
       <div className={styles.navContainer}>
-          <Link href="/shoppinglist">
+          <Link href="/ShopName">
               <a>
               <div className={styles.iconContainer}>
                  <div className={styles.notification}>3</div>

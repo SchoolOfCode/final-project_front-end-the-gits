@@ -142,7 +142,6 @@ const deleteShop = async (shops) => {
   return (
     <div className={styles.ShoppingNamelist}>
 
-
       {nameClicked ? (
         <div className={styles.items}>
           <InputBar
