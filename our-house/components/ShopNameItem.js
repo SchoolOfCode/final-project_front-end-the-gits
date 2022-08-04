@@ -59,7 +59,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
                         <FaRegEdit />
                         </div>
                         <div className={styles.delete} onClick={() => {
-                        deleteListItem(id)
+                        deleteListItem(name)
                         }}>
                         <RiDeleteBin6Line />
                         </div>

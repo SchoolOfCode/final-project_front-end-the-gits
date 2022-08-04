@@ -102,6 +102,33 @@ const ShopName = () => {
 
   };
 
+const deleteShop = async (shops) => {
+  const newListOfShops = shopName.filter((name) => {
+    if (shops === name) {
+      return false;
+    } else {
+      return true;
+    }
+  })
+  setShopName(newListOfShops);
+
+  // remove shop from the database
+  const data = await fetch(`${process.env.URL}/Shopping-List`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({shopName: shops}),
+  });
+
+}
+
+
+
+
+
+
+
   // uses item id to toggled between true or false
   const toggleItemAsCompleted = (id) => {
     let newListItems = [];
@@ -154,7 +181,7 @@ const ShopName = () => {
               name={item}
               key={index}
               id={item.id}
-              deleteListItem={deleteListItem}
+              deleteListItem={deleteShop}
               toggleItemAsCompleted={toggleItemAsCompleted}
               setNameClicked={setNameClicked}
               setListItems={setListItems}
