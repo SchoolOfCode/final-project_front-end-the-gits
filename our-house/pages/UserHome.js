@@ -48,7 +48,6 @@ const UserHome = () => {
 
 
   return (
-    <Layout>
     <div className={styles.shoppinglist}>
     <div className={styles.profile}>
         <div className={styles.bar}>
@@ -59,7 +58,6 @@ const UserHome = () => {
         <img src='/user_avatar_1.svg' width={20} height={70} alt='lee' />
         </div>
       </div>
-    <Navbar/>
     <div className={styles.userHome}>
       {/* <div className={styles.cards}>
         {appCards.map((appcard) => (
@@ -279,7 +277,6 @@ const UserHome = () => {
     </div>
 
    </div>
-   </Layout>
   )
   }
 

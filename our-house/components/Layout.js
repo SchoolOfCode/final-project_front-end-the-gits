@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import styles from '../styles/UserHome.module.css'
 import { useRouter } from "next/router";
+import Footer from "./Footer";
 
 
 export const Layout = ({ children }) => {
@@ -11,7 +12,9 @@ export const Layout = ({ children }) => {
   // on landing page dont load the navbar or profile bar
   if (router.pathname === '/') {
     return (
-      <div>{children}</div>
+      <div>{children}
+      <Footer />
+      </div>
     )
   } else {
     // load navbar and profile bar
@@ -27,6 +30,7 @@ export const Layout = ({ children }) => {
         </div>
         <Navbar/>
         {children}
+        <Footer />
       </div>
     )
   }
