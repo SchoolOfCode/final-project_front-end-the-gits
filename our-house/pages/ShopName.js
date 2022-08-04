@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import styles from "../styles/ShopName.module.css";
 import ShopNameItem from "../components/ShopNameItem";
 import { useState, useEffect } from "react";
@@ -22,8 +21,8 @@ const ShopName = () => {
       setFetchData(data);
       setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
       setIsLoading(false);
-      console.log(data);
-      console.log(shopName);
+      console.log("DATA: ", data);
+      console.log("SHOP ANME: ", shopName);
     }
     fetchShoppingLists();
   }, []);
@@ -80,16 +79,29 @@ const ShopName = () => {
     setShopName([value, ...shopName]);
   };
 
-  const deleteListItem = (id) => {
+  // removes a single item from a shopping list
+  const deleteListItem = async (id) => {
     const newListItems = listItems.filter((item) => {
-      if (item.id === id) {
+      if (item._id === id) {
         return false;
       } else {
         return true;
       }
     });
+    // update local state
     setListItems(newListItems);
+
+    // remove item from the database
+    const data = await fetch(`${process.env.URL}/Shopping-List`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({id}),
+    });
+
   };
+
   // uses item id to toggled between true or false
   const toggleItemAsCompleted = (id) => {
     let newListItems = [];
@@ -107,17 +119,11 @@ const ShopName = () => {
     setListItems(newListItems);
   };
 
+  console.log("list items: ", listItems)
+
   return (
     <div className={styles.ShoppingNamelist}>
-      <div className={styles.profile}>
-        <div className={styles.bar}>
-          <div className={styles.right}>
-            <h2> Welcome back, Lee</h2>
-          </div>
-          <img src="/user_avatar_1.svg" width={20} height={70} alt="lee" />
-        </div>
-      </div>
-      <Navbar />
+
 
       {nameClicked ? (
         <div className={styles.items}>
@@ -130,7 +136,7 @@ const ShopName = () => {
             <ShoppingListItem
               name={item.item}
               key={index}
-              id={item.id}
+              id={item._id}
               deleteListItem={deleteListItem}
               toggleItemAsCompleted={toggleItemAsCompleted}
             />
