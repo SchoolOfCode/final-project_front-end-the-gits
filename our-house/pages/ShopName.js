@@ -5,16 +5,15 @@ import ShopNameItem from "../components/ShopNameItem";
 import { useState, useEffect } from "react";
 import ShoppingListItem from "../components/ShoppingListItem";
 import InputBar from "../components/InputBar";
-import { useUser } from '@auth0/nextjs-auth0/'
+import { useUser } from "@auth0/nextjs-auth0/";
 
 const ShopName = () => {
-  const {user} = useUser()
+  const { user } = useUser();
   const [fetchData, setFetchData] = useState(null);
   const [shopName, setShopName] = useState(null);
   const [listItems, setListItems] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [nameClicked, setNameClicked] = useState(null);
-  
 
   useEffect(() => {
     async function fetchShoppingLists() {
@@ -60,25 +59,27 @@ const ShopName = () => {
     };
     console.log("sdfsdfs", [...listItems, newItem]);
     setListItems([newItem, ...listItems]);
-    
 
-    const newShopItem = {item: value, shoppingListName: shopName, completed: false, username: user.name}
+    const newShopItem = {
+      item: value,
+      shoppingListName: shopName,
+      completed: false,
+      username: user.name,
+    };
 
     const data = await fetch(`${process.env.URL}/Shopping-List`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(newShopItem),
-    })
+    });
   };
 
   const updateListOfShops = (value) => {
-    
-    setShopName([value, ...shopName])
-   
-  }
-  
+    setShopName([value, ...shopName]);
+  };
+
   const deleteListItem = (id) => {
     const newListItems = listItems.filter((item) => {
       if (item.id === id) {
@@ -105,12 +106,6 @@ const ShopName = () => {
     }
     setListItems(newListItems);
   };
-  const handleSubmit = (e) => {
-    // function to handle the submit button
-    // inbuild function for handling buttons
-    //  event.preventDefault()
-    setInput("");
-  };
 
   return (
     <div className={styles.ShoppingNamelist}>
@@ -123,25 +118,7 @@ const ShopName = () => {
         </div>
       </div>
       <Navbar />
-      {/* <div className={styles.inputBar}>
-        <input
-          className={styles.input}
-          type=" text"
-          onChange={(e) => setInput(e.target.value)}
-          value={input}
-        />
-        <div
-          className={styles.button}
-          type="submit"
-          onClick={() => {
-            handleSubmit();
-            const value = document.querySelector("input");
-            updateShoppingList(value.value);
-          }}
-        >
-          <p>Add Item</p>
-        </div>
-      </div> */}
+
       {nameClicked ? (
         <div className={styles.items}>
           <InputBar
