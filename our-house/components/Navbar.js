@@ -12,7 +12,7 @@ import { GiVacuumCleaner } from 'react-icons/gi';
 const Navbar = () => {
   // state only for mobile menu works with the revealMenu function
   const [isMenuOpen, setIsMenuOpen] = useState({opened: false, className: "close"})
-  const [isOpen, setIsOpen] = useState({opened: false, className: "mobile-menu-button-closed"})
+  // const [isOpen, setIsOpen] = useState({opened: false, className: "mobile-menu-button-closed"})
   
   // Only for mobile menus
   function revealMenu (){
@@ -23,17 +23,24 @@ const Navbar = () => {
     }
   }
 
-  function moveButton (){
-    if (isMenuOpen.opened === false) {
-      setIsOpen({opened: true, className: "mobile-menu-button"})
-    } else{
-      setIsOpen({opened: false, className: "mobile-menu-button-closed"})
-    }
-  }
+  // function moveButton (){
+  //   if (isMenuOpen.opened === false) {
+  //     setIsOpen({opened: true, className: "mobile-menu-button"})
+  //   } else{
+  //     setIsOpen({opened: false, className: "mobile-menu-button-closed"})
+  //   }
+  // }
 
   return (
     <>
     <nav className={`${styles.navbar} ${styles[isMenuOpen.className]}`}>
+
+
+    <button onClick={() => {revealMenu()}
+    } className={styles["mobile-menu-button"]}></button>
+
+
+
           <Link href="/UserHome">
           
 
@@ -125,9 +132,7 @@ const Navbar = () => {
           
       </div>
     </nav>
-    <button onClick={() => {revealMenu();
-      moveButton()}
-    } className={`${styles.mobile_menu_button} ${styles[isOpen.className]}`}></button>
+    
     </>
   );
 };
