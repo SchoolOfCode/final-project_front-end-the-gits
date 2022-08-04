@@ -14,7 +14,7 @@ const ShopName = () => {
   const [listItems, setListItems] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [nameClicked, setNameClicked] = useState(null);
-  const [input, setInput] = useState("");
+  
 
   useEffect(() => {
     async function fetchShoppingLists() {
@@ -60,6 +60,7 @@ const ShopName = () => {
     };
     console.log("sdfsdfs", [...listItems, newItem]);
     setListItems([newItem, ...listItems]);
+    
 
     const newShopItem = {item: value, shoppingListName: shopName, completed: false, username: user.name}
 
@@ -75,6 +76,7 @@ const ShopName = () => {
   const updateListOfShops = (value) => {
     
     setShopName([value, ...shopName])
+   
   }
   
   const deleteListItem = (id) => {
