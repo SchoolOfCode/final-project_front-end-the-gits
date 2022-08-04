@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import styles from "../styles/ShopName.module.css";
 import ShopNameItem from "../components/ShopNameItem";
 import { useState, useEffect } from "react";
@@ -22,8 +21,6 @@ const ShopName = () => {
       setFetchData(data);
       setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
       setIsLoading(false);
-      console.log(data);
-      console.log(shopName);
     }
     fetchShoppingLists();
   }, []);
@@ -34,19 +31,14 @@ const ShopName = () => {
 
   function compareName(name) {
     const newListItems = fetchData.filter((item) => {
-      console.log("item", item.shoppingListName);
-      console.log("nameClicked", name);
       if (item.shoppingListName === name) {
-        console.log(item);
         return true;
       } else {
-        console.log("error");
         return false;
       }
     });
 
     setListItems(newListItems);
-    console.log(fetchData);
   }
 
   const updateShoppingList = async (value, shopName) => {
@@ -57,7 +49,6 @@ const ShopName = () => {
       completed: false,
       icon: "user_avatar_1.svg",
     };
-    console.log("sdfsdfs", [...listItems, newItem]);
     setListItems([newItem, ...listItems]);
 
     const newShopItem = {
@@ -80,16 +71,56 @@ const ShopName = () => {
     setShopName([value, ...shopName]);
   };
 
-  const deleteListItem = (id) => {
+  // removes a single item from a shopping list
+  const deleteListItem = async (id) => {
     const newListItems = listItems.filter((item) => {
-      if (item.id === id) {
+      if (item._id === id) {
         return false;
       } else {
         return true;
       }
     });
+    // update local state
     setListItems(newListItems);
+
+    // remove item from the database
+    const data = await fetch(`${process.env.URL}/Shopping-List`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({id}),
+    });
+
   };
+
+const deleteShop = async (shops) => {
+  const newListOfShops = shopName.filter((name) => {
+    if (shops === name) {
+      return false;
+    } else {
+      return true;
+    }
+  })
+  setShopName(newListOfShops);
+
+  // remove shop from the database
+  const data = await fetch(`${process.env.URL}/Shopping-List/remove-shop`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({shopName: shops}),
+  });
+
+}
+
+
+
+
+
+
+
   // uses item id to toggled between true or false
   const toggleItemAsCompleted = (id) => {
     let newListItems = [];
@@ -107,9 +138,10 @@ const ShopName = () => {
     setListItems(newListItems);
   };
 
+
   return (
     <div className={styles.ShoppingNamelist}>
-      
+
       {nameClicked ? (
         <div className={styles.items}>
           <InputBar
@@ -121,7 +153,7 @@ const ShopName = () => {
             <ShoppingListItem
               name={item.item}
               key={index}
-              id={item.id}
+              id={item._id}
               deleteListItem={deleteListItem}
               toggleItemAsCompleted={toggleItemAsCompleted}
             />
@@ -139,7 +171,7 @@ const ShopName = () => {
               name={item}
               key={index}
               id={item.id}
-              deleteListItem={deleteListItem}
+              deleteListItem={deleteShop}
               toggleItemAsCompleted={toggleItemAsCompleted}
               setNameClicked={setNameClicked}
               setListItems={setListItems}
