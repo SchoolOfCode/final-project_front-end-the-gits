@@ -210,7 +210,24 @@
     transition: transform .32s;
   
   }
+
+  .buttons {
+    margin-top: 0;
+    margin: 3.4vh 1vw 0 1vw;
+    width: 32vw;
+    height: 4.4vh;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(116, 83, 207);
+    font-size: 17px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px 3px #000000;
+    text-align: center;
+  }
+  
   
   
 
 }
+
+
