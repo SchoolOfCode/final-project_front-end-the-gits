@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
 
+
 .profile{
     display: flex;
     justify-content: flex-end;
@@ -21,7 +22,8 @@
     /* border-top: 2px solid black; */
     border-bottom: 2px solid black;
     box-shadow: 1px 4px 6px -1px #585858;
-    border: 2.4px solid rgb(0, 0, 0);
+    border-top: 2.4px solid rgb(0, 0, 0);
+    border-bottom: 2.4px solid rgb(0, 0, 0);
   }
   
   .right{
@@ -80,7 +82,8 @@
      border-top: 2px solid black; 
     border-bottom: 2px solid black;
     box-shadow: 1px 4px 6px -1px #585858;
-    border: 1px solid rgb(0, 0, 0);
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
   }
   
   .right{
