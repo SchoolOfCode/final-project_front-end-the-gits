@@ -1,12 +1,7 @@
 import React,{useState} from "react";
 import Link from "next/link";
 import styles from "../styles/NavBar.module.css"
-// Temporary placeholder icons.
-import { RiMoneyPoundBoxLine } from 'react-icons/ri';
-import { GoCalendar } from 'react-icons/go'
-import { FaBirthdayCake } from 'react-icons/fa'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { GiVacuumCleaner } from 'react-icons/gi';
+
 
 
 const Navbar = () => {
