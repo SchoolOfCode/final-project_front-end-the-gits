@@ -7,6 +7,8 @@
     align-items: center;
     width: 100%;
     height: 13vh;
+    left: 0;
+    
   }
   
   .bar {
@@ -14,7 +16,7 @@
     justify-content: flex-end;
     align-items: center;
     background-color: #8A82E8;
-    height: 7.4vh;
+    height: 7vh;
     width: 100vw;
     /* border-top: 2px solid black; */
     border-bottom: 2px solid black;
@@ -24,22 +26,21 @@
   
   .right{
       display: flex;
-      justify-items: center;
+      justify-content: flex-end;
       align-items: center;
-      width: 16vw;
+      min-width: 16vw;
+      margin-right: 180px;
   }
   
   .profile img {
       position: relative;
-      display: block;
+      /* display: block; */
       border-radius: 50%;
       right: 8vw;
       border: 7px solid black;
-      width: 108px;
-      height: 108px;
+      width: 100px;
+      height: 100px;
       background-color: rgb(255, 45, 87);
-      
-  
   
   }
   
@@ -56,3 +57,55 @@
 
 
 
+  @media only screen and (max-width: 440px) {
+
+
+
+
+  .profile{
+    position: fixed;
+    width: 100%;
+    height: 14vh;
+    background-color: white;
+    z-index: 2;
+    top: 0;
+    margin: 0;
+    
+    
+  } 
+     
+  .bar {
+    height: 6vh;
+    width: 100vw;
+     border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+    box-shadow: 1px 4px 6px -1px #585858;
+    border: 1px solid rgb(0, 0, 0);
+  }
+  
+  .right{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    min-width: 16vw;
+    /* margin: auto auto; */
+    margin-right: 0px;
+    
+}
+  
+   .profile img {
+      position: absolute;
+      right: 5vw;
+      border: 4px solid black;
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+  }
+  
+  .right h2 {
+    /* margin-left: 6vw;      */
+    font-size: 15px;
+  } 
+
+}
