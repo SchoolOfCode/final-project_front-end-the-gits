@@ -13,10 +13,10 @@ export default function Profile() {
       <div className={styles.profile}>
         <div className={styles.bar}>
             <div className={styles.right}>
-                <h2> Welcome back, {user.name}</h2>
+                <h2>{user.name}</h2>
                 
             </div>
-        <img src='/user_avatar_1.svg' width={20} height={70} alt={user.name} />
+        <img src='/user_avatar_1.svg' alt={user.name} />
         </div>
       </div>
     )
