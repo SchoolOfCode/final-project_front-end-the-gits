@@ -3,69 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
 
-.profile{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100vw;
-  height: 13vh;
-  
-  
-}
-
-.bar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #8A82E8;
-  height: 7.4vh;
-  width: 100vw;
-  /* border-top: 2px solid black; */
-  border-bottom: 2px solid black;
-  box-shadow: 1px 4px 6px -1px #585858;
-  border: 2.4px solid rgb(0, 0, 0);
-}
-
-.right{
-    display: flex;
-    align-items: center;
-    width: 20vw;
-}
-
-.profile img {
-    position: relative;
-    display: block;
-    border-radius: 50%;
-    right: 5vw;
-    border: 8px solid black;
-    width: 108px;
-    height: 108px;
-    background-color: rgb(255, 45, 87);
-    
 
 
-}
-
-.right h2 {
-  margin-right: 2vw;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 22px;
-  text-shadow: 2px 2px 2px #383838;
-}
-
-
-
-
+/* Controls the top bar and profile avatar. Will remove when Profile componaent is completed */
 
 .userHome {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 80vh;
+  margin-top: 10px;
+  /* margin-left: 7.4vw; */
 }
 
 .cards {
@@ -73,12 +23,19 @@
   justify-content: space-around;
   align-items: flex-end;
   flex-wrap: wrap;
+  flex-direction: row;
   width: 74%;
-  height: 60%;
-  margin-left: 7vw;
-  margin-top: 12vh;
-  row-gap: 120px;
-  
+  min-height: 60%;
+  margin-left: 7.4vw;
+  row-gap: 30px; 
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100px;
   
   
 }
@@ -86,19 +43,25 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 310px;
   height: 160px;
   box-shadow: 1px 1px 2px 2px #4e4e4e;
   border-radius: 8px 8px 0 0;
+ 
   
   
 }
 
 .avatar {
   position: relative;
-  top: -40px;
+  top: 46px;
+}
+
+.cardContainer img {
+  width: 100px;
+  height: 100px;
 }
 
 .title {
@@ -107,6 +70,8 @@
   /* padding-bottom: 40px; */
   font-family: roboto;
   color: rgb(31, 31, 31);
+  padding-top: 16px;
+  
   
 }
 
@@ -211,6 +176,7 @@
     color: white;
     font-size: 13px;
     font-family: roboto;
+    
   
   }
 
@@ -288,3 +254,289 @@
 
   
 
+  @media only screen and (max-width: 440px) {
+
+
+    /* Controls the top bar and profile avatar. Will remove when Profile componaent is completed */
+    /* .profile{
+      position: fixed;
+      width: 100vw;
+      height: 14vh;
+      background-color: white;
+      z-index: 2;
+      top: 0;
+      
+      
+    } */
+/*     
+    .bar {
+      height: 6vh;
+      width: 100vw;
+      /* border-top: 2px solid black; 
+      border-bottom: 2px solid black;
+      box-shadow: 1px 4px 6px -1px #585858;
+      border: 1px solid rgb(0, 0, 0);
+    }
+    
+    .right{
+        width: 60vw;
+    }
+    
+    /* .profile img {
+      
+        right: 5vw;
+        border: 4px solid black;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .right h2 {
+      margin-left: 6vw;     
+      font-size: 17px;
+    } 
+ */
+
+
+
+    /* Controls the cards */
+    .userHome {
+      width: 100%;
+      height: 100vh;
+      margin-top: 10px;
+      /* margin-left: 7.4vw; */
+    }
+    
+    .cards {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width: 74%;
+      min-height: 60%;
+      margin-left: 0vw;
+      row-gap: 30px; 
+    }
+    
+    .cardContainer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100px;
+      
+    }
+    
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 310px;
+      height: 160px;
+      /* box-shadow: 1px 1px 2px 2px #4e4e4e; */
+      border-radius: 8px 8px 0 0;
+      background-color: white;
+      border: 0px;
+      
+      
+    }
+    
+    .avatar {
+      position: relative;
+      top: 46px;
+    }
+    
+    .cardContainer img {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      /* padding-bottom: 40px; */
+      font-family: roboto;
+      color: rgb(31, 31, 31);
+      padding-top: 16px;
+      
+      
+    }
+    
+    .cards a:link {
+       text-decoration: none; 
+      } 
+    
+    
+    .avatarsNotification {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      /* height: 80px; */
+      
+      /* width: 310px; */
+      background: linear-gradient(90deg, #8A82E8 0%, #a29af8 41%, #aea6ff 78%, #bbb5fa 100%);
+      /* box-shadow: 1px 1px 2px 2px #474747; */
+      /* border: 2px solid #1d1d1d; */
+      border-radius: 0 0 8px 8px;
+      /* box-sizing: border-box; */
+      padding-bottom: 10px;
+      padding-left: 5px;
+      
+      
+    }
+    
+    .avatarBox1, .avatarBox2, .avatarBox3, .avatarBox4  {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      margin-right: 12px;
+      
+      
+      
+    }
+    
+    .avatarBox1  img {
+      
+       
+        
+        border-radius: 50%;
+        
+        border: 3px solid black;
+        width: 30px;
+        height: 30px;
+        background-color: rgb(116, 199, 253);
+        box-shadow: 1px 4px 6px -1px #585858;
+      }
+    
+      .avatarBox2  img {
+      
+       
+        
+        border-radius: 50%;
+        
+        border: 3px solid black;
+        width: 30px;
+        height: 30px;
+        background-color: rgb(100, 204, 100);
+        box-shadow: 1px 4px 6px -1px #585858;
+      }
+      
+      .avatarBox3  img {
+      
+       
+        
+        border-radius: 50%;
+        
+        border: 3px solid black;
+        width: 30px;
+        height: 30px;
+        background-color: rgb(228, 151, 252);
+        box-shadow: 1px 4px 6px -1px #585858;
+      }
+      
+      .avatarBox4  img {
+      
+       
+        
+        border-radius: 50%;
+        
+        border: 3px solid black;
+        width: 30px;
+        height: 30px;
+        background-color: rgb(255, 116, 116);
+        box-shadow: 1px 4px 6px -1px #585858;
+      }
+    
+      .notification1 {
+        position: relative;
+        top: 10px;
+        left: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16px;
+        height: 16px;
+        background-color: rgb(116, 199, 253);
+        border: 2px solid black;
+        color: white;
+        font-size: 13px;
+        font-family: roboto;
+        
+      
+      }
+    
+      .notification2 {
+        position: relative;
+        top: 10px;
+        left: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16px;
+        height: 16px;
+        background-color: rgb(100, 204, 100);
+        border: 2px solid black;
+        color: white;
+        font-size: 13px;
+        font-family: roboto;
+      
+      }
+    
+      .notification3 {
+        position: relative;
+        top: 10px;
+        left: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16px;
+        height: 16px;
+        background-color: rgb(228, 151, 252);
+        border: 2px solid black;
+        color: white;
+        font-size: 13px;
+        font-family: roboto;
+      
+      }
+    
+      
+    
+      .notification4 {
+        position: relative;
+        top: 10px;
+        left: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16px;
+        height: 16px;
+        background-color: rgb(255, 116, 116);
+        border: 2px solid black;
+        color: white;
+        font-size: 13px;
+        font-family: roboto;
+      
+      }
+    
+      .avatarBox .notificationHidden {
+        visibility: hidden;
+        opacity: 0;
+        position: relative;
+        top: 10px;
+        left: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16px;
+        height: 16px;
+        background-color: red;
+        border: 2px solid black;
+        color: white;
+        font-size: 13px;
+        font-family: roboto;
+      
+      }
+    }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
 import styles from '../styles/ShopNameItem.module.css'
 import { FaRegEdit } from 'react-icons/fa'
 import { RiDeleteBin6Line } from 'react-icons/ri';
@@ -7,17 +8,23 @@ import { MdAddCircleOutline } from 'react-icons/md';
 import Link from 'next/link'
 
 
-const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) => {
-  return (
+const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, setNameClicked, setListItems, compareName}) => {
+    
+    function handleClick(){
+        setNameClicked(name)
+        compareName(name)
+    }
+
+    return (
     <div className={styles.shopItemContainer}>
         <div className={styles.background}>
                 <img src='/user_avatar_1.svg' alt="user avatar icon" width={55} />
         </div>
         <div className={styles.shopNameItem} >
             <div className={styles.cardTop}></div>
-            <Link href="/ShoppingList">
+            
                     <a>
-            <div className={styles.cardText}>
+            <div onClick={handleClick} className={styles.cardText}>
                     <p>
                         Terry's
                     </p> 
@@ -29,7 +36,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) =
                     </p>
             </div>
             </a>
-            </Link>
+            
             <div className={styles.icons}>
                     <div className={styles.iconLeft}>
                     </div>
@@ -40,7 +47,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) =
                         <FaRegEdit />
                         </div>
                         <div className={styles.delete} onClick={() => {
-                        deleteListItem(id)
+                        deleteListItem(name)
                         }}>
                         <RiDeleteBin6Line />
                         </div>

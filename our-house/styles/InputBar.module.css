@@ -1,0 +1,111 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+ }
+ 
+ 
+ .inputBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28.4vw;
+  height: 7.2vh;
+  background: linear-gradient(90deg, #6e61fc 0%, #8479fc 41%, #9a91ff 78%, #9c93f8 100%);
+  border: 2px solid rgb(66, 66, 66);
+  margin: 0.1vh auto 0.1vh auto;
+  /* border-radius: 8px; */
+  box-shadow: 1px 1px 1px 1px #474747;
+
+}
+
+.input {
+  width: 21.5vw;
+  height: 5.8vh;
+  border: 1.2px solid rgb(0, 0, 0);
+  /* border-radius:  6px 0 0 6px ; */
+  font-size: 19px;
+  font-family: roboto;
+  padding:0 12px;
+  
+  color: #474747;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vw;
+  height: 6.7vh;
+  background-color: transparent;
+  color: white;
+  font-family: roboto;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+}
+
+
+
+@media only screen and (max-width: 440px) { 
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto auto;
+    
+   }
+   
+   
+   .inputBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 7.2vh;
+    background: linear-gradient(90deg, #6e61fc 0%, #8479fc 41%, #9a91ff 78%, #9c93f8 100%);
+    border: 2px solid rgb(66, 66, 66);
+    margin: 3vh auto 1vh auto;
+    /* border-radius: 8px; */
+    box-shadow: 1px 1px 1px 1px #474747;
+  
+  }
+  
+  .input {
+    width: 49vw;
+    height: 5.8vh;
+    border: 1.2px solid rgb(0, 0, 0);
+    /* border-radius:  6px 0 0 6px ; */
+    font-size: 14px;
+    font-family: roboto;
+    padding:0 12px;
+    
+    color: #474747;
+  }
+  
+  .input:focus {
+    outline: none;
+  }
+  
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13vw;
+    height: 6.7vh;
+    background-color: transparent;
+    color: white;
+    font-family: roboto;
+    font-size: 8.4px;
+    cursor: pointer;
+    border: none;
+  }
+}
