@@ -9,24 +9,12 @@ import Link from 'next/link'
 
 
 const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, setNameClicked, setListItems, compareName}) => {
-    // const [listByName, setListByName] = useState("")
-    // useEffect(() => {
-    //     async function fetchShoppingListsByName(){
-    //     const response = await fetch("https://the-gits.herokuapp.com/api/v1/shopping-list/" + name)
-    //     const data = await response.json()
-        
-    //     setListItems(data)
-    //     console.log(data)
-       
-    //     }
-    //     fetchShoppingListsByName()
-    //   }, [listByName])
     
     function handleClick(){
         setNameClicked(name)
         compareName(name)
-        // setListByName(name)
     }
+
     return (
     <div className={styles.shopItemContainer}>
         <div className={styles.background}>
@@ -36,7 +24,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
             <div className={styles.cardTop}></div>
             
                     <a>
-            <button onClick={handleClick} className={styles.cardText}>
+            <div onClick={handleClick} className={styles.cardText}>
                     <p>
                         Terry's
                     </p> 
@@ -46,7 +34,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
                     <p>
                         list
                     </p>
-            </button>
+            </div>
             </a>
             
             <div className={styles.icons}>

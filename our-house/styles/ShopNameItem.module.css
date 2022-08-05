@@ -30,7 +30,7 @@
 
 .background {
   position: relative;
-  top: 55px;
+  top: 45px;
   left: 117px;
   display: flex;
   justify-content: center;
@@ -144,10 +144,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 180px;
+  width: 200px;
+  height: 100px;
   margin-top: 40px;
   top: -50px;
+  cursor: pointer;
 }
 
 .cardText p {
@@ -190,7 +191,7 @@
   justify-content: center;
   align-items: center;  
   width: 320px;
-  background: linear-gradient(90deg, rgb(255, 45, 87) 0%, rgb(255, 60, 99) 41%, rgb(255, 62, 100)  78%, rgb(255, 76, 112) 100%);
+  background: linear-gradient(90deg, #8A82E8 0%, #a29af8 41%, #aea6ff 78%, #bbb5fa 100%);
   box-shadow: 1px 1px 2px 2px #474747;
   border: 2px solid #1d1d1d;
   border-radius: 0 0 8px 8px;
