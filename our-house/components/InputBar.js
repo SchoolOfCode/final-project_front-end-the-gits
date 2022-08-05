@@ -1,26 +1,28 @@
 import React from "react";
-import styles from "../styles/ShopName.module.css";
+import styles from "../styles/InputBar.module.css";
 import { useState } from "react";
 
 const InputBar = ({ title, name, handleClick }) => {
   const [input, setInput] = useState("");
 
   return (
-    <div>
+    <div className={styles.inputContainer}>
       <h1 className={styles.heading}>{title}</h1>
+      <div className={styles.inputBar}>
       <input
         className={styles.input}
         type="text"
         onChange={(e) => setInput(e.target.value)}
         value={input}
       />
-      <button
+      <button className={styles.button}
         onClick={() => {
           const value = document.querySelector("input");
           handleClick(value.value, name);
           setInput("");
         }}
-      ></button>
+      >Add</button>
+    </div>
     </div>
   );
 };

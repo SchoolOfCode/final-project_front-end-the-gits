@@ -36,7 +36,7 @@
   align-items: center;
   flex-direction: column;
   min-height: 100px;
-  background-color: green;
+  
   
 }
 
@@ -47,9 +47,9 @@
   align-items: center;
   width: 310px;
   height: 160px;
-  /* box-shadow: 1px 1px 2px 2px #4e4e4e; */
+  box-shadow: 1px 1px 2px 2px #4e4e4e;
   border-radius: 8px 8px 0 0;
-  background-color: rgb(116, 94, 94);
+ 
   
   
 }
@@ -89,8 +89,8 @@
   
   width: 310px;
   background: linear-gradient(90deg, #8A82E8 0%, #a29af8 41%, #aea6ff 78%, #bbb5fa 100%);
-  /* box-shadow: 1px 1px 2px 2px #474747; */
-  /* border: 2px solid #1d1d1d; */
+  box-shadow: 1px 1px 2px 2px #474747;
+  border: 2px solid #1d1d1d;
   border-radius: 0 0 8px 8px;
   box-sizing: border-box;
   padding-bottom: 10px;

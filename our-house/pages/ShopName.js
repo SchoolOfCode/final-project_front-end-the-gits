@@ -141,7 +141,7 @@ const deleteShop = async (shops) => {
 
   return (
     <div className={styles.ShoppingNamelist}>
-
+       <div className={styles.shopBox}>
       {nameClicked ? (
         <div className={styles.items}>
           <InputBar
@@ -160,26 +160,33 @@ const deleteShop = async (shops) => {
           ))}
         </div>
       ) : (
-        <div className={styles.items}>
+        <div className={styles.shopNames}>
+          <div className={styles.inputBar}>
           <InputBar
             title="Your Shopping Lists"
             name={nameClicked}
             handleClick={updateListOfShops}
           />
-          {shopName.map((item, index) => (
-            <ShopNameItem
-              name={item}
-              key={index}
-              id={item.id}
-              deleteListItem={deleteShop}
-              toggleItemAsCompleted={toggleItemAsCompleted}
-              setNameClicked={setNameClicked}
-              setListItems={setListItems}
-              compareName={compareName}
-            />
-          ))}
+          </div>
+          <div className={styles.cardContainer}>
+            
+            {shopName.map((item, index) => (
+              <ShopNameItem
+                name={item}
+                key={index}
+                id={item.id}
+                deleteListItem={deleteShop}
+                toggleItemAsCompleted={toggleItemAsCompleted}
+                setNameClicked={setNameClicked}
+                setListItems={setListItems}
+                compareName={compareName}
+              />
+            ))}
+          
+         </div>
         </div>
       )}
+      </div>
     </div>
   );
 };

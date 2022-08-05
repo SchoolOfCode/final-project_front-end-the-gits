@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className={styles.home}>
         <div className={styles.right}>
-        <img src="/logo_8.svg" alt="" />
+        <img src="/home_logo_final.svg" alt="" />
         </div>
         <div className={styles.left}>
           <h1>Our House</h1>
