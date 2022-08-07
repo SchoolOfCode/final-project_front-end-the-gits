@@ -126,7 +126,7 @@ const deleteShop = async (shops) => {
     let newListItems = [];
     // find item by id, update the completed key:value and exit loop
     for (let i = 0; i < listItems.length; i++) {
-      if (listItems[i].id === id) {
+      if (listItems[i]._id === id) {
         newListItems = [
           ...listItems.slice(0, i),
           { ...listItems[i], completed: !listItems[i].completed },
@@ -151,6 +151,7 @@ const deleteShop = async (shops) => {
           />
           {listItems.map((item, index) => (
             <ShoppingListItem
+              completed={item.completed}
               name={item.item}
               key={index}
               id={item._id}
