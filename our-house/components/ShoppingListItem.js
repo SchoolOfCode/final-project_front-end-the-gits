@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/ShoppingListItem.module.css";
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -13,10 +13,14 @@ const ShoppingListItem = ({
   deleteListItem,
   toggleItemAsCompleted,
 }) => {
+
+  // to style the list item when completed
+  let markAsDone = completed ? 'completed' : 'todo';
+
   return (
-    <li className={styles.shoppingListItem}>
+    <li className={`${styles.shoppingListItem} ${styles[markAsDone]}`}>
       <div className={styles.left}>
-        <p key={id} onClick={toggleItemAsCompleted}>
+        <p key={id} onClick={() => { toggleItemAsCompleted(id); }}>
           {name}
         </p>
       </div>
