@@ -2,13 +2,13 @@ import React from 'react'
 import ChoresItem from "../components/ChoresItem"
 import { useState } from 'react'
 import InputBar from "../components/InputBar"
-import styles from "../styles/ShopName.module.css"
+import styles from "../styles/Chores.module.css"
 
 
 const Chores = () => {
   const [listItems, setListItems] = useState([
-    {username:"Abdullahi's", name: "Asda",  id:"1", icon:"user_avatar_1.svg", completed: false },
-    {username:"Lee's", name: "Lidl", id:"2", icon:"user_avatar_1.svg", completed: false}])
+    {username:"Abdullahi's", name: "Hoover",  id:"1", icon:"user_avatar_1.svg", completed: false },
+    {username:"Lee's", name: "Dishes", id:"2", icon:"user_avatar_1.svg", completed: false}])
 
     const [input, setInput] = useState("");
   // takes in a value from the input component

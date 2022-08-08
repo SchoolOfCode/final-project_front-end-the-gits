@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/ShoppingListItem.module.css'
+import styles from '../styles/ChoresItem.module.css'
 import { FiEdit } from 'react-icons/fi'
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { GiRecycle } from 'react-icons/gi';
