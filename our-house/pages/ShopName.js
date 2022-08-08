@@ -9,7 +9,7 @@ import { useUser } from "@auth0/nextjs-auth0/";
 const ShopName = () => {
   const { user, error, isLoading } = useUser();
   const [fetchData, setFetchData] = useState(null);
-  const [shopName, setShopName] = useState(null);
+  const [shopName, setShopName] = useState("");
   const [listItems, setListItems] = useState(null);
   const [isPageLoading, setIsPageLoading] = useState(true);
   const [nameClicked, setNameClicked] = useState(null);
@@ -20,7 +20,9 @@ const ShopName = () => {
       const response = await fetch(`${process.env.URL}/shopping-list/${user.sub}`);
       const data = await response.json();
       setFetchData(data);
-      setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
+      if (data.shoppingListName){
+        setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
+      }
       setIsPageLoading(false);
     }
     if (!isLoading){
@@ -156,7 +158,6 @@ const deleteShop = async (shops) => {
       },
       body: JSON.stringify(dbItem)
     })
-    console.log("ARE WE HERE")
   };
 
   return (
@@ -189,7 +190,8 @@ const deleteShop = async (shops) => {
             handleClick={updateListOfShops}
           />
           </div>
-          <div className={styles.cardContainer}>
+          {shopName ? (
+            <div className={styles.cardContainer}>
             
             {shopName.map((item, index) => (
               <ShopNameItem
@@ -203,8 +205,13 @@ const deleteShop = async (shops) => {
                 compareName={compareName}
               />
             ))}
-          
-         </div>
+          </div>
+          ) : (
+            <div>
+              <h2>No shops</h2>
+            </div>
+          )}
+         
         </div>
       )}
       </div>
