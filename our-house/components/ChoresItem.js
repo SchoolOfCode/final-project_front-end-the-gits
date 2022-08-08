@@ -4,38 +4,44 @@ import { FiEdit } from 'react-icons/fi'
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { GiRecycle } from 'react-icons/gi';
 
-
-const ChoresItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted}) => {
-  return (
-    <div className={styles.shopItemContainer}>
-        <div className={styles.background}>
-                <img src='/user_avatar_1.svg' alt="user avatar icon" width={55} />
+const ChoresItem = ({
+    name,
+    completed,
+    icon,
+    id,
+    deleteListItem,
+    toggleItemAsCompleted,
+  }) => {
+  
+    // to style the list item when completed
+    let markAsDone = completed ? 'completed' : 'todo';
+  
+    return (
+      <li className={`${styles.shoppingListItem} ${styles[markAsDone]}`}>
+        <div className={styles.left}>
+          <p key={id} onClick={() => { toggleItemAsCompleted(id); }}>
+            {name}
+          </p>
         </div>
-        <div className={styles.ChoresItem} >
-            <div className={styles.cardText}>
-                    <p>
-                        Abdullahi's
-                    </p> 
-                    <div className={styles.shopName}>
-                        {name} 
-                    </div>
-                    <p>
-                        list
-                    </p>
-            </div>
-            <div className={styles.icons}>
-                <div className={styles.edit}>
-                <FiEdit />
-                </div>
-                <div className={styles.delete} onClick={() => {
-                deleteListItem(id)
-                }}>
-                <RiDeleteBin6Line />
-                </div>
-            </div>
-            </div>
+        <div className={styles.right}>
+          <div className={styles.edit}>
+            <FiEdit />
+          </div>
+          <div className={styles.background}>
+            <img src="/user_avatar_1.svg" width={24} alt="user avatar icon" />
+          </div>
+          <div
+            className={styles.delete}
+            onClick={() => {
+              deleteListItem(id);
+            }}
+          >
+            <RiDeleteBin6Line />
+          </div>
         </div>
-  )
-}
-export default ChoresItem
+      </li>
+    );
+  };
+  
+  export default ChoresItem;
 

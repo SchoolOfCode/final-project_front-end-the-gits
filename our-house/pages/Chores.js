@@ -34,22 +34,27 @@ const Chores = () => {
   // uses item id to toggled between true or false
   const toggleItemAsCompleted = (id) => {
     let newListItems = [];
+    const dbItem = {id};
     // find item by id, update the completed key:value and exit loop
-    for(let i=0; i < listItems.length; i++) {
-      if (listItems[i].id === id) {
+    for (let i = 0; i < listItems.length; i++) {
+      if (listItems[i]._id === id) {
+        // create updated list
         newListItems = [
-          ...listItems.slice(0,i),
-          {...listItems[i], completed: !listItems[i].completed },
-          ...listItems.slice(i+1, listItems.lenght)
+          ...listItems.slice(0, i),
+          { ...listItems[i], completed: !listItems[i].completed },
+          ...listItems.slice(i + 1, listItems.lenght),
         ];
+        // create db object to udpate
+        dbItem.completed = !listItems[i].completed;
         break;
       }
     }
+    // update the local state
     setListItems(newListItems);
   }
-  const handleSubmit = (e) => { 
-      setInput("");
-  };
+
+
+
   return (
     <div className={styles.ShoppingNamelist}>
     <div className={styles.heading}>
