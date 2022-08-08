@@ -7,25 +7,29 @@ import InputBar from "../components/InputBar";
 import { useUser } from "@auth0/nextjs-auth0/";
 
 const ShopName = () => {
-  const { user } = useUser();
+  const { user, error, isLoading } = useUser();
   const [fetchData, setFetchData] = useState(null);
   const [shopName, setShopName] = useState(null);
   const [listItems, setListItems] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isPageLoading, setIsPageLoading] = useState(true);
   const [nameClicked, setNameClicked] = useState(null);
+  
 
   useEffect(() => {
     async function fetchShoppingLists() {
-      const response = await fetch(`${process.env.URL}/shopping-list`);
+      const response = await fetch(`${process.env.URL}/shopping-list/${user.sub}`);
       const data = await response.json();
       setFetchData(data);
       setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
-      setIsLoading(false);
+      setIsPageLoading(false);
     }
-    fetchShoppingLists();
-  }, []);
+    if (!isLoading){
+      fetchShoppingLists()
+    }
+    ;
+  }, [isLoading]);
 
-  if (isLoading) {
+  if (isPageLoading) {
     return <h2>Loading...</h2>;
   }
 
@@ -56,6 +60,7 @@ const ShopName = () => {
       shoppingListName: shopName,
       completed: false,
       username: user.name,
+      sub: user.sub
     };
 
     const data = await fetch(`${process.env.URL}/Shopping-List`, {
