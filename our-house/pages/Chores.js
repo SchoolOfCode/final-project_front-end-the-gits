@@ -7,8 +7,8 @@ import styles from "../styles/ShopName.module.css"
 
 const Chores = () => {
   const [listItems, setListItems] = useState([
-    {username:"Abdullahi's", name: "Asda",  id:"1", icon:"user_avatar_1.svg" },
-    {username:"Lee's", name: "Lidl", id:"2", icon:"user_avatar_1.svg"}])
+    {username:"Abdullahi's", name: "Asda",  id:"1", icon:"user_avatar_1.svg", completed: false },
+    {username:"Lee's", name: "Lidl", id:"2", icon:"user_avatar_1.svg", completed: false}])
 
     const [input, setInput] = useState("");
   // takes in a value from the input component
@@ -37,7 +37,9 @@ const Chores = () => {
     const dbItem = {id};
     // find item by id, update the completed key:value and exit loop
     for (let i = 0; i < listItems.length; i++) {
-      if (listItems[i]._id === id) {
+        console.log(id)
+        console.log(listItems[i].id)
+      if (listItems[i].id === id) {
         // create updated list
         newListItems = [
           ...listItems.slice(0, i),
@@ -58,16 +60,14 @@ const Chores = () => {
   return (
     <div className={styles.ShoppingNamelist}>
     <div className={styles.heading}>
-        <h1>
-          Chores
-        </h1>
         <InputBar 
+            title= "Chores"
             handleClick={updateShoppingList}
         />
     </div>
       <div className={styles.items}>
         {listItems.map((item, index) => (
-          <ChoresItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} />))}
+          <ChoresItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} completed={item.completed}/>))}
     </div>
     </div>
   )

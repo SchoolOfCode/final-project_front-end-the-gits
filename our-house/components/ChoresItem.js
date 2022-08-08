@@ -15,6 +15,8 @@ const ChoresItem = ({
   
     // to style the list item when completed
     let markAsDone = completed ? 'completed' : 'todo';
+
+    console.log(completed)
   
     return (
       <li className={`${styles.shoppingListItem} ${styles[markAsDone]}`}>
