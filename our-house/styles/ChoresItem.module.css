@@ -18,11 +18,6 @@
   border: 2px solid rgb(97, 97, 97);
 }
 
-.shoppingListItem.completed {
-    background:#B9B9B9;
-    text-decoration: line-through solid #000 3px; 
-}
-
 
 .shoppingListItem:nth-child(4n + 2) {
   background: linear-gradient(90deg, #7b71e6 0%, #867de4 41%, #9b92e9 78%, #aba3ff 100%);
@@ -43,8 +38,27 @@
   font-size: 22px;
 }
 
+/* .middle {
+  display: flex;
+  width: 10vw;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding:0;
+} */
 
-.left p {
+
+.createdBy {
+  /* display:inline; */
+  /* flex-direction: row; */
+  /* justify-content: flex-end; */
+  /* align-items: flex-end; */
+  /* background-color: green; */
+  /* margin-right: 10px; */
+  font-size:smaller;
+}
+
+.left span {
   margin-left: 3.4vw;
   color: white;
   font-size: 19px;
@@ -56,7 +70,7 @@
 .right {
   display: flex;
   width: 10vw;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   margin-right: 1vw;
 }
@@ -98,4 +112,9 @@
 .edit svg {
   width: 2.6vw;
   height: 2.6vh;
+}
+
+.shoppingListItem.completed {
+  background:#B9B9B9;
+  text-decoration: line-through solid #000 3px; 
 }

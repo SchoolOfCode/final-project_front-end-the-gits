@@ -16,19 +16,18 @@ const ChoresItem = ({
     // to style the list item when completed
     let markAsDone = completed ? 'completed' : 'todo';
 
+  
     console.log(completed)
   
     return (
       <li className={`${styles.shoppingListItem} ${styles[markAsDone]}`}>
         <div className={styles.left}>
-          <p key={id} onClick={() => { toggleItemAsCompleted(id); }}>
+          <span key={id} onClick={() => { toggleItemAsCompleted(id); }}>
             {name}
-          </p>
+          </span>
         </div>
         <div className={styles.right}>
-          <div className={styles.edit}>
-            <FiEdit />
-          </div>
+        <p className={styles.createdBy}>created by</p>
           <div className={styles.background}>
             <img src="/user_avatar_1.svg" width={24} alt="user avatar icon" />
           </div>
