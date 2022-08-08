@@ -1,4 +1,4 @@
-function Profile() {
+function UserProfile() {
   return ( 
     <div>
       <h1>This is empty</h1>
@@ -6,4 +6,4 @@ function Profile() {
    );
 }
 
-export default Profile;
+export default UserProfile;

@@ -26,7 +26,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
                     <a>
             <div onClick={handleClick} className={styles.cardText}>
                     <p>
-                        Terry's
+                        Terrys
                     </p> 
                     <div className={styles.shopName}>
                         {name} 
