@@ -19,8 +19,10 @@
 }
 
 .shoppingListItem.completed {
-  text-decoration: line-through solid #000 3px;
+    background:#B9B9B9;
+    text-decoration: line-through solid #000 3px; 
 }
+
 
 .shoppingListItem:nth-child(4n + 2) {
   background: linear-gradient(90deg, #7b71e6 0%, #867de4 41%, #9b92e9 78%, #aba3ff 100%);

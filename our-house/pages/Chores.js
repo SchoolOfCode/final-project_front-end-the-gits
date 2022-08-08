@@ -44,7 +44,7 @@ const Chores = () => {
         newListItems = [
           ...listItems.slice(0, i),
           { ...listItems[i], completed: !listItems[i].completed },
-          ...listItems.slice(i + 1, listItems.lenght),
+          ...listItems.slice(i + 1, listItems.length),
         ];
         // create db object to udpate
         dbItem.completed = !listItems[i].completed;
