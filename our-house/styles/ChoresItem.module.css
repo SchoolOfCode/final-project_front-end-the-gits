@@ -38,23 +38,8 @@
   font-size: 22px;
 }
 
-/* .middle {
-  display: flex;
-  width: 10vw;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 0;
-  padding:0;
-} */
-
 
 .createdBy {
-  /* display:inline; */
-  /* flex-direction: row; */
-  /* justify-content: flex-end; */
-  /* align-items: flex-end; */
-  /* background-color: green; */
-  /* margin-right: 10px; */
   font-size:smaller;
 }
 
