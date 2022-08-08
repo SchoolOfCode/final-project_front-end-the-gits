@@ -7,25 +7,31 @@ import InputBar from "../components/InputBar";
 import { useUser } from "@auth0/nextjs-auth0/";
 
 const ShopName = () => {
-  const { user } = useUser();
+  const { user, error, isLoading } = useUser();
   const [fetchData, setFetchData] = useState(null);
-  const [shopName, setShopName] = useState(null);
+  const [shopName, setShopName] = useState("");
   const [listItems, setListItems] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isPageLoading, setIsPageLoading] = useState(true);
   const [nameClicked, setNameClicked] = useState(null);
+  
 
   useEffect(() => {
     async function fetchShoppingLists() {
-      const response = await fetch(`${process.env.URL}/shopping-list`);
+      const response = await fetch(`${process.env.URL}/shopping-list/${user.sub}`);
       const data = await response.json();
       setFetchData(data);
-      setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
-      setIsLoading(false);
+      if (data.shoppingListName){
+        setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
+      }
+      setIsPageLoading(false);
     }
-    fetchShoppingLists();
-  }, []);
+    if (!isLoading){
+      fetchShoppingLists()
+    }
+    ;
+  }, [isLoading]);
 
-  if (isLoading) {
+  if (isPageLoading) {
     return <h2>Loading...</h2>;
   }
 
@@ -56,6 +62,7 @@ const ShopName = () => {
       shoppingListName: shopName,
       completed: false,
       username: user.name,
+      sub: user.sub
     };
 
     const data = await fetch(`${process.env.URL}/Shopping-List`, {
@@ -122,22 +129,36 @@ const deleteShop = async (shops) => {
 
 
   // uses item id to toggled between true or false
-  const toggleItemAsCompleted = (id) => {
+  const toggleItemAsCompleted = async (id) => {
     let newListItems = [];
+    const dbItem = {id};
     // find item by id, update the completed key:value and exit loop
     for (let i = 0; i < listItems.length; i++) {
-      if (listItems[i].id === id) {
+      if (listItems[i]._id === id) {
+        // create updated list
         newListItems = [
           ...listItems.slice(0, i),
           { ...listItems[i], completed: !listItems[i].completed },
           ...listItems.slice(i + 1, listItems.lenght),
         ];
+        // create db object to udpate
+        dbItem.completed = !listItems[i].completed;
         break;
       }
     }
+    // update the local state
     setListItems(newListItems);
-  };
 
+    // update the DB with item completed
+    
+    const datat = await fetch(`${process.env.URL}/Shopping-List`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dbItem)
+    })
+  };
 
   return (
     <div className={styles.ShoppingNamelist}>
@@ -151,6 +172,7 @@ const deleteShop = async (shops) => {
           />
           {listItems.map((item, index) => (
             <ShoppingListItem
+              completed={item.completed}
               name={item.item}
               key={index}
               id={item._id}
@@ -168,7 +190,8 @@ const deleteShop = async (shops) => {
             handleClick={updateListOfShops}
           />
           </div>
-          <div className={styles.cardContainer}>
+          {shopName ? (
+            <div className={styles.cardContainer}>
             
             {shopName.map((item, index) => (
               <ShopNameItem
@@ -182,8 +205,13 @@ const deleteShop = async (shops) => {
                 compareName={compareName}
               />
             ))}
-          
-         </div>
+          </div>
+          ) : (
+            <div>
+              <h2>No shops</h2>
+            </div>
+          )}
+         
         </div>
       )}
       </div>
