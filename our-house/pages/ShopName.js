@@ -10,7 +10,7 @@ const ShopName = () => {
   const { user, error, isLoading } = useUser();
   const [fetchData, setFetchData] = useState(null);
   const [shopName, setShopName] = useState("");
-  const [listItems, setListItems] = useState(null);
+  const [listItems, setListItems] = useState([]);
   const [isPageLoading, setIsPageLoading] = useState(true);
   const [nameClicked, setNameClicked] = useState(null);
   
@@ -20,7 +20,7 @@ const ShopName = () => {
       const response = await fetch(`${process.env.URL}/shopping-list/${user.sub}`);
       const data = await response.json();
       setFetchData(data);
-      if (data.shoppingListName){
+      if (!fetchData?.error){
         setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
       }
       setIsPageLoading(false);
@@ -36,16 +36,16 @@ const ShopName = () => {
   }
 
   function compareName(name) {
-    const newListItems = fetchData.filter((item) => {
-      if (item.shoppingListName === name) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-
-    setListItems(newListItems);
-  }
+    if (!fetchData.error) {
+      const newListItems = fetchData.filter((item) => {
+        if (item.shoppingListName === name) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      setListItems(newListItems);
+    }}
 
   const updateShoppingList = async (value, shopName) => {
     const id = String(Math.floor(Math.random() * 100 + 3));
@@ -170,7 +170,7 @@ const deleteShop = async (shops) => {
             name={nameClicked}
             handleClick={updateShoppingList}
           />
-          {listItems.map((item, index) => (
+          {!fetchData.error && listItems.length >0 ? (listItems.map((item, index) => (
             <ShoppingListItem
               completed={item.completed}
               name={item.item}
@@ -179,7 +179,13 @@ const deleteShop = async (shops) => {
               deleteListItem={deleteListItem}
               toggleItemAsCompleted={toggleItemAsCompleted}
             />
-          ))}
+          )) 
+          ) : (
+            <div>
+              <h2>No lists</h2>
+            </div>
+          )}
+          
         </div>
       ) : (
         <div className={styles.shopNames}>
