@@ -144,7 +144,7 @@ const deleteShop = async (shops) => {
 
     // update the DB with item completed
     
-    const datat = await fetch(`${process.env.URL}/Shopping-List`, {
+    const data = await fetch(`${process.env.URL}/Shopping-List`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
