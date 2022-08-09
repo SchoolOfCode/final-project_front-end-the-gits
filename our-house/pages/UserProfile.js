@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from "../styles/UserProfile.module.css"
 import { useUser } from '@auth0/nextjs-auth0';
+import Link from 'next/link';
 
 const UserProfile = () => {
 
@@ -92,7 +93,11 @@ const UserProfile = () => {
             </div>            
           </div>
           <div className={styles.submit}>
+          <Link href="/UserHome">
+          <a>
             <button>Submit</button>
+          </a>
+          </Link>
           </div>
     </div>
   )
