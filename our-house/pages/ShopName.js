@@ -20,7 +20,7 @@ const ShopName = () => {
       const response = await fetch(`${process.env.URL}/shopping-list/${user.sub}`);
       const data = await response.json();
       setFetchData(data);
-      if (!fetchData?.error){
+      if (!data?.error && !fetchData?.error){
         setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
       }
       setIsPageLoading(false);
@@ -159,7 +159,7 @@ const deleteShop = async (shops) => {
       body: JSON.stringify(dbItem)
     })
   };
-
+  
   return (
     <div className={styles.ShoppingNamelist}>
        <div className={styles.shopBox}>
@@ -170,7 +170,7 @@ const deleteShop = async (shops) => {
             name={nameClicked}
             handleClick={updateShoppingList}
           />
-          {!fetchData.error && listItems.length >0 ? (listItems.map((item, index) => (
+          {listItems.length > 0 ? (listItems.map((item, index) => (
             <ShoppingListItem
               completed={item.completed}
               name={item.item}
