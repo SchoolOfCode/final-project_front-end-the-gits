@@ -11,6 +11,27 @@ const Chores = () => {
     {username:"Lee's", name: "Dishes", id:"2", icon:"user_avatar_1.svg", completed: false}])
 
     const [input, setInput] = useState("");
+    
+    // const completedBy = (id)
+      const completedList = listItems.filter ((item) => {
+        if (item.completed === true) {
+          return true
+        } 
+        else {
+          return false
+        }
+      })
+    
+  const choresTodo = listItems.filter ((item) => {
+    if (item.completed === false) {
+      return true
+    } 
+    else {
+      return false
+    }
+  })
+
+    console.log(completedList)
   // takes in a value from the input component
 
   const updateShoppingList = (value) => {
@@ -65,8 +86,12 @@ const Chores = () => {
             handleClick={updateShoppingList}
         />
     </div>
-      <div className={styles.items}>
-        {listItems.map((item, index) => (
+      <div className={styles.todoItems}>
+        {choresTodo.map((item, index) => (
+          <ChoresItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} completed={item.completed}/>))}
+    </div>
+    <div className={styles.completedItems}>
+      {completedList.map((item, index) => (
           <ChoresItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} completed={item.completed}/>))}
     </div>
     </div>
