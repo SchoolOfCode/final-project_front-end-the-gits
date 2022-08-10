@@ -7,39 +7,45 @@ import InputBar from "../components/InputBar";
 import { useUser } from "@auth0/nextjs-auth0/";
 
 const ShopName = () => {
-  const { user } = useUser();
+  const { user, error, isLoading } = useUser();
   const [fetchData, setFetchData] = useState(null);
-  const [shopName, setShopName] = useState(null);
-  const [listItems, setListItems] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [shopName, setShopName] = useState("");
+  const [listItems, setListItems] = useState([]);
+  const [isPageLoading, setIsPageLoading] = useState(true);
   const [nameClicked, setNameClicked] = useState(null);
+  
 
   useEffect(() => {
     async function fetchShoppingLists() {
-      const response = await fetch(`${process.env.URL}/shopping-list`);
+      const response = await fetch(`${process.env.URL}/shopping-list/${user.sub}`);
       const data = await response.json();
       setFetchData(data);
-      setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
-      setIsLoading(false);
+      if (!data?.error && !fetchData?.error){
+        setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
+      }
+      setIsPageLoading(false);
     }
-    fetchShoppingLists();
-  }, []);
+    if (!isLoading){
+      fetchShoppingLists()
+    }
+    ;
+  }, [isLoading]);
 
-  if (isLoading) {
+  if (isPageLoading) {
     return <h2>Loading...</h2>;
   }
 
   function compareName(name) {
-    const newListItems = fetchData.filter((item) => {
-      if (item.shoppingListName === name) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-
-    setListItems(newListItems);
-  }
+    if (!fetchData.error) {
+      const newListItems = fetchData.filter((item) => {
+        if (item.shoppingListName === name) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      setListItems(newListItems);
+    }}
 
   const updateShoppingList = async (value, shopName) => {
     const id = String(Math.floor(Math.random() * 100 + 3));
@@ -56,6 +62,7 @@ const ShopName = () => {
       shoppingListName: shopName,
       completed: false,
       username: user.name,
+      sub: user.sub
     };
 
     const data = await fetch(`${process.env.URL}/Shopping-List`, {
@@ -144,27 +151,26 @@ const deleteShop = async (shops) => {
 
     // update the DB with item completed
     
-    const datat = await fetch(`${process.env.URL}/Shopping-List`, {
+    const data = await fetch(`${process.env.URL}/Shopping-List`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(dbItem)
     })
-    console.log("ARE WE HERE")
   };
-
+  
   return (
     <div className={styles.ShoppingNamelist}>
        <div className={styles.shopBox}>
       {nameClicked ? (
         <div className={styles.items}>
           <InputBar
-            title="Shopping list"
+            title={`${nameClicked} Shopping list`}
             name={nameClicked}
             handleClick={updateShoppingList}
           />
-          {listItems.map((item, index) => (
+          {listItems.length > 0 ? (listItems.map((item, index) => (
             <ShoppingListItem
               completed={item.completed}
               name={item.item}
@@ -173,18 +179,25 @@ const deleteShop = async (shops) => {
               deleteListItem={deleteListItem}
               toggleItemAsCompleted={toggleItemAsCompleted}
             />
-          ))}
+          )) 
+          ) : (
+            <div>
+              <h2>No items</h2>
+            </div>
+          )}
+          
         </div>
       ) : (
         <div className={styles.shopNames}>
           <div className={styles.inputBar}>
           <InputBar
-            title="Your Shopping Lists"
+            title="Create and Save your lists by shop name"
             name={nameClicked}
             handleClick={updateListOfShops}
           />
           </div>
-          <div className={styles.cardContainer}>
+          {shopName ? (
+            <div className={styles.cardContainer}>
             
             {shopName.map((item, index) => (
               <ShopNameItem
@@ -198,8 +211,13 @@ const deleteShop = async (shops) => {
                 compareName={compareName}
               />
             ))}
-          
-         </div>
+          </div>
+          ) : (
+            <div>
+              <h2>No shops added</h2>
+            </div>
+          )}
+         
         </div>
       )}
       </div>

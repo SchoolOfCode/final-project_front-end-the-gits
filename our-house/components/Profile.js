@@ -4,6 +4,7 @@ import styles from "../styles/Profile.module.css"
 
 export default function Profile() {
   const { user, error, isLoading } = useUser();
+  
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
