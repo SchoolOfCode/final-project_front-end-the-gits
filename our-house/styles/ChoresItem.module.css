@@ -103,3 +103,16 @@
   background:#B9B9B9;
   text-decoration: line-through solid #000 3px; 
 }
+
+.todoItems {
+  
+  
+}
+
+.completedItems {
+ 
+}
+
+.choresList {
+  display: flex;
+}
