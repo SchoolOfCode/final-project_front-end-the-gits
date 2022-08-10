@@ -21,6 +21,6 @@ export default withApiAuthRequired(async function shows(req, res) {
     res.json({statusCode: data.statusCode, message: data.message});
   }
 
-  res.status(200).json({user_data: data.user_metadata})
+  res.status(200).json({user_metadata: data.user_metadata})
 
 });
