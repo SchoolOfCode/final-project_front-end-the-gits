@@ -61,7 +61,7 @@ const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/bills">
+          <Link href="/Chores">
             <a>
               <div className={styles.iconContainer}>
                 <div className={styles.notification}>2</div>
@@ -74,20 +74,20 @@ const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/birthdays">
+          <Link href="/Appointments">
             <a>
-              <div className={styles.iconContainer}>
-                <div className={styles.notification}>1</div>
+            <div className={styles.iconContainerNoNotification}>
+                {/* <div className={styles.notification}>1</div> */}
                 <img
                   className={styles["svg-icons"]}
-                  src="/glasses_icon.svg"
+                  src="/appointments_icon.svg"
                   width={70}
                 ></img>
               </div>
             </a>
           </Link>
 
-          <Link href="/chores">
+          <Link href="/Bills">
             <a>
               <div className={styles.iconContainer}>
                 <div className={styles.notification}>4</div>
@@ -100,10 +100,10 @@ const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/Bills">
+          <Link href="/School">
             <a>
-              <div className={styles.iconContainer}>
-                <div className={styles.notification}>1</div>
+            <div className={styles.iconContainerNoNotification}>
+                {/* <div className={styles.notification}>1</div> */}
                 <img
                   className={styles["svg-icons"]}
                   src="/school_icon.svg"
@@ -113,7 +113,7 @@ const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/Bills">
+          <Link href="/Social">
             <a>
               <div className={styles.iconContainer}>
                 <div className={styles.notification}>2</div>
@@ -126,7 +126,7 @@ const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/Bills">
+          <Link href="/Birthdays">
             <a>
               <div className={styles.iconContainer}>
                 <div className={styles.notification}>2</div>
@@ -139,10 +139,11 @@ const Navbar = () => {
             </a>
           </Link>
 
-          <Link href="/Bills">
+          <Link href="/Finances">
             <a>
-              <div className={styles.iconContainer}>
-                <div className={styles.notification}>5</div>
+            
+              <div className={styles.iconContainerNoNotification}>
+                {/* <div className={styles.notification}>5</div> */}
                 <img
                   className={styles["svg-icons"]}
                   src="/finances_icon.svg"

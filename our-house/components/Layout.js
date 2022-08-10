@@ -13,6 +13,9 @@ export const Layout = ({ children }) => {
   const router = useRouter();
 
   // on landing page dont load the navbar or profile bar
+
+ 
+
   if (router.pathname === '/' || router.pathname === '/UserProfile' ) {
     return (
       <div>{children}
