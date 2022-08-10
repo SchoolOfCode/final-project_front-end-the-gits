@@ -9,22 +9,15 @@ const UserProfile = () => {
     "/avatars/avatar_default.svg"
   );
   const [changeColour, setChangeColour] = useState("#868686");
-  const [newMeta, setNewMeta] = useState(null)
+  
 
   const { user, error, isLoading } = useUser();
 
-  useEffect(() => {
-    async function fetchNewMeta() {
-      const response = await fetch(`"/api/userData"/${user.sub}`);
-      const data = await response.json();
-      
-    }
-    fetchNewMeta()
-    ;
-  }, []);
+
+   
 
 
-  async function updateMeta() {
+  async function updateMeta(avatar, colour) {
     const response = await fetch("/api/userData", {
       method: "post",
       headers: {
@@ -32,8 +25,8 @@ const UserProfile = () => {
       },
       body: JSON.stringify({
         user_metadata: {
-          avatar_id: displayAvatar,
-          theme_id: changeColour,
+          avatar_id: avatar,
+          theme_id: colour,
         },
         user_id: user.sub,
       }),
@@ -41,6 +34,12 @@ const UserProfile = () => {
     // data will have the latest metadata
     const data = await response.json();
     // setNewMeta(data)
+    fetchNewMeta();
+  }
+  async function fetchNewMeta() {
+    const response = await fetch(`/api/userData/${user.sub}`);
+    const data = await response.json();
+    console.log("FETCH, ", data)
   }
 
   const avatars = [
@@ -185,7 +184,7 @@ const UserProfile = () => {
         <div className={styles.submit}>
           <Link href="/UserHome">
             <a>
-              <button onClick={updateMeta()}>Submit</button>
+              <button onClick={updateMeta(displayAvatar, changeColour)}>Submit</button>
             </a>
           </Link>
         </div>

@@ -9,7 +9,7 @@ export default handleAuth({
         audience: `${process.env.AUTH0_ISSUER_BASE_URL}/api/v2/`,
         scope: 'openid profile email read:current_user update:current_user_metadata'
       },
-      returnTo: "/UserProfile",
+      returnTo: "/UserHome",
     });
     var options = {
         theme: {
