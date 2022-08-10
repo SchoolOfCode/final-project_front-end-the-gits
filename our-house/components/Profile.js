@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useUser } from "@auth0/nextjs-auth0";
 import styles from "../styles/Profile.module.css";
 import Link from "next/link";
 
 export default function Profile() {
   const { user, error, isLoading } = useUser();
+  const [newMeta, setNewMeta] = useState("")
+
+  useEffect (() => {
+    
+    async function fetchNewMeta() {
+      const response = await fetch(`/api/userData/${user.sub}`);
+      const data = await response.json();
+      // console.log("FETCH, ", data)
+      setNewMeta(data) 
+      console.log(data)
+    }
+    if (!isLoading){
+      fetchNewMeta()
+    }
+    
+  }, [isLoading])
+
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
-  console.log(user.user_metadata.theme_id)
+
+
+
+  // const currentUser = await fetchNewMeta()
+
+  // console.log(currentUser.user_metadata)
   return (
     user && (
       <div className={styles.profile}>
@@ -18,7 +40,11 @@ export default function Profile() {
           </div>
           <Link href="/UserProfile">
             <a>
+            {!newMeta ? (
               <img src={user.user_metadata.avatar_id} alt={user.name} style={{backgroundColor: user.user_metadata.theme_id}}/>
+            ) : (
+              <img src={newMeta.user_metadata.avatar_id} alt={user.name} style={{backgroundColor: newMeta.user_metadata.theme_id}}/>
+            )}
             </a>
           </Link>
         </div>

@@ -35,7 +35,6 @@ const UserProfile = () => {
   async function fetchNewMeta() {
     const response = await fetch(`/api/userData/${user.sub}`);
     const data = await response.json();
-    console.log("FETCH, ", data)
   }
 
   const avatars = [
