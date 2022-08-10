@@ -166,7 +166,7 @@ const deleteShop = async (shops) => {
       {nameClicked ? (
         <div className={styles.items}>
           <InputBar
-            title="Shopping list"
+            title={`${nameClicked} Shopping list`}
             name={nameClicked}
             handleClick={updateShoppingList}
           />
@@ -182,7 +182,7 @@ const deleteShop = async (shops) => {
           )) 
           ) : (
             <div>
-              <h2>No lists</h2>
+              <h2>No items</h2>
             </div>
           )}
           
@@ -191,7 +191,7 @@ const deleteShop = async (shops) => {
         <div className={styles.shopNames}>
           <div className={styles.inputBar}>
           <InputBar
-            title="Your Shopping Lists"
+            title="Create and Save your lists by shop name"
             name={nameClicked}
             handleClick={updateListOfShops}
           />
@@ -214,7 +214,7 @@ const deleteShop = async (shops) => {
           </div>
           ) : (
             <div>
-              <h2>No shops</h2>
+              <h2>No shops added</h2>
             </div>
           )}
          
