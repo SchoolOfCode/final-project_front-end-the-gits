@@ -80,7 +80,7 @@ const Chores = () => {
 
   return (
     <div className={styles.ShoppingNamelist}>
-      <div>
+      <div className={styles.choresWrapper}>
         <div>
           <div className={styles.heading}>
             <InputBar 

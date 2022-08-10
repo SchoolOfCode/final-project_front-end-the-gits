@@ -9,15 +9,23 @@
     height: 100vh;
 }
 
+.choresWrapper {
+    width: 76%;
+}
 
 .choresList {
     row-gap: 1em;
 }
+
 
 @media screen and (min-width: 1200px) {
     .choresList {
         display: flex;
         justify-content: space-evenly;
         column-gap: 1em;
+    }
+    .todoItems,
+    .completedItems {
+        width: 50%;
     }
 }
