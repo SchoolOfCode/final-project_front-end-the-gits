@@ -6,7 +6,25 @@ import Link from 'next/link';
 // import Profile from '../components/Profile';
 
 const UserProfile = () => {
-
+  async function updateMeta() {
+    const response = await fetch('/api/userData', {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        user_metadata: {
+          avatar_id: displayAvatar,
+          theme_id: changeColour
+        },
+        user_id: user.sub
+      })
+    })
+    // data will have the latest metadata
+    const data = await response.json()
+    console.log(data)
+    console.log(user)
+   }
  
 
   const avatars = [
@@ -25,7 +43,7 @@ const UserProfile = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
-  console.log(user)
+  // console.log(user)
 
   const handleClick = (index) => {
 
@@ -40,7 +58,7 @@ const UserProfile = () => {
      
   }}
   
-    
+    updateMeta()
   console.log(displayAvatar)
   }
 

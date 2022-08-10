@@ -16,9 +16,9 @@ export default function Profile() {
           <div className={styles.right}>
             <h2>{user.name}</h2>
           </div>
-          <Link href="/UserHome">
+          <Link href="/UserProfile">
             <a>
-              <img src="/user_avatar_1.svg" alt={user.name} />
+              <img src={user.user_metadata.avatar_id} alt={user.name} />
             </a>
           </Link>
         </div>
