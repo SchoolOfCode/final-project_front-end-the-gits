@@ -18,7 +18,7 @@ const ShoppingListItem = ({
   let markAsDone = completed ? 'completed' : 'todo';
 
   return (
-    <li className={`${styles.shoppingListItem} ${styles[markAsDone]}`}>
+    <li className={`${styles.shoppingListItem} ${styles[markAsDone]} theme-shoppinglist-item`}>
       <div className={styles.left}>
         <p key={id} onClick={() => { toggleItemAsCompleted(id); }}>
           {name}

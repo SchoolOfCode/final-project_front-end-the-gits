@@ -20,7 +20,7 @@ const ChoresItem = ({
     console.log(completed)
   
     return (
-      <li className={`${styles.shoppingListItem} ${styles[markAsDone]}`}>
+      <li className={`${styles.shoppingListItem} ${styles[markAsDone]} theme-chores-item`}>
         <div className={styles.left}>
           <span key={id} onClick={() => { toggleItemAsCompleted(id); }}>
             {name}

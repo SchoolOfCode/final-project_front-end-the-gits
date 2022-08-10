@@ -29,12 +29,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`${styles.navbar} ${styles[isMenuOpen.className]}`}>
+      <nav className={`${styles.navbar} ${styles[isMenuOpen.className]} theme-navbar`}>
         <button
           onClick={() => {
             revealMenu();
           }}
-          className={styles["mobile-menu-button"]}
+          className={`${styles["mobile-menu-button"]} theme-mobile-button`}
         ></button>
 
         <Link href="/UserHome">

@@ -8,7 +8,7 @@ const InputBar = ({ title, name, handleClick }) => {
   return (
     <div className={styles.inputContainer}>
       <h1 className={styles.heading}>{title}</h1>
-      <div className={styles.inputBar}>
+      <div className={`${styles.inputBar} theme-input-bar`}>
       <input
         className={styles.input}
         type="text"

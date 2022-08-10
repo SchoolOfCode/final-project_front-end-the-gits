@@ -68,7 +68,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
                     
                     
             </div>
-            <div className={styles.avatarsNotification}>
+            <div className={`${styles.avatarsNotification} theme-avatar-notification`}>
                   <div className={styles.avatarBox1}>
                       <div className={styles.notification1}>1</div>
                       <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />
