@@ -6,7 +6,7 @@ export default handleAuth({
   async login(req, res) {
     await handleLogin(req, res, {
       authorizationParams: {
-        audience: 'https://dev-addbc3gj.us.auth0.com/api/v2/',
+        audience: `${process.env.AUTH0_ISSUER_BASE_URL}/api/v2/`,
         scope: 'openid profile email read:current_user update:current_user_metadata'
       },
       returnTo: "/UserHome",

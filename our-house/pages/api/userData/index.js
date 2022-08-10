@@ -7,7 +7,7 @@ export default withApiAuthRequired(async function shows(req, res) {
   // grab the user metadata object and user id
   const {user_metadata, user_id} = req.body;
   // using the Management API update the user_metadata
-  const response = await fetch(`https://dev-addbc3gj.us.auth0.com/api/v2/users/${user_id}`, {
+  const response = await fetch(`${process.env.AUTH0_ISSUER_BASE_URL}/api/v2/users/${user_id}`, {
     method: 'PATCH',
     headers: {
       authorization: `Bearer ${accessToken}`,
