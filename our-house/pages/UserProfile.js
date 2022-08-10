@@ -180,7 +180,7 @@ const UserProfile = () => {
         <div className={styles.submit}>
           <Link href="/UserHome">
             <a>
-              <button onClick={updateMeta(displayAvatar, changeColour)}>Submit</button>
+              <button onClick={() => updateMeta(displayAvatar, changeColour)}>Submit</button>
             </a>
           </Link>
         </div>
