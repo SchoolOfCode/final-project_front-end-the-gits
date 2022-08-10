@@ -15,7 +15,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     async function fetchNewMeta() {
-      const response = await fetch(`"/api/userData"/${user.sub}`);
+      const response = await fetch(`"/api/userData/${user.sub}`);
       const data = await response.json();
       
     }
