@@ -57,8 +57,6 @@ const UserProfile = () => {
       setDisplayAvatar(displayAvatar)
       
   }}
-  
-    updateMeta()
   console.log(displayAvatar)
   }
 
@@ -73,7 +71,7 @@ const UserProfile = () => {
       setChangeColour(changeColour)
      
   }}
-
+  
     console.log(changeColour)
   }
   
@@ -124,7 +122,7 @@ const UserProfile = () => {
           <div className={styles.submit}>
           <Link href="/UserHome">
           <a>
-            <button>Submit</button>
+            <button onClick={updateMeta()}>Submit</button>
           </a>
           </Link>
           </div>
