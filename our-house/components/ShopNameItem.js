@@ -34,7 +34,11 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
                     <a>
             <div onClick={handleClick} className={styles.cardText}>
                     <p>
+
                       {user.name} 
+
+                   
+
                     </p> 
                     <div className={styles.shopName}>
                         {name} 
