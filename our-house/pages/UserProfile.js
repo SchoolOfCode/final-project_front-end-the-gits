@@ -55,7 +55,7 @@ const UserProfile = () => {
       displayAvatar = avatars[i].avatar;
    
       setDisplayAvatar(displayAvatar)
-     
+      
   }}
   
     updateMeta()

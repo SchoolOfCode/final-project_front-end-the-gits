@@ -8,7 +8,7 @@ export default function Profile() {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
-
+  console.log(user.user_metadata.theme_id)
   return (
     user && (
       <div className={styles.profile}>
@@ -18,7 +18,7 @@ export default function Profile() {
           </div>
           <Link href="/UserProfile">
             <a>
-              <img src={user.user_metadata.avatar_id} alt={user.name} />
+              <img src={user.user_metadata.avatar_id} alt={user.name} style={{backgroundColor: user.user_metadata.theme_id}}/>
             </a>
           </Link>
         </div>
