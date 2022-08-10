@@ -11,10 +11,12 @@ export default function Home() {
         <img src="/home_logo_final.svg" alt="" />
         </div>
         <div className={styles.left}>
-          <h1>Our House</h1>
-          <div className={styles.text}>
-            <p>Your one stop shop</p>
-            <p>to organise your home</p>
+          <div className={styles.textbox}>
+              <h1>Our House</h1>
+              <div className={styles.text}>
+                <p>Your one stop shop</p>
+                <p>to organise your home</p>
+           
           </div>
           <div className={styles.buttons}>
           <Link href="/api/auth/login">
@@ -22,6 +24,8 @@ export default function Home() {
             <button>Login / Sign-up</button>
           </a>
         </Link>
+          </div>
+
           </div>
         </div>
       </div>

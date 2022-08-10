@@ -4,22 +4,34 @@
 .home {
   display: flex;
   flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
 
 
 .home .left {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
   width: 40vw;
-  height: 100%;
+  height: 94vh;
   font-family: 'Roboto', sans-serif;
-  padding-top: 30vh;
   padding-left: 12vw;
-  
+}
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 80%;
+  padding-right: 140px;
+  padding-top: 60px;
+
 }
 
 .home .left h1 {
@@ -74,7 +86,7 @@
 
 .home .left button:hover {
  
-  transform: scale(1.01);
+  
   transition: 0.3;
   background-color: rgb(185, 126, 240);;
   box-shadow: 3px 3px 4px 3px #2e2e2e;
@@ -83,18 +95,25 @@
 
 .home .right {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 55vw;
-  height: 100vh; 
+  height: 94vh; 
+  
 }
 
 .home .right img {
   width: 33vw;
   z-index: 3;
-  padding-bottom: 3vh;
+  padding-right: 180px;
+  padding-bottom: 50px;
+  /* padding-bottom: 3vh; */
 }
 
+
+.footer {
+  margin-left: 0vw;
+}
 
 
 
@@ -102,106 +121,124 @@
   
   .home {
     display: flex;
+    justify-self: center;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
    
   }
   
+  
   .home .left {
-    
-    width: 100vw;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 40%;
     font-family: 'Roboto', sans-serif;
-    padding-top: 2vh;
-    padding-right: 5vw;
-    
+    padding-left: 0vw;
+  }
+  
+  .textbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    padding-right: 0px;
+    padding-top: 0px;
+  
   }
   
   .home .left h1 {
-    font-size: 64px;
-    font-weight: bold;
-    margin-bottom: 5vh;
-    margin-top: 2vh;
+    font-size: 54px;
+    font-weight: bolder;
+    margin-bottom: 3vh;
+    color: #302f2f;
   }
-
+  
   .text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70vw;
-    margin-top: 1vh;
+    width: 90vw;
   }
   
   .home .left p {
-    font-size: 28px;
+    font-size: 24px;
     margin: 0;
-    margin-top: 0.4vh;
+    margin-top: 1vh;
     font-weight: 500;
   }
   
- .buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 20vh;
-    width: 60vw;
-    margin-top: 4vh;
-    margin-bottom: 2vh;
-
- }
+  /* .home .left .buttons{
+  
+  } */
   
   
   .home .left button {
-    margin-top: 0;
-    margin: 3.4vh 1vw 0 1vw;
-    width: 32vw;
-    height: 4.4vh;
+    
+    margin: 9vh 1vw 9vw 1vw;
+    width: 128px;
+    height: 34px;
     border-radius: 8px;
     border: none;
-    background-color: rgb(116, 83, 207);
-    font-size: 17px;
+    background-color: rgb(179, 114, 240);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
     font-weight: bold;
     box-shadow: 2px 2px 5px 3px #000000;
-    text-align: center;
   }
   
   .home .left .signup {
-    background-color: rgb(160, 134, 231);
+    background-color: rgb(188, 150, 248);
   
   }
   .home .left .signup:hover {
-    background-color: rgb(172, 147, 240);
+    background-color: rgb(189, 153, 247);
   }
   
-
+  .home .left button:hover {
+   
+    
+    transition: 0.3;
+    background-color: rgb(185, 126, 240);;
+    box-shadow: 3px 3px 4px 3px #2e2e2e;
+  }
+  
   
   .home .right {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50vw;
-    height: 94vh;
-   
+    width: 100%;
+    height: 48vh; 
+    
   }
   
   .home .right img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5vh;
-    margin-left: 7.6vw;
-    width: 64vw;
-    height: 40vh;
+    width: 56vw;
+    z-index: 3;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 20px;
+    /* padding-bottom: 3vh; */
   }
   
   
+  .footer {
+    margin-left: 0vw;
+  }
+
 }
 
-@media only screen and (max-width: 390px) {
+/* @media only screen and (max-width: 390px) {
   
 
   
@@ -255,4 +292,4 @@
   
   
 }
-
+ */

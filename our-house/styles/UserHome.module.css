@@ -13,7 +13,8 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 80vh;
+  min-height: 100%;
+  height: auto;
   margin-top: 10px;
   /* margin-left: 7.4vw; */
 }
@@ -28,6 +29,7 @@
   min-height: 60%;
   margin-left: 7.4vw;
   row-gap: 30px; 
+  margin-bottom: 50px;
 }
 
 .cardContainer {
@@ -47,22 +49,66 @@
   align-items: center;
   width: 310px;
   height: 160px;
-  box-shadow: 1px 1px 2px 2px #4e4e4e;
+  box-shadow: 1px 1px 2px 1px #4e4e4e;
   border-radius: 8px 8px 0 0;
- 
-  
-  
+  margin-top: 20px;
 }
 
-.avatar {
+.cardIcon {
   position: relative;
-  top: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 80px;
+  top: 60px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px 1px #4e4e4e;
+  
 }
 
-.cardContainer img {
-  width: 100px;
-  height: 100px;
+.shopping img{
+  width: 64px;
+  height: 64px;
 }
+
+.chores img{
+  width: 58px;
+  height: 58px;
+}
+
+.appointments img{
+  width: 70px;
+  height: 70px;
+}
+
+.bills img{
+  width: 70px;
+  height: 70px;
+}
+
+.school img{
+  width: 58px;
+  height: 58px;
+}
+
+.events img{
+  width: 58px;
+  height: 58px;
+}
+
+.birthdays img{
+  width: 55px;
+  height: 55px;
+}
+
+.finances img{
+  width: 60px;
+  height: 60px;
+}
+
+
 
 .title {
   font-size: 22px;
@@ -89,8 +135,7 @@
   
   width: 310px;
   background: linear-gradient(90deg, #8A82E8 0%, #a29af8 41%, #aea6ff 78%, #bbb5fa 100%);
-  box-shadow: 1px 1px 2px 2px #474747;
-  border: 2px solid #1d1d1d;
+  box-shadow: 1px 1px 1px 2px #474747;
   border-radius: 0 0 8px 8px;
   box-sizing: border-box;
   padding-bottom: 10px;
@@ -301,7 +346,7 @@
     /* Controls the cards */
     .userHome {
       width: 100%;
-      height: 100vh;
+      min-height: 100%;
       margin-top: 10px;
       /* margin-left: 7.4vw; */
     }
@@ -309,13 +354,14 @@
     .cards {
       display: flex;
       justify-content: space-around;
-      align-items: flex-end;
+      align-items: flex-start;
       flex-wrap: wrap;
       flex-direction: row;
       width: 74%;
       min-height: 60%;
       margin-left: 0vw;
       row-gap: 30px; 
+      margin-top: 80px;
     }
     
     .cardContainer {
@@ -332,28 +378,75 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 310px;
-      height: 160px;
+      width: 250px;
+      height: 120px;
       /* box-shadow: 1px 1px 2px 2px #4e4e4e; */
       border-radius: 8px 8px 0 0;
       background-color: white;
       border: 0px;
+      margin-top: 0;
       
       
     }
-    
-    .avatar {
+    .cardIcon {
       position: relative;
-      top: 46px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 110px;
+      height: 70px;
+      top: 34px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 1px 1px 2px 1px #4e4e4e;
+      
     }
     
-    .cardContainer img {
-      width: 100px;
-      height: 100px;
+    .shopping img{
+      width: 50px;
+      height: 50px;
     }
+    
+    .chores img{
+      width: 44px;
+      height: 44px;
+    }
+    
+    .appointments img{
+      width: 56px;
+      height: 56px;
+    }
+    
+    .bills img{
+      width: 56px;
+      height: 56px;
+    }
+    
+    .school img{
+      width: 44px;
+      height: 44px;
+    }
+    
+    .events img{
+      width: 44px;
+      height: 44px;
+    }
+    
+    .birthdays img{
+      width: 41px;
+      height: 41px;
+    }
+    
+    .finances img{
+      width: 44px;
+      height: 44px;
+    }
+    
+    
+  
     
     .title {
-      font-size: 22px;
+      font-size: 18px;
       font-weight: bold;
       /* padding-bottom: 40px; */
       font-family: roboto;
@@ -373,7 +466,7 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      /* height: 80px; */
+      height: 50px;
       
       /* width: 310px; */
       background: linear-gradient(90deg, #8A82E8 0%, #a29af8 41%, #aea6ff 78%, #bbb5fa 100%);
@@ -405,8 +498,8 @@
         border-radius: 50%;
         
         border: 3px solid black;
-        width: 30px;
-        height: 30px;
+        width: 27px;
+        height: 27px;
         background-color: rgb(116, 199, 253);
         box-shadow: 1px 4px 6px -1px #585858;
       }
@@ -418,8 +511,8 @@
         border-radius: 50%;
         
         border: 3px solid black;
-        width: 30px;
-        height: 30px;
+        width: 27px;
+        height: 27px;
         background-color: rgb(100, 204, 100);
         box-shadow: 1px 4px 6px -1px #585858;
       }
@@ -431,8 +524,8 @@
         border-radius: 50%;
         
         border: 3px solid black;
-        width: 30px;
-        height: 30px;
+        width: 27px;
+        height: 27px;
         background-color: rgb(228, 151, 252);
         box-shadow: 1px 4px 6px -1px #585858;
       }
@@ -444,8 +537,8 @@
         border-radius: 50%;
         
         border: 3px solid black;
-        width: 30px;
-        height: 30px;
+        width: 27px;
+        height: 27px;
         background-color: rgb(255, 116, 116);
         box-shadow: 1px 4px 6px -1px #585858;
       }
@@ -457,12 +550,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
         background-color: rgb(116, 199, 253);
         border: 2px solid black;
         color: white;
-        font-size: 13px;
+        font-size: 10px;
         font-family: roboto;
         
       
@@ -475,12 +568,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
         background-color: rgb(100, 204, 100);
         border: 2px solid black;
         color: white;
-        font-size: 13px;
+        font-size: 10px;
         font-family: roboto;
       
       }
@@ -492,12 +585,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
         background-color: rgb(228, 151, 252);
         border: 2px solid black;
         color: white;
-        font-size: 13px;
+        font-size: 10px;
         font-family: roboto;
       
       }
@@ -511,12 +604,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
         background-color: rgb(255, 116, 116);
         border: 2px solid black;
         color: white;
-        font-size: 13px;
+        font-size: 10px;
         font-family: roboto;
       
       }
@@ -530,12 +623,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
         background-color: red;
         border: 2px solid black;
         color: white;
-        font-size: 13px;
+        font-size: 10px;
         font-family: roboto;
       
       }

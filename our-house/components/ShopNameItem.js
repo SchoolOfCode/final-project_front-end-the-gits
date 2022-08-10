@@ -41,11 +41,8 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
 
                     </p> 
                     <div className={styles.shopName}>
-                        {name} 
+                        {name} <p>'s List</p>
                     </div>
-                    <p>
-                       new list
-                    </p>
             </div>
             </a>
             
