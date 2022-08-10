@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "../styles/UserProfile.module.css";
 import { useUser } from "@auth0/nextjs-auth0";
 import Link from "next/link";
@@ -8,10 +8,8 @@ const UserProfile = () => {
     "/avatars/avatar_default.svg"
   );
   const [changeColour, setChangeColour] = useState("#868686");
-  
 
   const { user, error, isLoading } = useUser();
-
 
   async function updateMeta(avatar, colour) {
     const response = await fetch("/api/userData", {
@@ -28,12 +26,6 @@ const UserProfile = () => {
       }),
     });
     // data will have the latest metadata
-    const data = await response.json();
-    // setNewMeta(data)
-    fetchNewMeta();
-  }
-  async function fetchNewMeta() {
-    const response = await fetch(`/api/userData/${user.sub}`);
     const data = await response.json();
   }
 
@@ -97,8 +89,6 @@ const UserProfile = () => {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
-
-  
 
   const handleClick = (index) => {
     for (let i = 0; i < avatars.length; i++) {
@@ -179,7 +169,9 @@ const UserProfile = () => {
         <div className={styles.submit}>
           <Link href="/UserHome">
             <a>
-              <button onClick={() => updateMeta(displayAvatar, changeColour)}>Submit</button>
+              <button onClick={() => updateMeta(displayAvatar, changeColour)}>
+                Submit
+              </button>
             </a>
           </Link>
         </div>

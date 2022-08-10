@@ -5,32 +5,22 @@ import Link from "next/link";
 
 export default function Profile() {
   const { user, error, isLoading } = useUser();
-  const [newMeta, setNewMeta] = useState("")
+  const [newMeta, setNewMeta] = useState("");
 
-  useEffect (() => {
-    
+  useEffect(() => {
     async function fetchNewMeta() {
       const response = await fetch(`/api/userData/${user.sub}`);
       const data = await response.json();
-      // console.log("FETCH, ", data)
-      setNewMeta(data) 
-      console.log(data)
+      setNewMeta(data);
     }
-    if (!isLoading){
-      fetchNewMeta()
+    if (!isLoading) {
+      fetchNewMeta();
     }
-    
-  }, [isLoading])
-
+  }, [isLoading]);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
-
-
-  // const currentUser = await fetchNewMeta()
-
-  // console.log(currentUser.user_metadata)
   return (
     user && (
       <div className={styles.profile}>
@@ -40,11 +30,19 @@ export default function Profile() {
           </div>
           <Link href="/UserProfile">
             <a>
-            {!newMeta ? (
-              <img src={user.user_metadata.avatar_id} alt={user.name} style={{backgroundColor: user.user_metadata.theme_id}}/>
-            ) : (
-              <img src={newMeta.user_metadata.avatar_id} alt={user.name} style={{backgroundColor: newMeta.user_metadata.theme_id}}/>
-            )}
+              {!newMeta ? (
+                <img
+                  src={user.user_metadata.avatar_id}
+                  alt={user.name}
+                  style={{ backgroundColor: user.user_metadata.theme_id }}
+                />
+              ) : (
+                <img
+                  src={newMeta.user_metadata.avatar_id}
+                  alt={user.name}
+                  style={{ backgroundColor: newMeta.user_metadata.theme_id }}
+                />
+              )}
             </a>
           </Link>
         </div>
