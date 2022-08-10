@@ -86,14 +86,16 @@ const Chores = () => {
             handleClick={updateShoppingList}
         />
     </div>
-      <div className={styles.todoItems}>
-        {choresTodo.map((item, index) => (
-          <ChoresItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} completed={item.completed}/>))}
-    </div>
-    <div className={styles.completedItems}>
-      {completedList.map((item, index) => (
-          <ChoresItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} completed={item.completed}/>))}
-    </div>
+      <div className={styles.choresList}>
+        <div className={styles.todoItems}>
+          {choresTodo.map((item, index) => (
+            <ChoresItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} completed={item.completed}/>))}
+        </div>
+        <div className={styles.completedItems}>
+          {completedList.map((item, index) => (
+            <ChoresItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} completed={item.completed}/>))}
+        </div>
+      </div>
     </div>
   )
 }

@@ -18,10 +18,8 @@
       margin-bottom: 60px;
   }
 
-  .todoItems {
 
-  }
-
-  .completedItems {
-      
-  }
+.choresList {
+    display: flex;
+    justify-content: space-evenly;
+}
