@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
 
-
 .profile{
     display: flex;
     justify-content: flex-end;
@@ -42,7 +41,7 @@
       border: 5px solid rgb(31, 31, 31);
       width: 100px;
       height: 100px;
-      background-color: rgb(255, 45, 87);
+      /* background-color: rgb(255, 45, 87); */
   
   }
   
