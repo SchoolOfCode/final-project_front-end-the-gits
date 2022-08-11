@@ -4,6 +4,10 @@ import { FiEdit } from 'react-icons/fi'
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { GiRecycle } from 'react-icons/gi';
 
+export function sum(a, b) {
+  return a + b;
+}
+
 const ChoresItem = ({
     name,
     completed,
@@ -15,6 +19,10 @@ const ChoresItem = ({
   
     // to style the list item when completed
     let markAsDone = completed ? 'completed' : 'todo';
+
+  
+
+
 
   
     console.log(completed)
