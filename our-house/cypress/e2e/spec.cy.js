@@ -19,6 +19,11 @@ context("Auth0 login", ()=>{
     cy.visit("https://final-project-front-end-the-gits.vercel.app/UserHome")
     cy.get("h2");
   })
+
+  it("test user can click on the shopping list card", () => {
+    cy.visit("https://final-project-front-end-the-gits.vercel.app/UserHome");
+    cy.get('a[href="/ShopName"]').first().click()
+  })
 })
 
 
