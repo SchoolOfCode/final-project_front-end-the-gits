@@ -5,16 +5,18 @@
     justify-content: flex-start;
     padding-left: 17px;
     width: calc(100vw - 17px);
-    width: 100vw;
+    width: 100%;
     min-height: 75vh;
     height: auto;
+    margin-left: auto;
+    margin-right: auto;
     /* margin-left: 3.7vw; */
     margin-bottom: 5vh;
 }
 
 .choresWrapper {
     width: 76%;
-    margin-left: 7.4vw;
+    margin-left: 0vw;
 }
 
 .choresList {
@@ -24,6 +26,11 @@
 
 
 @media screen and (min-width: 1200px) {
+
+    .choresWrapper {
+        width: 76%;
+        margin-left: 7.4vw;
+    }
     .choresList {
         display: flex;
         justify-content: space-evenly;

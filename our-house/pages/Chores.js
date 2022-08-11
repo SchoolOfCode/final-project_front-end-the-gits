@@ -87,7 +87,7 @@ const Chores = () => {
             />
       </div>
       <div className={styles.choresWrapper}>
-        <div>
+        
           
           <div className={styles.choresList}>
             <div className={styles.todoItems}>
@@ -99,7 +99,7 @@ const Chores = () => {
                 <ChoresItem name={item.name} key={index} id={item.id} deleteListItem={deleteListItem} toggleItemAsCompleted={toggleItemAsCompleted} completed={item.completed}/>))}
             </div>
           </div>
-        </div>
+        
       </div>
     </div>
   )
