@@ -118,7 +118,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 7vh;
+    min-height: 7vh;
+    height: auto;
     width: 76vw;
     background: linear-gradient(90deg, #8A82E8 0%, #a29af8 41%, #aea6ff 78%, #bbb5fa 100%);
     /* background-color: #8A82E8; */
@@ -164,6 +165,7 @@
   }
   
   .left span {
+    min-height: 2em;
     margin-left: 1.4em;
     color: white;
     font-size: 13px;
