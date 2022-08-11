@@ -75,6 +75,14 @@
   margin-left: 0vw;
 }
 
+.items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1em;
+}
 }
  
   
