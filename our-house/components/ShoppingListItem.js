@@ -1,35 +1,46 @@
 import React, { useState } from "react";
 import styles from "../styles/ShoppingListItem.module.css";
-import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { useUser } from "@auth0/nextjs-auth0";
+import { useUserMeta } from "../utils/UserMetaContext";
 
-import { GiRecycle } from "react-icons/gi";
 
 const ShoppingListItem = ({
   name,
   completed,
-  icon,
   id,
   deleteListItem,
   toggleItemAsCompleted,
 }) => {
+  const { user, error, isLoading } = useUser();
+  const metaUser = useUserMeta()
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
 
   // to style the list item when completed
-  let markAsDone = completed ? 'completed' : 'todo';
+  let markAsDone = completed ? "completed" : "todo";
 
   return (
-    <li className={`${styles.shoppingListItem} ${styles[markAsDone]} theme-shoppinglist-item`}>
+    <li
+      className={`${styles.shoppingListItem} ${styles[markAsDone]} theme-shoppinglist-item`}
+    >
       <div className={styles.left}>
-        <p key={id} onClick={() => { toggleItemAsCompleted(id); }}>
+        <p
+          key={id}
+          onClick={() => {
+            toggleItemAsCompleted(id);
+          }}
+        >
           {name}
         </p>
       </div>
       <div className={styles.right}>
-        <div className={styles.edit}>
-          <FiEdit />
-        </div>
-        <div className={styles.background}>
-          <img src="/user_avatar_1.svg" width={24} alt="user avatar icon" />
+        <div
+          className={styles.background}
+          style={{ backgroundColor: metaUser.user_metadata.theme_id }}
+        >
+          <img src={metaUser.user_metadata.avatar_id} alt="user avatar icon" />
         </div>
         <div
           className={styles.delete}

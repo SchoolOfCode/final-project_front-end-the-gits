@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-// import styles from '../styles/Profile.module.css'
+import styles from '../styles/Layout.module.css'
 import { useRouter } from "next/router";
 import Profile from './Profile';
 import Footer from "./Footer";
@@ -22,7 +22,7 @@ export const Layout = ({ children }) => {
     // load navbar and profile bar
     return (
       <UserMetaProvider>
-        <div>
+        <div className={styles.container}>
           <Profile />
           <Navbar/>
           {children}

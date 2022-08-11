@@ -111,7 +111,7 @@
   justify-content: center;
   align-items: center;
   border: none;
-  color: rgb(214, 0, 0);
+  color: rgb(237, 15, 15);
   width: 1.6vw;
 }
 .edit {
@@ -119,8 +119,8 @@
   color: rgb(61, 61, 61);
 }
 .edit svg, .delete svg {
-  width: 2.6vw;
-  height: 2.6vh;
+  width: 5vw;
+  height: 5vh;
   cursor: pointer;
 }
 .edit svg {
@@ -465,6 +465,7 @@
     
     .iconRight {
       display: flex;
+      height: 10rem;
     }
     
     .edit, .delete {
@@ -472,16 +473,16 @@
       justify-content: center;
       align-items: center;
       border: none;
-      color: rgb(214, 0, 0);
-      width: 1.6vw;
+      color: rgb(233, 26, 26);
+      width: 10vw;
     }
     .edit {
       margin-right: 0.2vw;
       color: rgb(61, 61, 61);
     }
     .edit svg, .delete svg {
-      width: 2.6vw;
-      height: 2.6vh;
+      width: 9vw;
+      height: 9vh;
       cursor: pointer;
     }
     .edit svg {
@@ -510,7 +511,7 @@
       margin-top: 50px;
       top: -50px;
       cursor: pointer;
-      background-color: aqua;
+      /* background-color: aqua; */
     }
     
     .cardText p {
@@ -527,7 +528,9 @@
       justify-content: center;
       align-items: center;
       width: 300px;
-      height: 250px;
+      height: 220px;
+      margin-top: 0;
+      margin-bottom: 0;
     }
     
     .shopName{
@@ -537,7 +540,7 @@
       font-size: 20px;
       font-weight: bold;
       margin: 2px auto;
-      color: rgb(255, 45, 87);
+      color: rgb(64, 38, 209);
       letter-spacing: 0.5px;
       width: 80%;
     
