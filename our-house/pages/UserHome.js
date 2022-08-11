@@ -20,7 +20,7 @@ const UserHome = () => {
                     <div className={styles.title}>Shopping</div>                
                 </div>
             </div>
-            <div className={styles.avatarsNotification}>
+            <div className={`${styles.avatarsNotification} theme-avatar-notification`}>
                   <div className={styles.avatarBox1}>
                       <div className={styles.notification1}>1</div>
                       <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />
@@ -51,7 +51,7 @@ const UserHome = () => {
                     <div className={styles.title}>Chores</div>                
                 </div>
             </div>
-            <div className={styles.avatarsNotification}>
+            <div className={`${styles.avatarsNotification} theme-avatar-notification`}>
                   <div className={styles.avatarBox1}>
                       <div className={styles.notification1}>1</div>
                       <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />
@@ -79,7 +79,7 @@ const UserHome = () => {
                     <div className={styles.title}>Appointments</div>                
                 </div>
             </div>
-            <div className={styles.avatarsNotification}>
+            <div className={`${styles.avatarsNotification} theme-avatar-notification`}>
                   <div className={styles.avatarBox1}>
                       <div className={styles.notification1}>2</div>
                       <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />
@@ -107,7 +107,7 @@ const UserHome = () => {
                     <div className={styles.title}>Household Bills</div>                
                 </div>
             </div>
-            <div className={styles.avatarsNotification}>
+            <div className={`${styles.avatarsNotification} theme-avatar-notification`}>
                   <div className={styles.avatarBox1}>
                       <div className={styles.notification1}>1</div>
                       <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />
@@ -131,7 +131,7 @@ const UserHome = () => {
                     <div className={styles.title}>School Events</div>                
                 </div>
             </div>
-            <div className={styles.avatarsNotification}>
+            <div className={`${styles.avatarsNotification} theme-avatar-notification`}>
                   
                   <div className={styles.avatarBox2}>
                       <div className={styles.notification2}>1</div>
@@ -151,7 +151,7 @@ const UserHome = () => {
                     <div className={styles.title}>Social Events</div>                
                 </div>
             </div>
-            <div className={styles.avatarsNotification}>
+            <div className={`${styles.avatarsNotification} theme-avatar-notification`}>
                   <div className={styles.avatarBox1}>
                       <div className={styles.notification1}>1</div>
                       <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />
@@ -182,7 +182,7 @@ const UserHome = () => {
                         <div className={styles.title}>Birthdays</div>                
                     </div>
                 
-                <div className={styles.avatarsNotification}>
+                <div className={`${styles.avatarsNotification} theme-avatar-notification`}>
                     <div className={styles.avatarBox1}>
                         <div className={styles.notification1}>1</div>
                         <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />
@@ -207,7 +207,7 @@ const UserHome = () => {
                     <div className={styles.title}>Finances</div>                
                 </div>
             </div>
-            <div className={styles.avatarsNotification}>
+            <div className={`${styles.avatarsNotification} theme-avatar-notification`}>
                   <div className={styles.avatarBox1}>
                       <div className={styles.notification1}>2</div>
                       <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />

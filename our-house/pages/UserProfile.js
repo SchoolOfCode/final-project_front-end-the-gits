@@ -76,7 +76,7 @@ const UserProfile = () => {
     { background_color: "#6CBEED", theme_id: 4 },
     { background_color: "#F85A3E", theme_id: 5 },
     { background_color: "#26F0F1", theme_id: 6 },
-    { background_color: "rgb(238, 77, 184)", theme_id: 7 },
+    { background_color: "#ee4db8", theme_id: 7 },
     { background_color: "#FFCF56", theme_id: 8 },
     { background_color: "#8A82E8", theme_id: 9 },
     { background_color: "#B8F3FF", theme_id: 10 },

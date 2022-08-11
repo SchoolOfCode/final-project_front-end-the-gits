@@ -96,6 +96,6 @@
 }
 
 .shoppingListItem.completed {
-  background:#B9B9B9;
+  background:#B9B9B9 !important;
   text-decoration: line-through solid #000 3px; 
 }
