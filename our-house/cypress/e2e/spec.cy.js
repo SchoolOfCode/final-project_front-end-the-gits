@@ -16,7 +16,8 @@ context("Auth0 login", ()=>{
     cy.login(Cypress.env("EMAIL"), Cypress.env("PASSWORD"));
   });
   it("testing auth0 login works correctly", ()=>{
-    cy.get("h2").contains("Mumtaz");
+    cy.visit("https://final-project-front-end-the-gits.vercel.app/UserHome")
+    cy.get("h2").contains("carlos.alford@hotmail.com");
   })
 })
 
