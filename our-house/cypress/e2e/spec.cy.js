@@ -24,6 +24,12 @@ context("Auth0 login", ()=>{
     cy.visit("https://final-project-front-end-the-gits.vercel.app/UserHome");
     cy.get('a[href="/ShopName"]').first().click()
   })
+
+  it("test the input so the user can create lists", () => {
+    cy.visit("https://final-project-front-end-the-gits.vercel.app/ShopName");
+    cy.get('input[type="text"]').type('Tesco');
+    cy.get("button").contains('Add').click();
+  })
 })
 
 
