@@ -111,7 +111,7 @@
   justify-content: center;
   align-items: center;
   border: none;
-  color: rgb(214, 0, 0);
+  color: rgb(237, 15, 15);
   width: 1.6vw;
 }
 .edit {
@@ -473,16 +473,16 @@
       justify-content: center;
       align-items: center;
       border: none;
-      color: rgb(214, 0, 0);
-      width: 1.6vw;
+      color: rgb(233, 26, 26);
+      width: 10vw;
     }
     .edit {
       margin-right: 0.2vw;
       color: rgb(61, 61, 61);
     }
     .edit svg, .delete svg {
-      width: 2.6vw;
-      height: 2.6vh;
+      width: 9vw;
+      height: 9vh;
       cursor: pointer;
     }
     .edit svg {
@@ -511,7 +511,7 @@
       margin-top: 50px;
       top: -50px;
       cursor: pointer;
-      background-color: aqua;
+      /* background-color: aqua; */
     }
     
     .cardText p {
