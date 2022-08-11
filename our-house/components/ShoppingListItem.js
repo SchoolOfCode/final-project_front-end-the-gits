@@ -29,11 +29,8 @@ const ShoppingListItem = ({
         </p>
       </div>
       <div className={styles.right}>
-        {/* <div className={styles.edit}>
-          <FiEdit />
-        </div> */}
         <div className={styles.background} style={{ backgroundColor: user.user_metadata.theme_id }}>
-          <img src={user.user_metadata.avatar_id} width={24} alt="user avatar icon" />
+          <img src={user.user_metadata.avatar_id} alt="user avatar icon" />
         </div>
         <div
           className={styles.delete}
