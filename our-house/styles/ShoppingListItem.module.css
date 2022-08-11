@@ -211,7 +211,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 7.2vh;
+    min-height: 7.2vh;
+    height: auto;
     width: 74vw;
     background: linear-gradient(90deg, #8A82E8 0%, #a29af8 41%, #aea6ff 78%, #bbb5fa 100%);
     /* background-color: #8A82E8; */
@@ -249,16 +250,22 @@
     font-size:smaller;
   }
   
-  .left span {
+  .left p {
     margin-left: 1.6em;
     color: white;
-    font-size: 18px;
+    font-size: 13px;
     font-family: roboto;
     letter-spacing: 0.04vw;
     text-decoration: none;
     cursor: pointer;
   }
   
+  .left {
+    min-height: 2em;
+    /* background-color: grey; */
+    width: 22em;
+  }
+
   .right {
     display: flex;
     width: 12em;
