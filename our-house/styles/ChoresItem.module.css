@@ -118,8 +118,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 7.2vh;
-    width: 74vw;
+    height: 7vh;
+    width: 76vw;
     background: linear-gradient(90deg, #8A82E8 0%, #a29af8 41%, #aea6ff 78%, #bbb5fa 100%);
     /* background-color: #8A82E8; */
     margin-top: 1.2vh;
@@ -155,11 +155,18 @@
   .createdBy {
     font-size:smaller;
   }
+
+  .left {
+    display: flex;
+    align-items: center;
+    width: 15em;
+    
+  }
   
   .left span {
-    margin-left: 1.6em;
+    margin-left: 1.4em;
     color: white;
-    font-size: 18px;
+    font-size: 13px;
     font-family: roboto;
     letter-spacing: 0.04vw;
     text-decoration: none;
@@ -176,24 +183,24 @@
   
   .right p {
     margin: 1em;
-    font-size: 18px;
+    font-size: 11px;
   }
   
   .background {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 2.1em;
-    height: 2.1em;
-    margin-right: 0.6vw;
+    width: 1.4em;
+    height: 1.4em;
+    margin-right: 1vw;
     border: 3px solid black;
     border-radius: 50%;
     background-color: red;
   }
   
   .background img {
-    width: 2.15em;
-    height: 2.15em;
+     width: 1.4em;
+    height: 1.4em;
   }
   
   .edit, .delete {
@@ -205,12 +212,12 @@
   }
   
   .edit {
-    margin-right: 0.4vw;
+    margin-right: 0.2vw;
   }
   
   
   .edit svg, .delete svg {
-    width: 1.3em;
+    width: 0.95em;
     height: auto;
     cursor: pointer;
   }
