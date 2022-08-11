@@ -25,11 +25,9 @@ const ShoppingListItem = ({
         </p>
       </div>
       <div className={styles.right}>
-        <div className={styles.edit}>
-          <FiEdit />
-        </div>
+       
         <div className={styles.background}>
-          <img src="/user_avatar_1.svg" width={24} alt="user avatar icon" />
+          <img src="/user_avatar_1.svg"  alt="user avatar icon" />
         </div>
         <div
           className={styles.delete}

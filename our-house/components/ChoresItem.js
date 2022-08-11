@@ -27,9 +27,9 @@ const ChoresItem = ({
           </span>
         </div>
         <div className={styles.right}>
-        {/* <p className={styles.createdBy}>created by</p> */}
+         <p className={styles.createdBy}>Created by</p>
           <div className={styles.background}>
-            <img src="/user_avatar_1.svg" width={24} alt="user avatar icon" />
+            <img src="/user_avatar_1.svg" alt="user avatar icon" />
           </div>
           <div
             className={styles.delete}
