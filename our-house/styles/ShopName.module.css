@@ -62,13 +62,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 60vh;
-  width: 74vw;
-  gap: 60px; 
+  width: 100%;
+  /* background-color: brown; */
+  gap: 0px; 
   /* margin-top: 1vh;  */
   margin-bottom: 3vh;
-  margin-left: 7.4vw;
+  margin-left: 0vw;
 }
 
 }

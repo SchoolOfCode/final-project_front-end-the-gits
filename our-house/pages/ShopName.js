@@ -169,6 +169,7 @@ const deleteShop = async (shops) => {
             title={`${nameClicked} Shopping list`}
             name={nameClicked}
             handleClick={updateShoppingList}
+            placeholderText="Add item"
           />
           {listItems.length > 0 ? (listItems.map((item, index) => (
             <ShoppingListItem
@@ -191,9 +192,10 @@ const deleteShop = async (shops) => {
         <div className={styles.shopNames}>
           <div className={styles.inputBar}>
           <InputBar
-            title="Create and Save your lists by shop name"
+            title="Create and Save lists"
             name={nameClicked}
             handleClick={updateListOfShops}
+            placeholderText="Enter shop name"
           />
           </div>
           {shopName ? (

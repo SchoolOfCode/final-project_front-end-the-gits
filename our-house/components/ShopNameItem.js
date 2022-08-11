@@ -40,8 +40,8 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
                    
 
                     </p> 
-                    <div className={styles.shopName}>
-                        {name} <p>'s List</p>
+                    <div >
+                    <p><span className={styles.shopName}>{name}</span>'s List</p>
                     </div>
             </div>
             </a>

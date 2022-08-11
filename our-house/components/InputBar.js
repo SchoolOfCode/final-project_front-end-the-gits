@@ -2,18 +2,19 @@ import React from "react";
 import styles from "../styles/InputBar.module.css";
 import { useState } from "react";
 
-const InputBar = ({ title, name, handleClick }) => {
+const InputBar = ({ title, name, handleClick, placeholderText }) => {
   const [input, setInput] = useState("");
 
   return (
     <div className={styles.inputContainer}>
-      <h1 className={styles.heading}>{title}</h1>
+      <h2 className={styles.heading}>{title}</h2>
       <div className={`${styles.inputBar} theme-input-bar`}>
       <input
         className={styles.input}
         type="text"
         onChange={(e) => setInput(e.target.value)}
         value={input}
+        placeholder={placeholderText}
       />
       <button className={styles.button}
         onClick={() => {

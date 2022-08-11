@@ -21,7 +21,7 @@ export default function Home() {
           <div className={styles.buttons}>
           <Link href="/api/auth/login">
           <a href="/api/auth/login">
-            <button>Login / Sign-up</button>
+            <button>Login</button>
           </a>
         </Link>
           </div>
