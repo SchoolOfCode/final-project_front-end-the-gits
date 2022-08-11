@@ -213,7 +213,7 @@
     align-items: center;
     min-height: 7.2vh;
     height: auto;
-    width: 74vw;
+    width: 76vw;
     background: linear-gradient(90deg, #8A82E8 0%, #a29af8 41%, #aea6ff 78%, #bbb5fa 100%);
     /* background-color: #8A82E8; */
     margin-top: 1.2vh;
@@ -223,6 +223,7 @@
     font-size: 22px;
     font-family: roboto;
     border: 2px solid rgb(97, 97, 97);
+    margin-left: 0;
   }
   
   

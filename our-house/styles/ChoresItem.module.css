@@ -165,6 +165,9 @@
   }
   
   .left span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 2em;
     margin-left: 1.4em;
     color: white;
@@ -173,6 +176,7 @@
     letter-spacing: 0.04vw;
     text-decoration: none;
     cursor: pointer;
+   
   }
   
   .right {
@@ -185,7 +189,7 @@
   
   .right p {
     margin: 1em;
-    font-size: 11px;
+    font-size: 9px;
   }
   
   .background {
