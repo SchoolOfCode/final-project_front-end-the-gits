@@ -34,3 +34,4 @@ cypress.env.json
 .netlify
 
 .env
+cypress.config.js
