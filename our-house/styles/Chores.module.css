@@ -8,12 +8,13 @@
     width: 100vw;
     min-height: 75vh;
     height: auto;
-    margin-left: 3.7vw;
+    /* margin-left: 3.7vw; */
     margin-bottom: 5vh;
 }
 
 .choresWrapper {
     width: 76%;
+    margin-left: 7.4vw;
 }
 
 .choresList {
