@@ -164,13 +164,14 @@ const deleteShop = async (shops) => {
     <div className={styles.ShoppingNamelist}>
        <div className={styles.shopBox}>
       {nameClicked ? (
-        <div className={styles.items}>
+        <div >
           <InputBar
             title={`${nameClicked} Shopping list`}
             name={nameClicked}
             handleClick={updateShoppingList}
             placeholderText="Add item"
           />
+          <div className={styles.items}>
           {listItems.length > 0 ? (listItems.map((item, index) => (
             <ShoppingListItem
               completed={item.completed}
@@ -180,12 +181,13 @@ const deleteShop = async (shops) => {
               deleteListItem={deleteListItem}
               toggleItemAsCompleted={toggleItemAsCompleted}
             />
-          )) 
-          ) : (
+            
+          ))
+          ): (
             <div>
               <h2>No items</h2>
             </div>
-          )}
+          )}</div> 
           
         </div>
       ) : (

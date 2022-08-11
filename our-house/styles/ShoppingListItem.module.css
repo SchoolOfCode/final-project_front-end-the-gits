@@ -204,3 +204,125 @@
   background:#B9B9B9 !important;
   text-decoration: line-through solid #000 3px; 
 }
+
+
+@media screen and (max-width: 440px) {
+  .shoppingListItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 7.2vh;
+    height: auto;
+    width: 74vw;
+    background: linear-gradient(90deg, #8A82E8 0%, #a29af8 41%, #aea6ff 78%, #bbb5fa 100%);
+    /* background-color: #8A82E8; */
+    margin-top: 1.2vh;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px #131313;
+    color: white;
+    font-size: 22px;
+    font-family: roboto;
+    border: 2px solid rgb(97, 97, 97);
+  }
+  
+  
+  .shoppingListItem:nth-child(4n + 2) {
+    background: linear-gradient(90deg, #7b71e6 0%, #867de4 41%, #9b92e9 78%, #aba3ff 100%);
+    box-shadow: 12px 12px 9px 2px rgba(0,0,0,0.);
+    
+    font-size: 22px;
+  }
+  .shoppingListItem:nth-child(4n + 3) {
+    background: linear-gradient(90deg, #776bf7 0%, #8479fc 41%, #938af8 78%, #aca5fd 100%);
+    box-shadow: 12px 12px 9px 2px rgba(0,0,0,0.);
+    
+    font-size: 22px;
+  }
+  .shoppingListItem:nth-child(4n + 4) {
+    background: linear-gradient(90deg, #a49cff 0%, #beb8fc 41%, #beb9ff 78%, #c5c0fa 100%);
+    box-shadow: 12px 12px 9px 2px rgba(0,0,0,0.);
+    
+    font-size: 22px;
+  }
+  
+  
+  .createdBy {
+    font-size:smaller;
+  }
+  
+  .left p {
+    margin-left: 1.6em;
+    color: white;
+    font-size: 13px;
+    font-family: roboto;
+    letter-spacing: 0.04vw;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .left {
+    min-height: 2em;
+    /* background-color: grey; */
+    width: 22em;
+  }
+
+  .right {
+    display: flex;
+    width: 12em;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1vw;
+  }
+  
+  .right p {
+    margin: 1em;
+    font-size: 18px;
+  }
+  
+  .background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.1em;
+    height: 2.1em;
+    margin-right: 0.6vw;
+    border: 3px solid black;
+    border-radius: 50%;
+    background-color: red;
+  }
+  
+  .background img {
+    width: 2.15em;
+    height: 2.15em;
+  }
+  
+  .edit, .delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: white;  
+  }
+  
+  .edit {
+    margin-right: 0.4vw;
+  }
+  
+  
+  .edit svg, .delete svg {
+    width: 1.3em;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .edit svg {
+    width: 2.6vw;
+    height: 2.6vh;
+  }
+  
+  .shoppingListItem.completed {
+    background:#B9B9B9 !important;
+    text-decoration: line-through solid #000 3px; 
+  }
+  
+  }
