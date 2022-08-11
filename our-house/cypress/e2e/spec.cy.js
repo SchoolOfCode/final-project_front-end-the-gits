@@ -17,7 +17,7 @@ context("Auth0 login", ()=>{
   });
   it("testing auth0 login works correctly", ()=>{
     cy.visit("https://final-project-front-end-the-gits.vercel.app/UserHome")
-    cy.get("h2").contains("carlos.alford@hotmail.com");
+    cy.get("h2");
   })
 })
 
