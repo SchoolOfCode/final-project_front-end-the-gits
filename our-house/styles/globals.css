@@ -58,6 +58,12 @@ body {
 
 .the-gits-theme-3EC300 .theme-chores-item {
   background: linear-gradient(90deg, #3EC300 0%, #3EC300 41%, #3EC300 78%, #3EC300 100%);
+  
+}
+
+.the-gits-theme-3EC300 .theme-shoppinglist-item:nth-child(4n + 1),
+.the-gits-theme-3EC300 .theme-chores-item:nth-child(4n + 2) {
+  background: linear-gradient(90deg, #3EC300 0%, #3EC300 41%, #3EC300 78%, #3EC300 100%);
 }
 
 .the-gits-theme-3EC300 .theme-shoppinglist-item:nth-child(4n + 2),

@@ -80,14 +80,15 @@ const Chores = () => {
 
   return (
     <div className={styles.ShoppingNamelist}>
-      <div className={styles.choresWrapper}>
-        <div>
-          <div className={styles.heading}>
+      <div className={styles.heading}>
             <InputBar 
                 title= "Chores"
                 handleClick={updateShoppingList}
             />
-          </div>
+      </div>
+      <div className={styles.choresWrapper}>
+        <div>
+          
           <div className={styles.choresList}>
             <div className={styles.todoItems}>
               {choresTodo.map((item, index) => (
