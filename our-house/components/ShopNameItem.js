@@ -6,9 +6,16 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 import { GiRecycle } from 'react-icons/gi';
 import { MdAddCircleOutline } from 'react-icons/md';
 import Link from 'next/link'
+import { useUser } from '@auth0/nextjs-auth0';
 
 
 const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, setNameClicked, setListItems, compareName}) => {
+
+    const { user, error, isLoading } = useUser();
+  
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
     
     function handleClick(){
         setNameClicked(name)
@@ -16,6 +23,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
     }
 
     return (
+        user && (
     <div className={styles.shopItemContainer}>
         <div className={styles.background}>
                 <img src='/user_avatar_1.svg' alt="user avatar icon" width={55} />
@@ -26,14 +34,15 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
                     <a>
             <div onClick={handleClick} className={styles.cardText}>
                     <p>
-                        Terrys
+
+                      {user.name} 
+
+                   
+
                     </p> 
                     <div className={styles.shopName}>
-                        {name} 
+                        {name} <p>'s List</p>
                     </div>
-                    <p>
-                        list
-                    </p>
             </div>
             </a>
             
@@ -59,7 +68,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
                     
                     
             </div>
-            <div className={styles.avatarsNotification}>
+            <div className={`${styles.avatarsNotification} theme-avatar-notification`}>
                   <div className={styles.avatarBox1}>
                       <div className={styles.notification1}>1</div>
                       <img className={styles.usersAvatar} src='/user_avatar_1.svg' width={20}  />
@@ -79,6 +88,7 @@ const ShopNameItem = ({name, icon, id, deleteListItem, toggleItemAsCompleted, se
                   </div>
                 </div>
         </div>
+        )
   )
 }
 export default ShopNameItem
