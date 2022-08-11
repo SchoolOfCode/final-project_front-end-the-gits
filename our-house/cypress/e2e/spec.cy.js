@@ -30,6 +30,24 @@ context("Auth0 login", ()=>{
     cy.get('input[type="text"]').type('Tesco');
     cy.get("button").contains('Add').click();
   })
+
+  it("test the input so the user can add items to the shop list", () => {
+    cy.visit("https://final-project-front-end-the-gits.vercel.app/ShopName");
+    cy.wait(1000)
+    cy.get('a').last().click();
+    cy.get('input[type="text"]').type('Apples');
+    cy.get("button").contains('Add').click();
+    cy.get("li p").contains('Apples');
+  })
+
+  it("the user can remove single item from shop list", () => {
+    cy.visit("https://final-project-front-end-the-gits.vercel.app/ShopName");
+    cy.wait(1000)
+    cy.get('a').last().click();
+    cy.get("li p").contains('Apples');
+    cy.get("li:last-child() div div svg").parent().last().click();
+    cy.get("li p").contains('Apples').should('not.exist')
+  })
 })
 
 
