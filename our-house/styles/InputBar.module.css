@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
+
 .inputContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+  font-family: roboto;
+  margin-bottom: 2vh;
+  margin-left: 3.7vw;
  }
  
+ .heading {
+  color: grey;
+ }
  
  .inputBar {
   display: flex;
@@ -60,10 +68,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: auto auto;
+    margin: 110px auto 0 auto;
+    height: 80px;
     
    }
    
+   .heading {
+    color: grey;
+    /* background-color: #8479fc; */
+    
+   }
    
    .inputBar {
     display: flex;
@@ -73,7 +87,7 @@
     height: 7.2vh;
     background: linear-gradient(90deg, #6e61fc 0%, #8479fc 41%, #9a91ff 78%, #9c93f8 100%);
     border: 2px solid rgb(66, 66, 66);
-    margin: 3vh auto 1vh auto;
+    margin: 1vh auto 3vh auto;
     /* border-radius: 8px; */
     box-shadow: 1px 1px 1px 1px #474747;
   
