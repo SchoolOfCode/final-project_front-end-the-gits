@@ -25,19 +25,19 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', (email, password) => {
-    cy.session([email, password], ()=> {
-      cy.visit("https://final-project-front-end-the-gits.vercel.app/");
-      cy.get("button").first().click();
-  
-      cy.origin(
-        "https://dev-addbc3gj.us.auth0.com/",
-        {args: [email, password]},
-        ([email, password])=>{
-          cy.get("#username").type(email);
-          cy.get("input[type='password']").type(password);
-          cy.get("button[type='submit']").first().click();
-        }
-      );
-      // cy.get("h2").should("Mumtaz");
-    });
+  cy.session([email, password], ()=> {
+    cy.visit("https://final-project-front-end-the-gits.vercel.app/");
+    cy.get("button").first().click();
+
+    cy.origin(
+      "https://dev-addbc3gj.us.auth0.com/",
+      {args: [email, password]},
+      ([email, password])=>{
+        cy.get("#username").type(email);
+        cy.get("input[type='password']").type(password);
+        cy.get("button[type='submit']").first().click();
+      }
+    );
+
   });
+});
