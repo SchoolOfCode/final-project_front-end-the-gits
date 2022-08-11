@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/ChoresItem.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useUser } from "@auth0/nextjs-auth0";
+import { useUserMeta } from "../utils/UserMetaContext";
 
 const ChoresItem = ({
   name,
@@ -13,6 +14,7 @@ const ChoresItem = ({
   // to style the list item when completed
   let markAsDone = completed ? "completed" : "todo";
   const { user, error, isLoading } = useUser();
+  const metaUser = useUserMeta()
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
@@ -35,9 +37,9 @@ const ChoresItem = ({
         <p className={styles.createdBy}>Created by</p>
         <div
           className={styles.background}
-          style={{ backgroundColor: user.user_metadata.theme_id }}
+          style={{ backgroundColor: metaUser.user_metadata.theme_id }}
         >
-          <img src={user.user_metadata.avatar_id} alt="user avatar icon" />
+          <img src={metaUser.user_metadata.avatar_id} alt="user avatar icon" />
         </div>
         <div
           className={styles.delete}

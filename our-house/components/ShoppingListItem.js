@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "../styles/ShoppingListItem.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useUser } from "@auth0/nextjs-auth0";
+import { useUserMeta } from "../utils/UserMetaContext";
+
 
 const ShoppingListItem = ({
   name,
@@ -11,6 +13,7 @@ const ShoppingListItem = ({
   toggleItemAsCompleted,
 }) => {
   const { user, error, isLoading } = useUser();
+  const metaUser = useUserMeta()
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
@@ -35,9 +38,9 @@ const ShoppingListItem = ({
       <div className={styles.right}>
         <div
           className={styles.background}
-          style={{ backgroundColor: user.user_metadata.theme_id }}
+          style={{ backgroundColor: metaUser.user_metadata.theme_id }}
         >
-          <img src={user.user_metadata.avatar_id} alt="user avatar icon" />
+          <img src={metaUser.user_metadata.avatar_id} alt="user avatar icon" />
         </div>
         <div
           className={styles.delete}

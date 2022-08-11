@@ -7,6 +7,8 @@ import { GiRecycle } from "react-icons/gi";
 import { MdAddCircleOutline } from "react-icons/md";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0";
+import { useUserMeta } from "../utils/UserMetaContext";
+
 
 const ShopNameItem = ({
   name,
@@ -19,6 +21,7 @@ const ShopNameItem = ({
   compareName,
 }) => {
   const { user, error, isLoading } = useUser();
+  const metaUser = useUserMeta()
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
@@ -31,8 +34,8 @@ const ShopNameItem = ({
   return (
     user && (
       <div className={styles.shopItemContainer}>
-        <div className={styles.background} style={{ backgroundColor: user.user_metadata.theme_id }}>
-          <img src={user.user_metadata.avatar_id} alt="user avatar icon" width={55} />
+        <div className={styles.background} style={{ backgroundColor: metaUser.user_metadata.theme_id }}>
+          <img src={metaUser.user_metadata.avatar_id} alt="user avatar icon" width={55} />
         </div>
         <div className={styles.shopNameItem}>
           <div className={styles.cardTop}></div>
