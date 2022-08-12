@@ -1,40 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/ShopName.module.css";
 import ShopNameItem from "../components/ShopNameItem";
-import { useState, useEffect } from "react";
 import ShoppingListItem from "../components/ShoppingListItem";
 import InputBar from "../components/InputBar";
 import { useUser } from "@auth0/nextjs-auth0/";
 
+
 const ShopName = () => {
-  const { user, error, isLoading } = useUser();
+  // calling the Auth0 hook
+  const { user, isLoading } = useUser();
+  // store all the data fetched
   const [fetchData, setFetchData] = useState(null);
+  // list of shop list names
   const [shopName, setShopName] = useState("");
+  // all the list items
   const [listItems, setListItems] = useState([]);
+  // to render the page depending on weather the fetching is complete
   const [isPageLoading, setIsPageLoading] = useState(true);
+  // the name of the shop the user clicked on so we can render the right list
   const [nameClicked, setNameClicked] = useState(null);
   
-
+  // use an effect to get ALL the shopping list items
   useEffect(() => {
     async function fetchShoppingLists() {
       const response = await fetch(`${process.env.URL}/shopping-list/${user.sub}`);
       const data = await response.json();
       setFetchData(data);
+      // only sort the list into shop names if there was not fetching error
       if (!data?.error && !fetchData?.error){
         setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
       }
       setIsPageLoading(false);
     }
+    // once user auth0 has loaded get the database items
     if (!isLoading){
       fetchShoppingLists()
     }
     ;
   }, [isLoading]);
 
+  // let the user know if the page still loading
   if (isPageLoading) {
     return <h2>Loading...</h2>;
   }
 
+  // takes the items from DB and create a list of shop names
   function compareName(name) {
     if (!fetchData.error) {
       const newListItems = fetchData.filter((item) => {
@@ -47,7 +57,9 @@ const ShopName = () => {
       setListItems(newListItems);
     }}
 
+  // using the input value and the rendered shop name add new item to the list
   const updateShoppingList = async (value, shopName) => {
+    // updates the local state only
     const id = String(Math.floor(Math.random() * 100 + 3));
     const newItem = {
       item: value,
@@ -57,6 +69,7 @@ const ShopName = () => {
     };
     setListItems([newItem, ...listItems]);
 
+    // update the DB
     const newShopItem = {
       item: value,
       shoppingListName: shopName,
@@ -98,35 +111,29 @@ const ShopName = () => {
       },
       body: JSON.stringify({id}),
     });
-
   };
 
-const deleteShop = async (shops) => {
-  const newListOfShops = shopName.filter((name) => {
-    if (shops === name) {
-      return false;
-    } else {
-      return true;
-    }
-  })
-  setShopName(newListOfShops);
+  // using the name of the shop remove it from the list of shops
+  const deleteShop = async (shops) => {
+    // update local state
+    const newListOfShops = shopName.filter((name) => {
+      if (shops === name) {
+        return false;
+      } else {
+        return true;
+      }
+    })
+    setShopName(newListOfShops);
 
-  // remove shop from the database
-  const data = await fetch(`${process.env.URL}/Shopping-List/remove-shop`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({shopName: shops}),
-  });
-
-}
-
-
-
-
-
-
+    // remove shop from the database
+    const data = await fetch(`${process.env.URL}/Shopping-List/remove-shop`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({shopName: shops}),
+    });
+  }
 
   // uses item id to toggled between true or false
   const toggleItemAsCompleted = async (id) => {
@@ -184,7 +191,7 @@ const deleteShop = async (shops) => {
             
           ))
           ): (
-            <div>
+            <div className={styles.noItems}>
               <h2>No items</h2>
             </div>
           )}</div> 

@@ -4,6 +4,9 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { useUser } from "@auth0/nextjs-auth0";
 import { useUserMeta } from "../utils/UserMetaContext";
 
+// Chores component takes in 5 props, 3 are values and 2 are functions
+// 'name' is the actual chore to be completed
+// uses styled component to display the delete icon
 const ChoresItem = ({
   name,
   completed,
@@ -11,11 +14,15 @@ const ChoresItem = ({
   deleteListItem,
   toggleItemAsCompleted,
 }) => {
-  // to style the list item when completed
+  // to dynamically style the list item when completed
   let markAsDone = completed ? "completed" : "todo";
-  const { user, error, isLoading } = useUser();
+
+  // hooks to check if there are any errors with user authentication
+  const { error, isLoading } = useUser();
+  // loads the latest user metadata
   const metaUser = useUserMeta()
 
+  // lets the user know if app is loading or there was an error and skip the rest
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 

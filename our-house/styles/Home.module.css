@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
 
+/* this is the landing page css */
+
+/* this centres the entire page to the middle of the screen. The flex-direction row-reverse allows the logo image to display first because the text would stack on top of the logo in the mobile, so this reverses the issue*/
 
 .home {
   display: flex;
@@ -10,6 +13,7 @@
   height: 100%;
 }
 
+/* this div contains the text and displays it on the left handside of the landing page */
 
 .home .left {
   display: flex;
@@ -21,6 +25,8 @@
   font-family: 'Roboto', sans-serif;
   padding-left: 12vw;
 }
+
+/* div that controls the positioning of the text */
 
 .textbox {
   display: flex;
@@ -41,6 +47,7 @@
   color: #302f2f;
 }
 
+/* this controls the text below the h1  */
 .text {
   display: flex;
   flex-direction: column;
@@ -55,11 +62,6 @@
   margin-top: 1vh;
   font-weight: 500;
 }
-
-/* .home .left .buttons{
-
-} */
-
 
 .home .left button {
   
@@ -76,6 +78,7 @@
   box-shadow: 2px 2px 5px 3px #000000;
 }
 
+/* this is the styling for the buttons, it changes colour on hover */
 .home .left .signup {
   background-color: rgb(188, 150, 248);
 
@@ -85,12 +88,12 @@
 }
 
 .home .left button:hover {
- 
-  
-  transition: 0.3;
+ transition: 0.3;
   background-color: rgb(185, 126, 240);;
   box-shadow: 3px 3px 4px 3px #2e2e2e;
 }
+
+/* this contains the logo image and positions to the right of the screen */
 
 
 .home .right {
@@ -99,7 +102,6 @@
   align-items: center;
   width: 55vw;
   height: 94vh; 
-  
 }
 
 .home .right img {
@@ -107,7 +109,6 @@
   z-index: 3;
   padding-right: 180px;
   padding-bottom: 50px;
-  /* padding-bottom: 3vh; */
 }
 
 
@@ -119,6 +120,7 @@
 
 @media only screen and (max-width: 440px) {
   
+  /* this stacks the home logo and text on the landing page on top of each other */
   .home {
     display: flex;
     justify-self: center;
@@ -127,7 +129,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-   
   }
   
   
@@ -151,7 +152,6 @@
     height: 80%;
     padding-right: 0px;
     padding-top: 0px;
-  
   }
   
   .home .left h1 {
@@ -176,13 +176,8 @@
     font-weight: 500;
   }
   
-  /* .home .left .buttons{
-  
-  } */
-  
   
   .home .left button {
-    
     margin: 9vh 1vw 9vw 1vw;
     width: 128px;
     height: 34px;
@@ -205,8 +200,6 @@
   }
   
   .home .left button:hover {
-   
-    
     transition: 0.3;
     background-color: rgb(185, 126, 240);;
     box-shadow: 3px 3px 4px 3px #2e2e2e;
@@ -219,7 +212,6 @@
     align-items: center;
     width: 100%;
     height: 48vh; 
-    
   }
   
   .home .right img {
@@ -228,7 +220,6 @@
     padding-right: 0px;
     padding-bottom: 0px;
     padding-top: 20px;
-    /* padding-bottom: 3vh; */
   }
   
   
@@ -237,59 +228,3 @@
   }
 
 }
-
-/* @media only screen and (max-width: 390px) {
-  
-
-  
- 
-  
-  .home .left h1 {
-    font-size: 58px;
-    font-weight: bold;
-    margin-bottom: 2.8vh;
-    margin-top: 1.6vh;
-  }
-
-  .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 70vw;
-    margin-top: 1vh;
-  }
-  
-  .home .left p {
-    font-size: 26px;
-    margin: 0;
-    margin-top: 0.4vh;
-    font-weight: 500;
-  }
-  
- .buttons {
-    height: 20vh;
-    width: 70vw;
-    margin-top: 3.8vh;
-
- }
-  
-  
-  .home .left button {
-    width: 34vw;
-   
-  }
-  
-  
-  
-  .home .right img {
-   
-    
-   
-    width: 67vw;
-    height: 42vh;
-  }
-  
-  
-}
- */

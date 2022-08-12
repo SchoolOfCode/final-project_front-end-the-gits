@@ -43,6 +43,14 @@
   margin-left: 7.4vw;
 }
 
+.noItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+}
+
 
 @media only screen and (max-width: 440px) {
 
@@ -86,6 +94,18 @@
   width: 90vw;
   
 }
+.noItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.noItems h2 {
+  font-size: 18px;
+}
+
 }
  
   

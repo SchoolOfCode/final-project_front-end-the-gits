@@ -8,7 +8,7 @@ const Navbar = () => {
     opened: false,
     className: "close",
   });
-  // const [isOpen, setIsOpen] = useState({opened: false, className: "mobile-menu-button-closed"})
+  
 
   // Only for mobile menus
   function revealMenu() {
@@ -19,13 +19,7 @@ const Navbar = () => {
     }
   }
 
-  // function moveButton (){
-  //   if (isMenuOpen.opened === false) {
-  //     setIsOpen({opened: true, className: "mobile-menu-button"})
-  //   } else{
-  //     setIsOpen({opened: false, className: "mobile-menu-button-closed"})
-  //   }
-  // }
+ 
 
   return (
     <>
@@ -66,8 +60,8 @@ const Navbar = () => {
               <div className={styles.iconContainer}>
                 <div className={styles.notification}>2</div>
                 <img
-                  className={styles["svg-icons"]}
-                  src="/school_icon.svg"
+                  className={styles["chores"]}
+                  src="/chores_icon.svg"
                   width={70}
                 ></img>
               </div>
@@ -143,7 +137,7 @@ const Navbar = () => {
             <a>
             
               <div className={styles.iconContainerNoNotification}>
-                {/* <div className={styles.notification}>5</div> */}
+            
                 <img
                   className={styles["svg-icons"]}
                   src="/finances_icon.svg"

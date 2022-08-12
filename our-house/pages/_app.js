@@ -4,7 +4,9 @@ import { UserProvider } from '@auth0/nextjs-auth0';
 import { Layout } from '../components/Layout';
 import styles from "../styles/globals.css"
 
+
 export default function App({ Component, pageProps }) {
+  // wrapping the app in the UserProvider to pass the latest user metadata
   return (
     <UserProvider>
       <Layout>

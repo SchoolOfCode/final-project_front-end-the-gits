@@ -27,9 +27,11 @@ yarn-error.log*
 
 # local env files
 .env*.local
+cypress.env.json
 
 # vercel
 .vercel
 .netlify
 
 .env
+cypress.config.js
