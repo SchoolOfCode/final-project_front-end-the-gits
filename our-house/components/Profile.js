@@ -6,12 +6,16 @@ import { useUserMeta ,useUserMetaDispatch } from "../utils/UserMetaContext";
 
 
 export default function Profile() {
+  // calling the Auth0 hook
   const { user, error, isLoading } = useUser();
+  // stores the latest user meta data
   const [newMeta, setNewMeta] = useState("");
+  // uses a reducer to update the meta data context
   const dispatch = useUserMetaDispatch();
-
+  // use an effect to persist the latest meta data
   useEffect(() => {
     async function fetchNewMeta() {
+      //  using next.js end point to fetch meta data
       const response = await fetch(`/api/userData/${user.sub}`);
       const data = await response.json();
       setNewMeta(data);
@@ -20,6 +24,7 @@ export default function Profile() {
         ...data,
       })
     }
+    // wait for Auth0 to finish loading before fetching data
     if (!isLoading) {
       fetchNewMeta();
     }
@@ -27,8 +32,6 @@ export default function Profile() {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
-
-  console.log(useUserMeta())
 
   return (
     user && (
@@ -47,9 +50,9 @@ export default function Profile() {
                 />
               ) : (
                 <img
-                  src={newMeta.user_metadata.avatar_id}
+                  src={newMeta.user_metadata?.avatar_id}
                   alt={user.name}
-                  style={{ backgroundColor: newMeta.user_metadata.theme_id }}
+                  style={{ backgroundColor: newMeta.user_metadata?.theme_id }}
                 />
               )}
             </a>

@@ -3,14 +3,19 @@ import styles from "../styles/UserProfile.module.css";
 import { useUser } from "@auth0/nextjs-auth0";
 import Link from "next/link";
 
+
 const UserProfile = () => {
+  // calling the Auth0 hook
+  const { user, error, isLoading } = useUser();
+
+  // store the default avatar for the page
   const [displayAvatar, setDisplayAvatar] = useState(
     "/avatars/avatar_default.svg"
   );
+  // store defaut colour for the page
   const [changeColour, setChangeColour] = useState("#868686");
 
-  const { user, error, isLoading } = useUser();
-
+  // update the user metadata on the auth0 backend
   async function updateMeta(avatar, colour) {
     const response = await fetch("/api/userData", {
       method: "post",
@@ -29,6 +34,7 @@ const UserProfile = () => {
     const data = await response.json();
   }
 
+  // default avatars string
   const avatars = [
     { avatar: "/avatars/avatar_1.svg", avatar_id: 0 },
     { avatar: "/avatars/avatar_2.svg", avatar_id: 1 },
@@ -68,6 +74,7 @@ const UserProfile = () => {
     { avatar: "/avatars/avatar_36.svg", avatar_id: 35 },
   ];
 
+  // default theme colours
   const theme = [
     { background_color: "#E3170A", theme_id: 0 },
     { background_color: "#3EC300", theme_id: 1 },
@@ -87,19 +94,21 @@ const UserProfile = () => {
     { background_color: "#6B7FD7", theme_id: 15 },
   ];
 
+  // make sure auth0 is not loading and there were no errors
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
+  // update the state storing the current avatar when user selects one
   const handleClick = (index) => {
     for (let i = 0; i < avatars.length; i++) {
       if (index === avatars[i].avatar_id) {
         displayAvatar = avatars[i].avatar;
-
         setDisplayAvatar(displayAvatar);
       }
     }
   };
 
+  // update the state storing the current theme when user selects a colour
   const changeBackground = (index) => {
     for (let i = 0; i < theme.length; i++) {
       if (index === theme[i].theme_id) {

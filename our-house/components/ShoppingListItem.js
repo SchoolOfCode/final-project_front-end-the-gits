@@ -12,7 +12,9 @@ const ShoppingListItem = ({
   deleteListItem,
   toggleItemAsCompleted,
 }) => {
+  // calling the Auth0 hook
   const { user, error, isLoading } = useUser();
+  // getting the latest user meta data
   const metaUser = useUserMeta()
 
   if (isLoading) return <div>Loading...</div>;

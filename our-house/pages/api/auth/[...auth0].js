@@ -1,7 +1,6 @@
-// pages/api/auth/[...auth0].js
 import { handleAuth, handleLogin } from "@auth0/nextjs-auth0";
 
-
+// handler to login user
 export default handleAuth({
   async login(req, res) {
     await handleLogin(req, res, {
@@ -12,9 +11,9 @@ export default handleAuth({
       returnTo: "/UserHome",
     });
     var options = {
-        theme: {
-          logo: 'https://thumbs2.imgbox.com/d3/92/hIE71HWq_t.png'
-        }
-      };
+      theme: {
+        logo: 'https://thumbs2.imgbox.com/d3/92/hIE71HWq_t.png'
+      }
+    };
   },
 });
