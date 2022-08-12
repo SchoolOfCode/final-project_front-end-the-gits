@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../styles/404.module.css"
 
-
+// Catches any users trying to navigate to a non existing page
 const NotFound = () => {
   return (
     <div className={styles.notFound}>
