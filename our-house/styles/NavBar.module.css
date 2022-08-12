@@ -65,11 +65,18 @@
   padding-right: 26px;
 }
 
-.iconContainerNoNotification img{
+.svg-icons{
   width: 58px;
   height: 58px;
   /* padding-right: 13px; */
 }
+
+.navbar .chores {
+  width: 65px;
+  height: 65px;
+}
+
+
 
 
 
@@ -195,11 +202,18 @@
     height: 42px;
     padding-left: 7px
   }
+
+
   
   .iconContainerNoNotification img{
     width: 42px;
     height: 42px;
    
+  }
+
+  .navbar .chores {
+    width: 47px;
+    height: 47px;
   }
    
   

@@ -2,17 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
 
 
+/* Controls the whole UserProfile page */
+
 .userProfile {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
   height: 96vh;
-  font-family: roboto;
- 
+  font-family: roboto; 
 }
 
-/* Created custom profile bar for this page */
+/* Created custom profile bar for this page to be able to show the avatar and background colour choice in the profile */
+
+/* div that controls and contains the profile bar and avatar */
 
 .profile{
   display: flex;
@@ -20,10 +23,10 @@
   align-items: center;
   width: 100%;
   height: 13vh;
-  left: 0;
-  
-  
+  left: 0; 
 }
+
+/* Coloured bar that spans the page behond the avatar */
 
 .bar {
   display: flex;
@@ -32,44 +35,47 @@
   background-color: #8A82E8;
   height: 7vh;
   width: 100vw;
-  /* border-top: 2px solid black; */
   border-bottom: 2px solid black;
   box-shadow: 1px 4px 6px -1px #585858;
   border-top: 2.4px solid rgb(0, 0, 0);
   border-bottom: 2.4px solid rgb(0, 0, 0);
 }
 
+
+/* div and contains user name and positions it to the right on pc and center on the mobile */
+
 .right{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    min-width: 16vw;
-    margin-right: 180px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 16vw;
+  margin-right: 180px;
 }
+
+/* div that contains the avatar and shows the theme colour choice */
 
 .profileCirle {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-    /* display: block; */
-    border-radius: 50%;
-    right: 8vw;
-    border: 6px solid rgb(27, 27, 27);
-    width: 100px;
-    height: 100px;
+  border-radius: 50%;
+  right: 8vw;
+  border: 6px solid rgb(27, 27, 27);
+  width: 100px;
+  height: 100px;
 }
+
+/* Show the avatar choice */
 
 .img {
-    
     width: 88px;
-    height: 88px;
-    
-
+    height: 88px;  
 }
 
+/* Styles the userName in the profile bar */
+
 .right h2 {
-  /* margin-right: 2vw; */
   color: white;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -77,6 +83,8 @@
   text-shadow: 2px 2px 2px #383838;
   min-width: 4vw;
 }
+
+/* Div that controls the h1 heading */
 
 .heading {
   display: flex;
@@ -87,6 +95,8 @@
   margin-top: 2vh;
 }
 
+/* div that contains the avatarsBox and colourBox */
+
 .main{
   display: flex;
   flex-direction: row;
@@ -94,8 +104,9 @@
   align-items: center;
   width: 90%;
   height: 67%;
-  
 }
+
+/* div that contains the avatarBox */
 
 .mainLeft {
   display: flex;
@@ -104,7 +115,6 @@
   align-items: center;
   width: 64%;
   height: 100%;
- 
 }
 
 .mainLeft .h2 {
@@ -112,11 +122,12 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  /* background-color: aquamarine; */
   width: 100%;
   height: 10%;
   padding-left: 30px;
 }
+
+/* div that contains the avatars */
 
 .avatarBox {
   display: flex;
@@ -132,6 +143,8 @@
   border-radius: 8px;
 }
 
+/* Grey cirles backgrounds for the avatars */
+
 .avatarCirle {
   display: flex;
   justify-content: center;
@@ -146,11 +159,14 @@
   margin: 4px;
 }
 
+/* Turns background res on hover */
+
 .avatarCirle:hover {
   background-color: #e01515;
   transition: 0.3s;
- 
 }
+
+/* controls size of the avatar */
 
 .avatarCirle img {
   width: 88px;
@@ -163,6 +179,8 @@
   height: 90px;
 }
 
+
+/* div that contains the colourBox */
 
 .mainRight {
   display: flex;
@@ -183,6 +201,8 @@
   padding-left: 40px;
 }
 
+/* Div that contains the colour choices */
+
 .colourBox {
   display: flex;
   flex-direction: row;
@@ -197,6 +217,7 @@
   border-radius: 8px;
 }
 
+ /* Div that controls the size of the colour circles */
 .colour {
   width: 104px;
   height: 104px;
@@ -212,6 +233,8 @@
   border: 4px solid #e01515;
 }
 
+/* Div that controls the submit button */
+
 .submit{
   display: flex;
   justify-content: center;
@@ -220,6 +243,8 @@
   height: 10%;
   padding-top: 10px;
 }
+
+/* Styles the submit button */
 
 .submit button {
   width: 140px;
@@ -241,8 +266,9 @@
 
 
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 440px) {
 
+  /* Changes direction of the page to column so avatars and colour choices stack on top of each other */
 
 .userProfile {
   display: flex;
@@ -277,7 +303,6 @@
   background-color: #8A82E8;
   height: 6vh;
   width: 100%;
-  /* border-top: 2px solid black; */
   border-bottom: 2px solid black;
   box-shadow: 1px 4px 6px -1px #585858;
   border-top: 2.4px solid rgb(0, 0, 0);
@@ -290,9 +315,7 @@
   width: 100%;
   align-items: center;
   min-width: 16vw;
-  /* margin: auto auto; */
-  margin-right: 0px;
-  
+  margin-right: 0px;  
 }
 
 .profileCirle {
@@ -303,18 +326,14 @@
     width: 60px;
     height: 60px;
     margin-right: 10px;
-
 }
 
 .img {
-    
     width: 55px;
-    height: 55px;
-    
+    height: 55px; 
 }
 
 .right h2 {
-  /* margin-right: 2vw; */
   color: white;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -323,6 +342,7 @@
   min-width: 4vw;
   padding-left: 0;
 }
+
 .heading {
   display: flex;
   justify-content: center;
@@ -334,17 +354,13 @@
   color: #1d1d1d;
 }
 
-
-
 .main{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 90%;
-  min-height: 100vh;
-  /* margin-top: 1vh; */
-  /* background-color: green; */
+  min-height: 100vh;  
   height: auto;
 }
 
@@ -363,7 +379,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  /* background-color: aquamarine; */
   width: 100%;
   height: 40px;
   font-size: 15px;
@@ -431,9 +446,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  /* background-color: aquamarine; */
-  width: 100%;
-  
+  width: 100;  
   height: 40px;
   font-size: 15px;
   color: #1d1d1d;
