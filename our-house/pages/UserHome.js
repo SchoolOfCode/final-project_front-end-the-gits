@@ -45,7 +45,7 @@ const UserHome = () => {
             <a>
             <div className={styles.cardContainer}>
                 <div className={`${styles.cardIcon} ${styles.chores}`}>
-                    <img className={styles.avatar} src='/school_icon.svg'></img>  
+                    <img className={styles.avatar} src='/chores_icon.svg'></img>  
                 </div>
                 <div className={styles.card}>             
                     <div className={styles.title}>Chores</div>                

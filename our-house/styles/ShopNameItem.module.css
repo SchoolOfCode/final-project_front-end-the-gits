@@ -112,10 +112,12 @@
   align-items: center;
   border: none;
   color: rgb(237, 15, 15);
-  width: 1.6vw;
+  width: 1.4vw;
+  margin-right: 0.3vw;
+  margin-top: 0.2vh;
 }
 .edit {
-  margin-right: 0.2vw;
+  margin-right: 0.3vw;
   color: rgb(61, 61, 61);
 }
 .edit svg, .delete svg {
@@ -474,7 +476,8 @@
       align-items: center;
       border: none;
       color: rgb(233, 26, 26);
-      width: 10vw;
+      width: 6vw;
+      margin-right: 1.8vw;
     }
     .edit {
       margin-right: 0.2vw;

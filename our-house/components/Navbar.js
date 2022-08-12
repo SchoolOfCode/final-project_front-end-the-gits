@@ -67,7 +67,7 @@ const Navbar = () => {
                 <div className={styles.notification}>2</div>
                 <img
                   className={styles["svg-icons"]}
-                  src="/school_icon.svg"
+                  src="/chores_icon.svg"
                   width={70}
                 ></img>
               </div>

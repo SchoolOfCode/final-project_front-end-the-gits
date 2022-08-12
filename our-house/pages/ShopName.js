@@ -184,7 +184,7 @@ const deleteShop = async (shops) => {
             
           ))
           ): (
-            <div>
+            <div className={styles.noItems}>
               <h2>No items</h2>
             </div>
           )}</div> 

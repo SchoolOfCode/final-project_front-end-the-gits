@@ -12,7 +12,7 @@
  }
  
  .heading {
-  color: grey;
+  color: rgb(40, 40, 40);
  }
  
  .inputBar {
@@ -73,10 +73,10 @@
     
    }
    
+   
+
    .heading {
-    color: grey;
-    /* background-color: #8479fc; */
-    
+    color: rgb(40, 40, 40);
    }
    
    .inputBar {
@@ -122,4 +122,6 @@
     cursor: pointer;
     border: none;
   }
+
+
 }
