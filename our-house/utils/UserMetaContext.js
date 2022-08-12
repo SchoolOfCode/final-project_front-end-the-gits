@@ -12,8 +12,8 @@ export function UserMetaProvider({ children }) {
   // both keeps track and update the state of the user metadata
   const [userMeta, dispatch] = useReducer(userReducer, userInitValues);
   
-  // create class to wrap the whole app
-  const theClassName = `the-gits-theme-${userMeta.user_metadata.theme_id.substring(1)}`
+  // create class to wrap the whole app, checking for undefined
+  const theClassName = `the-gits-theme-${userMeta.user_metadata.theme_id ? userMeta.user_metadata.theme_id.substring(1) : '8A82E8'}`
 
   return (
     <UserMetaContext.Provider value={userMeta}>
@@ -33,6 +33,11 @@ export const useUserMetaDispatch = () => useContext(UserMetaDispatchContext);
 
 // only updates the state to match latest user metadata
 function userReducer(userMeta, action) {
+  // make sure the updata data is not empty otherwise skip
+  if (!action.user_metadata) {
+    action.type = 'skip';
+  }
+  // you can either update the data or keep as is
   switch(action.type) {
     case 'update':
       return {user_metadata: {...action.user_metadata}}
