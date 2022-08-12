@@ -8,7 +8,7 @@ context("Home Page", () => {
     cy.get("h1").contains("Our House");
   });
   it("login button", ()=> {
-    cy.get("button").contains("Login / Sign-up")
+    cy.get("button").contains("Login")
   })
 });
 
@@ -33,8 +33,10 @@ context("MVP walk through with Auth0", ()=>{
   // once in the shop lists user can create a new one
   it("test the input so the user can create lists", () => {
     cy.visit("https://final-project-front-end-the-gits.vercel.app/ShopName");
+    cy.wait(200);
     cy.get('input[type="text"]').type('Tesco');
     cy.get("button").contains('Add').click();
+    cy.wait(200);
   })
 
   // inside the shop list a user can add items
