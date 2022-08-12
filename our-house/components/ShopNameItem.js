@@ -1,15 +1,10 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import styles from "../styles/ShopNameItem.module.css";
-import { FaRegEdit } from "react-icons/fa";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { GiRecycle } from "react-icons/gi";
-import { MdAddCircleOutline } from "react-icons/md";
-import Link from "next/link";
+import { RiDeleteBin6Line } from "react-icons/ri"
 import { useUser } from "@auth0/nextjs-auth0";
 import { useUserMeta } from "../utils/UserMetaContext";
 
-
+// props, some are not being used yet as they are part of the stretch goals
 const ShopNameItem = ({
   name,
   icon,
@@ -20,12 +15,14 @@ const ShopNameItem = ({
   setListItems,
   compareName,
 }) => {
+  // calling the Auth0 hook
   const { user, error, isLoading } = useUser();
+  // getting the latest user meta data
   const metaUser = useUserMeta()
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
-
+  // calls the props to open shopping list
   function handleClick() {
     setNameClicked(name);
     compareName(name);
@@ -34,12 +31,13 @@ const ShopNameItem = ({
   return (
     user && (
       <div className={styles.shopItemContainer}>
+       {/*avatar section */} 
         <div className={styles.background} style={{ backgroundColor: metaUser.user_metadata.theme_id }}>
           <img src={metaUser.user_metadata.avatar_id} alt="user avatar icon" width={55} />
         </div>
         <div className={styles.shopNameItem}>
           <div className={styles.cardTop}></div>
-
+           {/*shopping list name  */}
           <div className={styles.cardText}>
             <a onClick={handleClick}>
               <p>
