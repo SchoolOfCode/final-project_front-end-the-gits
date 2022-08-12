@@ -28,7 +28,7 @@ export default function Profile() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
-  console.log(useUserMeta())
+  console.log("META: ", useUserMeta(), " USER: ", user)
 
   return (
     user && (
@@ -47,9 +47,9 @@ export default function Profile() {
                 />
               ) : (
                 <img
-                  src={newMeta.user_metadata.avatar_id}
+                  src={newMeta.user_metadata?.avatar_id}
                   alt={user.name}
-                  style={{ backgroundColor: newMeta.user_metadata.theme_id }}
+                  style={{ backgroundColor: newMeta.user_metadata?.theme_id }}
                 />
               )}
             </a>
