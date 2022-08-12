@@ -50,9 +50,9 @@ export default function Profile() {
                 />
               ) : (
                 <img
-                  src={newMeta.user_metadata.avatar_id}
+                  src={newMeta.user_metadata?.avatar_id}
                   alt={user.name}
-                  style={{ backgroundColor: newMeta.user_metadata.theme_id }}
+                  style={{ backgroundColor: newMeta.user_metadata?.theme_id }}
                 />
               )}
             </a>
