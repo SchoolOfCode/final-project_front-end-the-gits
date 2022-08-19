@@ -89,7 +89,6 @@ const ShopName = () => {
       },
       body: JSON.stringify(newShopItem),
     });
-    console.log(data)
   };
 
   const updateListOfShops = (value) => {
