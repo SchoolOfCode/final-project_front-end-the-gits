@@ -61,9 +61,10 @@ const ShopName = () => {
   const updateShoppingList = async (value, shopName) => {
     // updates the local state only
     const id = String(Math.floor(Math.random() * 100 + 3));
+    console.log(id)
     const newItem = {
       item: value,
-      id: id,
+      _id: id,
       completed: false,
       icon: "user_avatar_1.svg",
     };
@@ -93,7 +94,11 @@ const ShopName = () => {
 
   // removes a single item from a shopping list
   const deleteListItem = async (id) => {
+    console.log(id)
     const newListItems = listItems.filter((item) => {
+      // try item.id
+      console.log(item.id)
+      console.log(item._id)
       if (item._id === id) {
         return false;
       } else {
@@ -102,6 +107,7 @@ const ShopName = () => {
     });
     // update local state
     setListItems(newListItems);
+    console.log(listItems)
 
     // remove item from the database
     const data = await fetch(`${process.env.URL}/Shopping-List`, {
@@ -188,7 +194,6 @@ const ShopName = () => {
               deleteListItem={deleteListItem}
               toggleItemAsCompleted={toggleItemAsCompleted}
             />
-            
           ))
           ): (
             <div className={styles.noItems}>
