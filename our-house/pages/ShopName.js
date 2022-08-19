@@ -26,6 +26,7 @@ const ShopName = () => {
       const response = await fetch(`${process.env.URL}/shopping-list/${user.sub}`);
       const data = await response.json();
       setFetchData(data);
+      console.log(data)
       // only sort the list into shop names if there was not fetching error
       if (!data?.error && !fetchData?.error){
         setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
@@ -65,6 +66,7 @@ const ShopName = () => {
     const newItem = {
       item: value,
       _id: id,
+      id: id,
       completed: false,
       icon: "user_avatar_1.svg",
     };
@@ -76,7 +78,8 @@ const ShopName = () => {
       shoppingListName: shopName,
       completed: false,
       username: user.name,
-      sub: user.sub
+      sub: user.sub,
+      id: id
     };
 
     const data = await fetch(`${process.env.URL}/Shopping-List`, {
@@ -86,6 +89,7 @@ const ShopName = () => {
       },
       body: JSON.stringify(newShopItem),
     });
+    console.log(data)
   };
 
   const updateListOfShops = (value) => {
@@ -99,7 +103,7 @@ const ShopName = () => {
       // try item.id
       console.log(item.id)
       console.log(item._id)
-      if (item._id === id) {
+      if (item._id === id || item.id === id) {
         return false;
       } else {
         return true;
