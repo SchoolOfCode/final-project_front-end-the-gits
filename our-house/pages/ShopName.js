@@ -26,6 +26,7 @@ const ShopName = () => {
       const response = await fetch(`${process.env.URL}/shopping-list/${user.sub}`);
       const data = await response.json();
       setFetchData(data);
+      console.log(data)
       // only sort the list into shop names if there was not fetching error
       if (!data?.error && !fetchData?.error){
         setShopName([...new Set(data.map((shop) => shop.shoppingListName))]);
@@ -41,7 +42,7 @@ const ShopName = () => {
 
   // let the user know if the page still loading
   if (isPageLoading) {
-    return <h2>Loading...</h2>;
+    return <h2 className="loading">Loading...</h2>;
   }
 
   // takes the items from DB and create a list of shop names
@@ -60,22 +61,12 @@ const ShopName = () => {
   // using the input value and the rendered shop name add new item to the list
   const updateShoppingList = async (value, shopName) => {
     // updates the local state only
-    const id = String(Math.floor(Math.random() * 100 + 3));
-    const newItem = {
-      item: value,
-      id: id,
-      completed: false,
-      icon: "user_avatar_1.svg",
-    };
-    setListItems([newItem, ...listItems]);
-
-    // update the DB
     const newShopItem = {
       item: value,
       shoppingListName: shopName,
       completed: false,
       username: user.name,
-      sub: user.sub
+      sub: user.sub,
     };
 
     const data = await fetch(`${process.env.URL}/Shopping-List`, {
@@ -85,6 +76,13 @@ const ShopName = () => {
       },
       body: JSON.stringify(newShopItem),
     });
+    
+    const response = await data.json()
+    console.log(response)
+    setListItems([response, ...listItems]);
+
+    // update the DB
+    
   };
 
   const updateListOfShops = (value) => {
@@ -93,7 +91,9 @@ const ShopName = () => {
 
   // removes a single item from a shopping list
   const deleteListItem = async (id) => {
+    
     const newListItems = listItems.filter((item) => {
+      // try item.id
       if (item._id === id) {
         return false;
       } else {
@@ -188,7 +188,6 @@ const ShopName = () => {
               deleteListItem={deleteListItem}
               toggleItemAsCompleted={toggleItemAsCompleted}
             />
-            
           ))
           ): (
             <div className={styles.noItems}>
