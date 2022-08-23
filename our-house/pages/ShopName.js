@@ -42,7 +42,7 @@ const ShopName = () => {
 
   // let the user know if the page still loading
   if (isPageLoading) {
-    return <h2>Loading...</h2>;
+    return <h2 className="loading">Loading...</h2>;
   }
 
   // takes the items from DB and create a list of shop names
@@ -61,25 +61,12 @@ const ShopName = () => {
   // using the input value and the rendered shop name add new item to the list
   const updateShoppingList = async (value, shopName) => {
     // updates the local state only
-    const id = String(Math.floor(Math.random() * 100 + 3));
-    console.log(id)
-    const newItem = {
-      item: value,
-      _id: id,
-      id: id,
-      completed: false,
-      icon: "user_avatar_1.svg",
-    };
-    setListItems([newItem, ...listItems]);
-
-    // update the DB
     const newShopItem = {
       item: value,
       shoppingListName: shopName,
       completed: false,
       username: user.name,
       sub: user.sub,
-      id: id
     };
 
     const data = await fetch(`${process.env.URL}/Shopping-List`, {
@@ -89,6 +76,13 @@ const ShopName = () => {
       },
       body: JSON.stringify(newShopItem),
     });
+    
+    const response = await data.json()
+    console.log(response)
+    setListItems([response, ...listItems]);
+
+    // update the DB
+    
   };
 
   const updateListOfShops = (value) => {
@@ -97,12 +91,10 @@ const ShopName = () => {
 
   // removes a single item from a shopping list
   const deleteListItem = async (id) => {
-    console.log(id)
+    
     const newListItems = listItems.filter((item) => {
       // try item.id
-      console.log(item.id)
-      console.log(item._id)
-      if (item._id === id || item.id === id) {
+      if (item._id === id) {
         return false;
       } else {
         return true;
@@ -110,7 +102,6 @@ const ShopName = () => {
     });
     // update local state
     setListItems(newListItems);
-    console.log(listItems)
 
     // remove item from the database
     const data = await fetch(`${process.env.URL}/Shopping-List`, {
