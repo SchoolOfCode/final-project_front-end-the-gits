@@ -22,7 +22,7 @@ const Chores = () => {
     async function fetchChores() {
       const response = await fetch(`${process.env.URL}/chores/${user.sub}`);
       const data = await response.json();
-      if (response?.error){
+      if (data?.error){
         setListItems([])
       } else {
         setListItems(data);
@@ -42,8 +42,6 @@ const Chores = () => {
   if (isPageLoading) {
     return <h2 className="loading">Loading...</h2>;
   }
-
-
 
   // creates a list of the items which have been completed
   const completedList = listItems.filter ((item) => {
@@ -110,7 +108,7 @@ const Chores = () => {
   }
 
   // uses item id to toggled between true or false
-  const toggleItemAsCompleted = (id) => {
+  const toggleItemAsCompleted = async (id) => {
     let newListItems = [];
     const dbItem = {id};
     // find item by id, update the completed key:value and exit loop
@@ -131,6 +129,13 @@ const Chores = () => {
     }
     // update the local state
     setListItems(newListItems);
+    const data = await fetch(`${process.env.URL}/chores`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dbItem)
+    })
   }
 
   return (
@@ -140,6 +145,7 @@ const Chores = () => {
         <InputBar 
             title= "Chores"
             handleClick={updateShoppingList}
+            placeholderText="Add chore"
         />
       </div>
       <div className={styles.choresWrapper}>
