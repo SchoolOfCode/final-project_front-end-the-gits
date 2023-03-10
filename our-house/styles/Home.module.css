@@ -52,7 +52,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  text-align: left;
   width: 22vw;
 }
 
@@ -65,9 +66,9 @@
 
 .home .left button {
   
-  margin: 12vh 1vw 0 1vw;
-  width: 7vw;
-  height: 4vh;
+  margin: 6vh 1vw 0 1vw;
+  width: 8vw;
+  height: 6vh;
   border-radius: 8px;
   border: none;
   background-color: rgb(179, 114, 240);
@@ -89,7 +90,7 @@
 
 .home .left button:hover {
  transition: 0.3;
-  background-color: rgb(185, 126, 240);;
+  background-color: rgb(205, 172, 236);;
   box-shadow: 3px 3px 4px 3px #2e2e2e;
 }
 
